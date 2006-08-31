@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>../../Models/FlightDeck/a320.flightdeck.ac</path> 
+	<!--texture-path>../Textures/Livery/House</texture-path-->
+	
+	<!-- Turn off shadow entirely for this model. -->
+	<animation>
+		<type>noshadow</type>
+	</animation>
+	
+	<!-- panel models -->
+	
+	<model>
+		<path>Aircraft/747/Models/boeing747-400-pfd-jw.xml</path>
+		<offsets>
+			<x-m>-17.17</x-m>
+			<y-m>-0.59</y-m>
+			<z-m>-2</z-m>
+			<pitch-deg>-15.0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/747/Models/boeing747-400-enav-jw.xml</path>
+		<offsets>
+			<x-m>-17.17</x-m>
+			<y-m>-0.36</y-m>
+			<z-m>-2</z-m>
+			<pitch-deg>-15.0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/747/Models/boeing747-400-enav-jw.xml</path>
+		<offsets>
+			<x-m>-17.17</x-m>
+			<y-m>+0.36</y-m>
+			<z-m>-2</z-m>
+			<pitch-deg>-15.0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/747/Models/boeing747-400-pfd-jw.xml</path>
+		<offsets>
+			<x-m>-17.17</x-m>
+			<y-m>+0.59</y-m>
+			<z-m>-2</z-m>
+			<pitch-deg>-15.0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/747/Models/boeing747-400-ai-jw.xml</path>
+		<offsets>
+			<x-m>-17.153</x-m>
+			<y-m>-0.11</y-m>
+			<z-m>-2.05</z-m>
+			<pitch-deg>-15.0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/747/Models/boeing747-400-asi-jw.xml</path>
+		<offsets>
+			<x-m>-17.185</x-m>
+			<y-m>-0.19</y-m>
+			<z-m>-1.95</z-m>
+			<pitch-deg>-15.0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/747/Models/boeing747-400-alt-jw.xml</path>
+		<offsets>
+			<x-m>-17.185</x-m>
+			<y-m>-0.09</y-m>
+			<z-m>-1.95</z-m>
+			<pitch-deg>-15.0</pitch-deg>
+		</offsets>
+	</model>
+	<!--
+	<model>
+		<path>Aircraft/747/Models/boeing747-400-mcp-jw.xml</path>
+		<offsets>
+			<x-m>-18.9</x-m>
+			<y-m>-0.057</y-m>
+			<z-m>3.1</z-m>
+			<pitch-deg>-20.0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/747/Models/boeing747-400-efisp-jw.xml</path>
+		<offsets>
+			<x-m>-18.9</x-m>
+			<y-m>-0.32</y-m>
+			<z-m>3.1</z-m>
+			<pitch-deg>-20.0</pitch-deg>
+		</offsets>
+	</model>
+	-->
+	<!-- -->
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>ThrottleLeft</object-name>
+		<property>/controls/engines/engine[0]/throttle</property>
+		<factor>-55</factor>
+		<center>
+			<x-m>-16.771</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.370</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>ThrottleRight</object-name>
+		<property>/controls/engines/engine[1]/throttle</property>
+		<factor>-55</factor>
+		<center>
+			<x-m>-16.771</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.370</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>PedalLeft</object-name>
+		<property>/controls/flight/rudder</property>
+		<factor>0.10</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>PedalRight</object-name>
+		<property>/controls/flight/rudder</property>
+		<factor>-0.10</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>StickLeft</object-name>
+		<property>/controls/flight/aileron</property>
+		<factor>25</factor>
+		<center>
+			<x-m>-16.801</x-m>
+			<y-m>-0.860</y-m>
+			<z-m>-2.215</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>StickLeft</object-name>
+		<property>/controls/flight/elevator</property>
+		<factor>20</factor>
+		<center>
+			<x-m>-16.801</x-m>
+			<y-m>-0.860</y-m>
+			<z-m>-2.215</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>GearLever.1</object-name>
+		<object-name>GearLever.2</object-name>
+		<object-name>GearLeverKnob.1</object-name>
+		<object-name>GearLeverKnob.2</object-name>
+		<property>/controls/gear/gear-down</property>
+		<factor>60</factor>
+		<center>
+			<x-m>-17.17</x-m>
+			<y-m>0.165</y-m>
+			<z-m>-2.122</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>FlapLever.1</object-name>
+		<object-name>FlapLever.2</object-name>
+		<object-name>FlapLever.3</object-name>
+		<property>/controls/flight/flaps</property>
+		<factor>80</factor>
+		<center>
+			<x-m>-16.518</x-m>
+			<y-m>0.085</y-m>
+			<z-m>-2.401</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+</PropertyList>

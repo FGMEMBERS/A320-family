@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<PropertyList include="a320.wingbox.xml">
+	<model>
+		<path>Aircraft/A320-family/XMLs/Wings/a320.ailerons.xml</path>
+	</model>
+	
+	<model>
+		<path>Aircraft/A320-family/XMLs/Wings/a320.flaps.xml</path>
+	</model>
+	
+	<model>
+		<path>Aircraft/A320-family/XMLs/Wings/a320.leading.xml</path>
+	</model>
+	
+	<model>
+		<path>Aircraft/A320-family/XMLs/Wings/a320.spoilers.xml</path>
+	</model>
+	
+	<model>
+		<path>Aircraft/A320-family/XMLs/Wings/a320.trailing.xml</path>
+	</model>
+	
+	<model>
+		<name>Engine.CFM.Left</name>
+		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.cfm.left.xml</path>
+		<offsets>
+			<x-m>-1.38</x-m>
+			<y-m>-5.755</y-m>
+			<z-m>-1.0170087</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>Engine.CFM.Right</name>
+		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.cfm.right.xml</path>
+		<offsets>
+			<x-m>-1.38</x-m>
+			<y-m>5.755</y-m>
+			<z-m>-1.0170087</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>Engine.IAE.Left</name>
+		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.iae.left.xml</path>
+		<offsets>
+			<x-m>-1.6387912</x-m>
+			<y-m>-5.755</y-m>
+			<z-m>-1.0170087</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>Engine.IAE.Right</name>
+		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.iae.right.xml</path>
+		<offsets>
+			<x-m>-1.6387912</x-m>
+			<y-m>5.755</y-m>
+			<z-m>-1.0170087</z-m>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Engine.CFM.Left</object-name>
+		<object-name>Engine.CFM.Right</object-name>
+		<condition>
+			<equals>
+				<property>sim/engine</property>
+				<value>CFM56-5A1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Engine.IAE.Left</object-name>
+		<object-name>Engine.IAE.Right</object-name>
+		<condition>
+			<equals>
+				<property>sim/engine</property>
+				<value>IAE V2500</value>
+			</equals>
+		</condition>
+	</animation>
+</PropertyList>

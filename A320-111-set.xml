@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<PropertyList include="A320-main.xml">
+	<sim>
+		
+		<description>Airbus A320-100 with CFM56-5A1 engines</description>
+		
+		<flight-model>jsb</flight-model>
+		<aero>A320-111</aero>
+		<variant>100</variant>
+		<engine>CFM56-5A1</engine>
+		
+		<help>
+			<title>Airbus A320-100 with CFM56-5A1 engines</title>
+		</help>
+		
+		<!-- Flaps only go up to 35 degrees for the 111 -->
+		<flaps>
+			<setting>0.00</setting>
+			<setting>0.25</setting>
+			<setting>0.375</setting>
+			<setting>0.5</setting>
+			<setting>0.875</setting>
+		</flaps>
+	</sim>
+	
+</PropertyList>

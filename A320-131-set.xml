@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<PropertyList include="A320-main.xml">
+	<sim>
+		
+		<description>Airbus A320-100 with IAE V2500 engines</description>
+		
+		<flight-model>jsb</flight-model>
+		<aero>A320-131</aero>
+		<variant>100</variant>
+		<engine>IAE V2500</engine>
+		
+		<help>
+			<title>Airbus A320-100 with IAE V2500 engines</title>
+		</help>
+		
+		<!-- Flaps go up to 40 degrees for the 131 -->
+		<flaps>
+			<setting>0.00</setting>
+			<setting>0.25</setting>
+			<setting>0.375</setting>
+			<setting>0.5</setting>
+			<setting>1.0</setting>
+		</flaps>
+	</sim>
+</PropertyList>

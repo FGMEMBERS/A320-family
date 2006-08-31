@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<path>../Models/a320.nacelle.iae.3ds</path>
+	<texture-path>../Textures/Livery/House</texture-path>
+	
+	<offsets>
+		<pitch-deg>2.2</pitch-deg>
+	</offsets>
+	
+	<!-- Disable shadows for the following objects. -->
+	<animation>
+		<name>Core_Cowling.Left</name>
+		<type>noshadow</type>
+		<object-name>CORE.L1</object-name>
+		<object-name>CORE.L2</object-name>
+	</animation>
+	
+	<animation>
+		<name>Core_Cowling.Right</name>
+		<type>noshadow</type>
+		<object-name>CORE.R1</object-name>
+		<object-name>CORE.R2</object-name>
+	</animation>
+	
+	<animation>
+		<name>Fan_Cowling.Inner.Left</name>
+		<type>noshadow</type>
+		<object-name>FANCOWL.L2</object-name>
+	</animation>
+	
+	<animation>
+		<name>Fan_Cowling.Inner.Right</name>
+		<type>noshadow</type>
+		<object-name>FANCOWL.R2</object-name>
+	</animation>
+	
+	<animation>
+		<name>Thrust_Reverser.Inner.Left</name>
+		<type>noshadow</type>
+		<object-name>REVERSE.L2</object-name>
+	</animation>
+	
+	<animation>
+		<name>Thrust_Reverser.Inner.Right</name>
+		<type>noshadow</type>
+		<object-name>REVERSE.R2</object-name>
+	</animation>
+	
+	<animation>
+		<name>Nozzle.Interior</name>
+		<type>noshadow</type>
+		<object-name>NOZZLE.INT</object-name>
+	</animation>
+	
+</PropertyList>

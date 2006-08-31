@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<surface-positions>
+		<dummy>1</dummy>
+	</surface-positions>
+	<sim>
+	
+	<model>
+		<path>Aircraft/A320-family/XMLs/a320_100.xml</path>
+	<livery>
+	<material>
+		<emit_color>
+		<diffuse>
+		<red>0</red>
+		<green>0</green>
+		<blue>0</blue>
+		</diffuse>
+	
+		<ambient>
+		<red>0.8</red>
+		<green>0.8</green>
+		<blue>0.8</blue>
+		</ambient>
+	
+		<specular>
+		<red>0.063</red>
+		<green>0.063</green>
+		<blue>0.063</blue>
+		</specular>
+	
+		<emission>
+		<red>0.8</red>
+		<green>0.8</green>
+		<blue>0.8</blue>
+		</emission>
+	
+		<transparency>
+		<alpha>1.0</alpha>
+		</transparency>
+	
+		<shininess>10</shininess>
+		</emit_color>
+	</material>
+	</livery>
+	</model>
+	
+	<view>
+		<internal archive="y">true</internal>
+		<config>
+			<!-- x/y/z == right/up/back -->
+			<x-offset-m archive="y">-0.525</x-offset-m>
+			<y-offset-m archive="y">2.3635023</y-offset-m>
+			<z-offset-m archive="y">-13.8829</z-offset-m>
+			<pitch-offset-deg archive="y">-15.0</pitch-offset-deg>
+		</config>
+	</view>
+	
+	<!-- turns off GA tower communications -->
+	<ATC>
+	<enabled type="bool">false</enabled>
+	</ATC>
+	
+	<!-- turns off GA traffic -->
+	<ai-traffic>
+	<enabled type="bool">false</enabled>
+	</ai-traffic>
+	
+	</sim>
+	
+	<engines>
+	<engine n="0">
+	<running>true</running>
+	</engine>
+	<engine n="1">
+	<running>true</running>
+	</engine>
+	<engine n="2">
+	<running>true</running>
+	</engine>
+	<engine n="3">
+	<running>true</running>
+	</engine>
+	</engines>
+	
+	<radios>
+	<dme>
+	<switch-position>1</switch-position>
+	</dme>
+	</radios>
+	
+	<input>
+		<keyboard>
+			<!--Changed by Ampere -->
+			<!-- Q or q -->
+			<key n="81">
+				<name>Q</name>
+				<desc>steer NLG left.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						STEP = 0.1;
+						propDir = "/controls/gear/handle-steer-norm[0]";
+						
+						steering = getprop(propDir);
+						
+						if (steering == nil)
+						{	setprop(propDir, 0);
+						}
+						else
+						{	steering = steering - STEP;
+							if (-steering > 1){steering = -1;}
+							setprop(propDir, steering);
+						}
+					</script>
+				</binding>
+			</key>
+			<key n="113">
+				<name>q</name>
+				<desc>steer NLG left.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						STEP = 0.1;
+						propDir = "/controls/gear/handle-steer-norm[0]";
+						
+						steering = getprop(propDir);
+						
+						if (steering == nil)
+						{	setprop(propDir, 0);
+						}
+						else
+						{	steering = steering - STEP;
+							if (-steering > 1){steering = -1;}
+							setprop(propDir, steering);
+						}
+					</script>
+				</binding>
+			</key>
+			<!-- E or e -->
+			<key n="69">
+				<name>E</name>
+				<desc>steer NLG right.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						STEP = 0.1;
+						propDir = "/controls/gear/handle-steer-norm[0]";
+						
+						steering = getprop(propDir);
+						
+						if (steering == nil)
+						{	setprop(propDir, 0);
+						}
+						else
+						{	steering = steering + STEP;
+							if (steering > 1){steering = 1;}
+							setprop(propDir, steering);
+						}
+					</script>
+				</binding>
+			</key>
+			<key n="101">
+				<name>e</name>
+				<desc>steer NLG right.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						STEP = 0.1;
+						propDir = "/controls/gear/handle-steer-norm[0]";
+						
+						steering = getprop(propDir);
+						
+						if (steering == nil)
+						{	setprop(propDir, 0);
+						}
+						else
+						{	steering = steering + STEP;
+							if (steering > 1){steering = 1;}
+							setprop(propDir, steering);
+						}
+					</script>
+				</binding>
+			</key>
+			<!--Change ends-->
+		</keyboard>
+	</input>
+</PropertyList>
+
+

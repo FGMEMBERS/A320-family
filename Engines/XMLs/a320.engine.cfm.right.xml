@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<PropertyList include="a320.nacelle.cfm.xml">
+	<offsets>
+		<heading-deg>-1.0</heading-deg>
+	</offsets>
+	
+	<model>
+		<path>Aircraft/A320-family/Engines/XMLs/a320.pylon.cfm.right.xml</path>
+	</model>
+	
+	<model>
+		<path>Aircraft/A320-family/Engines/XMLs/a320.cfm.xml</path>
+	</model>
+	
+	<animation>
+		<name>Fan</name>
+		<type>spin</type>
+		<object-name>blades</object-name>
+		<object-name>cone</object-name>
+		<factor>-67</factor>
+		<property>/engines/engine[1]/n1</property>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+</PropertyList>
