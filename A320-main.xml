@@ -55,6 +55,8 @@
 		</config>
 	</view>
 	
+	<chase-distance-m>-40</chase-distance-m>
+	
 	<!-- turns off GA tower communications -->
 	<ATC>
 	<enabled type="bool">false</enabled>
@@ -68,18 +70,12 @@
 	</sim>
 	
 	<engines>
-	<engine n="0">
-	<running>true</running>
-	</engine>
-	<engine n="1">
-	<running>true</running>
-	</engine>
-	<engine n="2">
-	<running>true</running>
-	</engine>
-	<engine n="3">
-	<running>true</running>
-	</engine>
+		<engine n="0">
+		<running>true</running>
+		</engine>
+		<engine n="1">
+		<running>true</running>
+		</engine>
 	</engines>
 	
 	<radios>
