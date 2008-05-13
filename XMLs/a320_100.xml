@@ -88,4 +88,21 @@
 		</condition>
 	</animation>
 	
+	<!-- Since the exterior model is double-sided at the moment, it will have to be invisible when we
+	     are in inside view. -->
+	<animation>
+		<name>Exterior.Hide</name>
+		<type>select</type>
+		<object-name>COCKPIT</object-name>
+		<object-name>FUSELAGE</object-name>
+		<object-name>WINDSHIELD</object-name>
+		<condition>
+			<not>
+				<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
+			</not>
+		</condition>
+	</animation>
 </PropertyList>
