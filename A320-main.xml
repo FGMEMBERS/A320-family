@@ -231,7 +231,7 @@
 			<name>PAX</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]" />
 			<min-lb type="double">0</min-lb>
-			<max-lb type="double">93000</max-lb>
+			<max-lb type="double">31500</max-lb>
 		</weight>
 	</payload>
 

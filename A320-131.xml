@@ -60,7 +60,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		</location>
 	</pointmass>
 	<pointmass name="PAX">
-		<weight unit="LBS">93000</weight>
+		<weight unit="LBS">31500</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>705</x>
 			<y>0</y>
