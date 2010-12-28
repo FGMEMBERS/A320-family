@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- All variants share one central model, they only link to separate files so that different A320s are distinguishable through multiplayer -->
+
+<PropertyList>
+	<model>
+		<path>Aircraft/A320-family/XMLs/A320.xml</path>
+	</model>
+</PropertyList>

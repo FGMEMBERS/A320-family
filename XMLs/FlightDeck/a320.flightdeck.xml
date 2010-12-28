@@ -2,112 +2,124 @@
 
 <PropertyList>
 
-	<path>../../Models/FlightDeck/a320.flightdeck.ac</path> 
-	<!--texture-path>../Textures/Livery/House</texture-path-->
-	
-	<!-- Turn off shadow entirely for this model. -->
-	<animation>
-		<type>noshadow</type>
-	</animation>
-	
-	<!-- panel models -->
-	
+	<path>../../Models/FlightDeck/a320.flightdeck.ac</path>
+
+	<!-- EXTRA MODELS -->
 	<model>
-		<path>Aircraft/747/Models/boeing747-400-pfd-jw.xml</path>
+		<path>Aircraft/A320-family/XMLs/Instruments/PFD/PFD.xml</path>
 		<offsets>
 			<x-m>-17.17</x-m>
-			<y-m>-0.59</y-m>
+			<y-m>-0.56</y-m>
 			<z-m>-2</z-m>
 			<pitch-deg>-15.0</pitch-deg>
 		</offsets>
 	</model>
 	
 	<model>
-		<path>Aircraft/747/Models/boeing747-400-enav-jw.xml</path>
+		<path>Aircraft/A320-family/XMLs/Instruments/MFD/MFD.xml</path>
 		<offsets>
 			<x-m>-17.17</x-m>
-			<y-m>-0.36</y-m>
+			<y-m>-0.355</y-m>
 			<z-m>-2</z-m>
 			<pitch-deg>-15.0</pitch-deg>
 		</offsets>
 	</model>
 	
 	<model>
-		<path>Aircraft/747/Models/boeing747-400-enav-jw.xml</path>
+		<path>Aircraft/A320-family/XMLs/Instruments/MFD/MFD.xml</path>
 		<offsets>
 			<x-m>-17.17</x-m>
-			<y-m>+0.36</y-m>
+			<y-m>0.375</y-m>
 			<z-m>-2</z-m>
 			<pitch-deg>-15.0</pitch-deg>
 		</offsets>
 	</model>
 	
 	<model>
-		<path>Aircraft/747/Models/boeing747-400-pfd-jw.xml</path>
+		<path>Aircraft/A320-family/XMLs/Instruments/PFD/PFD.xml</path>
 		<offsets>
 			<x-m>-17.17</x-m>
-			<y-m>+0.59</y-m>
+			<y-m>0.58</y-m>
 			<z-m>-2</z-m>
 			<pitch-deg>-15.0</pitch-deg>
 		</offsets>
 	</model>
-	
+
 	<model>
-		<path>Aircraft/747/Models/boeing747-400-ai-jw.xml</path>
+		<path>Aircraft/A320-family/XMLs/Instruments/EICAS/EICAS.xml</path>
 		<offsets>
-			<x-m>-17.153</x-m>
-			<y-m>-0.11</y-m>
-			<z-m>-2.05</z-m>
+			<x-m>-17.173</x-m>
+			<y-m>0.013</y-m>
+			<z-m>-1.99</z-m>
 			<pitch-deg>-15.0</pitch-deg>
 		</offsets>
 	</model>
-	
+
 	<model>
-		<path>Aircraft/747/Models/boeing747-400-asi-jw.xml</path>
+		<path>Aircraft/A320-family/XMLs/Instruments/EICAS/EICAS.xml</path>
 		<offsets>
-			<x-m>-17.185</x-m>
-			<y-m>-0.19</y-m>
-			<z-m>-1.95</z-m>
+			<x-m>-17.12</x-m>
+			<y-m>0.013</y-m>
+			<z-m>-2.188</z-m>
 			<pitch-deg>-15.0</pitch-deg>
 		</offsets>
 	</model>
-	
+
 	<model>
-		<path>Aircraft/747/Models/boeing747-400-alt-jw.xml</path>
+		<path>Aircraft/A320-family/XMLs/Instruments/MCP/MCP.xml</path>
 		<offsets>
-			<x-m>-17.185</x-m>
-			<y-m>-0.09</y-m>
-			<z-m>-1.95</z-m>
+			<x-m>-16.907</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.723</z-m>
 			<pitch-deg>-15.0</pitch-deg>
 		</offsets>
 	</model>
-	<!--
+
 	<model>
-		<path>Aircraft/747/Models/boeing747-400-mcp-jw.xml</path>
+		<path>Aircraft/A320-family/XMLs/Instruments/Stby-AI/Stby-AI.xml</path>
 		<offsets>
-			<x-m>-18.9</x-m>
-			<y-m>-0.057</y-m>
-			<z-m>3.1</z-m>
-			<pitch-deg>-20.0</pitch-deg>
+			<x-m>-17.17</x-m>
+			<y-m>-0.15</y-m>
+			<z-m>-2</z-m>
+			<pitch-deg>-15.0</pitch-deg>
 		</offsets>
 	</model>
-	
+
 	<model>
-		<path>Aircraft/747/Models/boeing747-400-efisp-jw.xml</path>
+		<path>Aircraft/A320-family/XMLs/Instruments/Stby-ASI/Stby-ASI.xml</path>
 		<offsets>
-			<x-m>-18.9</x-m>
-			<y-m>-0.32</y-m>
-			<z-m>3.1</z-m>
-			<pitch-deg>-20.0</pitch-deg>
+			<x-m>-17.184</x-m>
+			<y-m>-0.215</y-m>
+			<z-m>-1.949</z-m>
+			<pitch-deg>-15.0</pitch-deg>
 		</offsets>
 	</model>
-	-->
-	<!-- -->
-	
+
+	<model>
+		<path>Aircraft/A320-family/XMLs/Instruments/Altimeter/altimeter.xml</path>
+		<offsets>
+			<x-m>-17.17</x-m>
+			<y-m>-0.215</y-m>
+			<z-m>-2.014</z-m>
+			<pitch-deg>-15.0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/A320-family/XMLs/Instruments/VOR/VOR.xml</path>
+		<offsets>
+			<x-m>-17.136</x-m>
+			<y-m>-0.15</y-m>
+			<z-m>-2.114</z-m>
+			<pitch-deg>-15.0</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- ANIMATIONS -->
 	<animation>
 		<type>rotate</type>
 		<object-name>ThrottleLeft</object-name>
-		<property>/controls/engines/engine[0]/throttle</property>
+		<property>controls/engines/engine[0]/throttle</property>
 		<factor>-55</factor>
 		<center>
 			<x-m>-16.771</x-m>
@@ -124,7 +136,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>ThrottleRight</object-name>
-		<property>/controls/engines/engine[1]/throttle</property>
+		<property>controls/engines/engine[1]/throttle</property>
 		<factor>-55</factor>
 		<center>
 			<x-m>-16.771</x-m>
@@ -141,7 +153,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>PedalLeft</object-name>
-		<property>/controls/flight/rudder</property>
+		<property>controls/flight/rudder</property>
 		<factor>0.10</factor>
 		<axis>
 			<x>1.0</x>
@@ -153,7 +165,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>PedalRight</object-name>
-		<property>/controls/flight/rudder</property>
+		<property>controls/flight/rudder</property>
 		<factor>-0.10</factor>
 		<axis>
 			<x>1.0</x>
@@ -165,11 +177,11 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>StickLeft</object-name>
-		<property>/controls/flight/aileron</property>
+		<property>controls/flight/aileron</property>
 		<factor>25</factor>
 		<center>
-			<x-m>-16.801</x-m>
-			<y-m>-0.860</y-m>
+			<x-m>0</x-m>
+			<y-m>-0.86</y-m>
 			<z-m>-2.215</z-m>
 		</center>
 		<axis>
@@ -178,15 +190,31 @@
 			<z>0</z>
 		</axis>
 	</animation>
-	
+	<animation>
+		<type>rotate</type>
+		<object-name>StickRight</object-name>
+		<property>controls/flight/aileron</property>
+		<factor>25</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0.86</y-m>
+			<z-m>-2.215</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 	<animation>
 		<type>rotate</type>
 		<object-name>StickLeft</object-name>
-		<property>/controls/flight/elevator</property>
+		<object-name>StickRight</object-name>
+		<property>controls/flight/elevator</property>
 		<factor>20</factor>
 		<center>
 			<x-m>-16.801</x-m>
-			<y-m>-0.860</y-m>
+			<y-m>0</y-m>
 			<z-m>-2.215</z-m>
 		</center>
 		<axis>
@@ -195,14 +223,13 @@
 			<z>0</z>
 		</axis>
 	</animation>
-	
 	<animation>
 		<type>rotate</type>
 		<object-name>GearLever.1</object-name>
 		<object-name>GearLever.2</object-name>
 		<object-name>GearLeverKnob.1</object-name>
 		<object-name>GearLeverKnob.2</object-name>
-		<property>/controls/gear/gear-down</property>
+		<property>controls/gear/gear-down</property>
 		<factor>60</factor>
 		<center>
 			<x-m>-17.17</x-m>
@@ -218,10 +245,8 @@
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>FlapLever.1</object-name>
-		<object-name>FlapLever.2</object-name>
-		<object-name>FlapLever.3</object-name>
-		<property>/controls/flight/flaps</property>
+		<object-name>FlapLever</object-name>
+		<property>controls/flight/flaps</property>
 		<factor>80</factor>
 		<center>
 			<x-m>-16.518</x-m>
@@ -234,4 +259,72 @@
 			<z>0</z>
 		</axis>
 	</animation>
+
+	<animation>
+		<name>Engine 1 cutoff switch rotate</name>
+		<type>rotate</type>
+		<object-name>Eng1Cutoff</object-name>
+		<property>controls/engines/engine[0]/cutoff</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-40</dep></entry>
+			<entry><ind>1</ind><dep>0</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>-16.639</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.363</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<name>Engine 1 cutoff switch pick</name>
+		<type>pick</type>
+		<object-name>Eng1Cutoff</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/engines/engine[0]/cutoff</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Engine 2 cutoff switch rotate</name>
+		<type>rotate</type>
+		<object-name>Eng2Cutoff</object-name>
+		<property>controls/engines/engine[1]/cutoff</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-40</dep></entry>
+			<entry><ind>1</ind><dep>0</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>-16.639</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.363</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<name>Engine 2 cutoff switch pick</name>
+		<type>pick</type>
+		<object-name>Eng2Cutoff</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/engines/engine[1]/cutoff</property>
+			</binding>
+		</action>
+	</animation>
+
 </PropertyList>

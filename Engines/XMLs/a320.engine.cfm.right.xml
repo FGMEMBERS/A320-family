@@ -1,29 +1,54 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
-<PropertyList include="a320.nacelle.cfm.xml">
+<PropertyList include="a320.nacelle.cfm.right.xml">
+
 	<offsets>
-		<heading-deg>-1.0</heading-deg>
+		<heading-deg>-1</heading-deg>
 	</offsets>
-	
+
 	<model>
-		<path>Aircraft/A320-family/Engines/XMLs/a320.pylon.cfm.right.xml</path>
+		<path>Aircraft/A320-family/Engines/XMLs/a320.pylon.cfm.left.xml</path>
 	</model>
-	
+
 	<model>
 		<path>Aircraft/A320-family/Engines/XMLs/a320.cfm.xml</path>
 	</model>
-	
+
+	<model>
+		<name>Contrail</name>
+		<path>Aircraft/A320-family/XMLs/Effects/contrail-eng2.xml</path>
+		<offsets>
+			<x-m>4.875</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Engine fire</name>
+		<path>Aircraft/A320-family/XMLs/Effects/enginefire.xml</path>
+		<offsets>
+			<x-m>2.774</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+		<condition>
+			<property>engines/engine[1]/on-fire</property>
+		</condition>
+	</model>
+
 	<animation>
 		<name>Fan</name>
 		<type>spin</type>
 		<object-name>blades</object-name>
 		<object-name>cone</object-name>
 		<factor>-67</factor>
-		<property>/engines/engine[1]/n1</property>
+		<property>engines/engine[1]/n1</property>
 		<axis>
-			<x>1</x>
+			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
 	</animation>
+
 </PropertyList>

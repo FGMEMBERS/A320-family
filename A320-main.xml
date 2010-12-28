@@ -1,185 +1,530 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" ?>
+
 <PropertyList>
-	<surface-positions>
-		<dummy>1</dummy>
-	</surface-positions>
+
 	<sim>
-	
-	<model>
-		<path>Aircraft/A320-family/XMLs/a320_100.xml</path>
-	<livery>
-	<material>
-		<emit_color>
-		<diffuse>
-		<red>0</red>
-		<green>0</green>
-		<blue>0</blue>
-		</diffuse>
-	
-		<ambient>
-		<red>0.8</red>
-		<green>0.8</green>
-		<blue>0.8</blue>
-		</ambient>
-	
-		<specular>
-		<red>0.063</red>
-		<green>0.063</green>
-		<blue>0.063</blue>
-		</specular>
-	
-		<emission>
-		<red>0.8</red>
-		<green>0.8</green>
-		<blue>0.8</blue>
-		</emission>
-	
-		<transparency>
-		<alpha>1.0</alpha>
-		</transparency>
-	
-		<shininess>10</shininess>
-		</emit_color>
-	</material>
-	</livery>
-	</model>
-	
-	<view>
-		<internal archive="y">true</internal>
-		<config>
-			<!-- x/y/z == right/up/back -->
-			<x-offset-m archive="y">-0.525</x-offset-m>
-			<y-offset-m archive="y">2.3635023</y-offset-m>
-			<z-offset-m archive="y">-13.8829</z-offset-m>
-			<pitch-offset-deg archive="y">-15.0</pitch-offset-deg>
-		</config>
-	</view>
-	
-	<chase-distance-m>-40</chase-distance-m>
-	
-	<!-- turns off GA tower communications -->
-	<ATC>
-	<enabled type="bool">false</enabled>
-	</ATC>
-	
-	<!-- turns off GA traffic -->
-	<ai-traffic>
-	<enabled type="bool">false</enabled>
-	</ai-traffic>
-	
+		<model>
+			<livery>
+				<texture>Blank.png</texture>
+				<texture-path n="0">../Blank.png</texture-path>
+				<texture-path n="1">../../Blank.png</texture-path>
+			</livery>
+			<A320>
+				<heading-bug-pfd-deg type="double">0</heading-bug-pfd-deg>
+				<ias-bug-kt-norm type="double">0</ias-bug-kt-norm>
+				<mach-bug-kt-norm type="double">0</mach-bug-kt-norm>
+			</A320>
+			<pushback>
+				<kp type="double">1000</kp>
+				<ki type="double">0</ki>
+				<kd type="double">0</kd>
+				<position-norm type="double">0</position-norm>
+			</pushback>
+		</model>
+
+		<startup>
+			<splash-texture>Aircraft/A320-family/splash.png</splash-texture>
+		</startup>
+
+		<systems>
+			<autopilot>
+				<name>Autopilot</name>
+				<path>Aircraft/A320-family/Systems/a320-autopilot.xml</path>
+			</autopilot>
+			<autopilot>
+				<name>Autopilot helpers</name>
+				<path>Aircraft/Generic/generic-autopilot-helper.xml</path>
+			</autopilot>
+		</systems>
+
+		<view>
+			<name>Pilot View</name>
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y">-0.525</x-offset-m>
+				<y-offset-m archive="y">2.3635023</y-offset-m>
+				<z-offset-m archive="y">-13.8829</z-offset-m>
+				<pitch-offset-deg archive="y">-15.0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="100">
+			<name>Gear View</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0</x-offset-m>
+				<y-offset-m archive="y">-1.5</y-offset-m>
+				<z-offset-m archive="y">8.5</z-offset-m>
+				<pitch-offset-deg archive="y">0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="101">
+			<name>Passenger View (Economy Class)</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-1.5</x-offset-m>
+				<y-offset-m archive="y">2.3</y-offset-m>
+				<z-offset-m archive="y">5</z-offset-m>
+				<pitch-offset-deg archive="y">0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="102">
+			<name>Passenger View (First Class)</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-1.45</x-offset-m>
+				<y-offset-m archive="y">2.3</y-offset-m>
+				<z-offset-m archive="y">-8.7</z-offset-m>
+				<pitch-offset-deg archive="y">0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="103">
+			<name>Copilot View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0.525</x-offset-m>
+				<y-offset-m archive="y">2.3635023</y-offset-m>
+				<z-offset-m archive="y">-13.8829</z-offset-m>
+				<pitch-offset-deg archive="y">-15.0</pitch-offset-deg>
+			</config>
+		</view>
+		<chase-distance-m>-40</chase-distance-m>
+
+		<sound>
+			<path>Aircraft/A320-family/A320-sound.xml</path>
+		</sound>
+
+		<menubar>
+			<default>
+				<menu n="3">
+					<item>
+						<name>autopilot</name>
+						<label>Autopilot Settings</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							 var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/A320-family/Systems/autopilot-dlg.xml");
+							 autopilot.open();
+							</script>
+						</binding>
+					</item>
+				</menu>
+				<menu n="100">
+					<enabled type="bool">true</enabled>
+					<item>
+						<name>autostart</name>
+						<label>Autostart</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>sim/model/start-idling</property>
+						</binding>
+					</item>
+					<item>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							 aircraft.livery.dialog.open();
+							</script>
+						</binding>
+					</item>
+					<item>
+						<name>pushback</name>
+						<label>Pushback</label>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>pushback</dialog-name>
+						</binding>
+					</item>
+					<item>
+						<name>lights</name>
+						<label>Lights</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							 var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/A320-family/Systems/lights-dlg.xml");
+							 lights.open();
+							</script>
+						</binding>
+					</item>
+					<item>
+						<name>failures</name>
+						<label>Failures</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							 var failures = gui.Dialog.new("sim/gui/dialogs/failures/dialog", "Aircraft/A320-family/Systems/failures-dlg.xml");
+							 failures.open();
+							</script>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
+
+		<help>
+			<title>Airbus A320</title>
+			<key>
+				<name>Delete</name>
+				<desc>toggle thrust reversers</desc>
+			</key>
+			<key>
+				<name>Ctrl-b</name>
+				<desc>toggle speedbrakes/spoilers</desc>
+			</key>
+			<key>
+				<name>w</name>
+				<desc>walk forward toward view direction</desc>
+			</key>
+			<key>
+				<name>W</name>
+				<desc>run forward toward view direction</desc>
+			</key>
+			<key>
+				<name>s</name>
+				<desc>walk backward from view direction</desc>
+			</key>
+		</help>
 	</sim>
+
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<name>LH Inner</name>
+			</tank>
+			<tank n="1">
+				<name>LH Outer</name>
+			</tank>
+			<tank n="2">
+				<name>LH Vent</name>
+			</tank>
+			<tank n="3">
+				<name>Center</name>
+			</tank>
+			<tank n="4">
+				<name>RH Inner</name>
+			</tank>
+			<tank n="5">
+				<name>RH Outer</name>
+			</tank>
+			<tank n="6">
+				<name>RH Vent</name>
+			</tank>
+		</fuel>
+	</consumables>
+
+	<payload>
+		<weight n="0">
+			<name>Crew</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]" />
+			<min-lb type="double">120</min-lb>
+			<max-lb type="double">600</max-lb>
+		</weight>
+		<weight n="1">
+			<name>PAX</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]" />
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">93000</max-lb>
+		</weight>
+	</payload>
+
+	<autopilot>
+		<settings>
+			<autothrottle type="bool">false</autothrottle>
+			<engaged type="bool">false</engaged>
+			<altitude>altitude-hold</altitude>
+			<heading>dg-heading-hold</heading>
+			<heading-mode>magnetic</heading-mode>
+			<speed-mode>knots</speed-mode>
+			<heading-bug-deg type="double">360</heading-bug-deg>
+			<target-speed-kt type="double">200</target-speed-kt>
+			<target-speed-mach type="double">0</target-speed-mach>
+			<target-altitude-ft type="double">10000</target-altitude-ft>
+			<vertical-speed-fpm type="double">1800</vertical-speed-fpm>
+		</settings>
+	</autopilot>
+
+	<controls>
+		<gear>
+			<brake-parking type="bool">true</brake-parking>
+		</gear>
+		<lighting>
+			<beacon type="bool">false</beacon>
+			<landing-lights n="0" type="bool">false</landing-lights>
+			<landing-lights n="1" type="bool">false</landing-lights>
+			<landing-lights n="2" type="bool">false</landing-lights>
+			<nav-lights type="bool">false</nav-lights>
+			<strobe type="bool">false</strobe>
+			<logo-lights type="bool">false</logo-lights>
+			<cockpit type="bool">false</cockpit>
+			<cones type="bool">true</cones>
+			<interior type="double">0</interior>
+			<panel-norm type="double">0</panel-norm>
+		</lighting>
+	</controls>
 	
 	<engines>
 		<engine n="0">
-		<running>true</running>
+			<cutoff type="bool">true</cutoff>
+			<starter type="bool">false</starter>
+			<running type="bool">false</running>
+			<on-fire type="bool">false</on-fire>
+			<reverser-pos-norm type="double">0</reverser-pos-norm>
 		</engine>
 		<engine n="1">
-		<running>true</running>
+			<cutoff type="bool">true</cutoff>
+			<starter type="bool">false</starter>
+			<running type="bool">false</running>
+			<on-fire type="bool">false</on-fire>
+			<reverser-pos-norm type="double">0</reverser-pos-norm>
 		</engine>
 	</engines>
-	
-	<radios>
-	<dme>
-	<switch-position>1</switch-position>
-	</dme>
-	</radios>
-	
+
+	<gear>
+		<gear n="0">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+		</gear>
+		<gear n="1">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+		</gear>
+		<gear n="2">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+		</gear>
+	</gear>
+
+	<instrumentation>
+		<adf n="1">
+			<serviceable type="bool">true</serviceable>
+			<mode>adf</mode>
+			<frequencies>
+				<selected-khz>341</selected-khz>
+				<standby-khz>379</standby-khz>
+			</frequencies>
+		</adf>
+		<mfd>
+			<nav-display n="0" type="int">1</nav-display>
+			<nav-display n="1" type="int">1</nav-display>
+		</mfd>
+		<nav-compass>
+			<nav-display n="0" type="int">0</nav-display>
+			<nav-display n="1" type="int">0</nav-display>
+		</nav-compass>
+	</instrumentation>
+
 	<input>
 		<keyboard>
-			<!--Changed by Ampere -->
-			<!-- Q or q -->
-			<key n="81">
-				<name>Q</name>
-				<desc>steer NLG left.</desc>
+			<key n="127">
+				<name>Delete</name>
+				<desc>Toggle thrust reversers</desc>
 				<binding>
 					<command>nasal</command>
 					<script>
-						STEP = 0.1;
-						propDir = "/controls/gear/handle-steer-norm[0]";
-						
-						steering = getprop(propDir);
-						
-						if (steering == nil)
-						{	setprop(propDir, 0);
-						}
-						else
-						{	steering = steering - STEP;
-							if (-steering > 1){steering = -1;}
-							setprop(propDir, steering);
-						}
+					 reversethrust.togglereverser();
 					</script>
 				</binding>
 			</key>
-			<key n="113">
-				<name>q</name>
-				<desc>steer NLG left.</desc>
+			<key n="119">
+				<name>w</name>
+				<desc>Walk forward toward view</desc>
+				<repeatable type="bool">true</repeatable>
 				<binding>
 					<command>nasal</command>
 					<script>
-						STEP = 0.1;
-						propDir = "/controls/gear/handle-steer-norm[0]";
-						
-						steering = getprop(propDir);
-						
-						if (steering == nil)
-						{	setprop(propDir, 0);
-						}
-						else
-						{	steering = steering - STEP;
-							if (-steering > 1){steering = -1;}
-							setprop(propDir, steering);
-						}
+					 walk.walk_about(0.1);
 					</script>
 				</binding>
 			</key>
-			<!-- E or e -->
-			<key n="69">
-				<name>E</name>
-				<desc>steer NLG right.</desc>
+			<key n="87">
+				<name>W</name>
+				<desc>Run forward toward view</desc>
+				<repeatable type="bool">true</repeatable>
 				<binding>
 					<command>nasal</command>
 					<script>
-						STEP = 0.1;
-						propDir = "/controls/gear/handle-steer-norm[0]";
-						
-						steering = getprop(propDir);
-						
-						if (steering == nil)
-						{	setprop(propDir, 0);
-						}
-						else
-						{	steering = steering + STEP;
-							if (steering > 1){steering = 1;}
-							setprop(propDir, steering);
-						}
+					 walk.walk_about(0.25);
 					</script>
 				</binding>
 			</key>
-			<key n="101">
-				<name>e</name>
-				<desc>steer NLG right.</desc>
+			<key n="115">
+				<name>s</name>
+				<desc>Walk backward from view</desc>
+				<repeatable type="bool">true</repeatable>
 				<binding>
 					<command>nasal</command>
 					<script>
-						STEP = 0.1;
-						propDir = "/controls/gear/handle-steer-norm[0]";
-						
-						steering = getprop(propDir);
-						
-						if (steering == nil)
-						{	setprop(propDir, 0);
-						}
-						else
-						{	steering = steering + STEP;
-							if (steering > 1){steering = 1;}
-							setprop(propDir, steering);
-						}
+					 walk.walk_about(-0.1);
 					</script>
 				</binding>
 			</key>
-			<!--Change ends-->
+
+			<!-- Custom autopilot hotkeys -->
+<!--			<key n="15">
+				<name>Ctrl-O</name>
+				<desc>Toggle TO/GA lock</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 var node = props.globals.getNode("/autopilot/settings/speed", 1);
+					 if (node.getValue() == "speed-to-ga")
+					  {
+					  node.setValue("");
+					  }
+					 else
+					  {
+					  node.setValue("speed-to-ga");
+					  }
+					</script>
+				</binding>
+			</key>-->
+			<key n="26">
+				<name>Ctrl-Z</name>
+				<desc>Toggle master autopilot switch</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>autopilot/settings/engaged</property>
+				</binding>
+			</key>
+			<key n="25">
+				<name>Ctrl-Y</name>
+				<desc>Toggle autothrottle switch</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>autopilot/settings/autothrottle</property>
+				</binding>
+			</key>
+
+			<!-- Default autopilot hotkeys -->
+			<key n="1">
+				<name>Ctrl-A</name>
+				<desc>toggle autopilot altitude lock</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>autopilot/settings/altitude</property>
+					<value>altitude-hold</value>
+				</binding>
+			</key>
+			<key n="7">
+				<name>Ctrl-G</name>
+				<desc>Toggle autopilot glide slope lock</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 var hdgNode = props.globals.getNode("/autopilot/settings/heading", 1);
+					 var altNode = props.globals.getNode("/autopilot/settings/altitude", 1);
+
+					 if (altNode.getValue() == "gs1-hold")
+					  {
+					  hdgNode.setValue("dg-heading-hold");
+					  altNode.setValue("altitude-hold");
+					  }
+					 else
+					  {
+					  hdgNode.setValue("nav1-hold");
+					  altNode.setValue("gs1-hold");
+					  }
+					</script>
+				</binding>
+			</key>
+			<key n="8">
+				<name>Ctrl-H</name>
+				<desc>Toggle autopilot heading lock</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>autopilot/settings/heading</property>
+					<value>dg-heading-hold</value>
+				</binding>
+			</key>
+			<key n="14">
+				<name>Ctrl-N</name>
+				<desc>Toggle autopilot nav1 lock</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 var node = props.globals.getNode("/autopilot/settings/heading", 1);
+					 if (node.getValue() == "nav1-hold")
+					  {
+					  node.setValue("dg-heading-hold");
+					  }
+					 else
+					  {
+					  node.setValue("nav1-hold");
+					  }
+					</script>
+				</binding>
+			</key>
+			<key n="262">
+				<name>F6</name>
+				<desc>Toggle Autopilot Heading Mode</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 var node = props.globals.getNode("/autopilot/settings/heading", 1);
+					 if (node.getValue() == "true-heading-hold")
+					  {
+					  node.setValue("dg-heading-hold");
+					  }
+					 else
+					  {
+					  node.setValue("true-heading-hold");
+					  }
+					</script>
+				</binding>
+			</key>
+			<key n="267">
+				<name>F11</name>
+				<desc>Open autopilot dialog</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/A320-family/Systems/autopilot-dlg.xml");
+					 autopilot.open();
+					</script>
+				</binding>
+			</key>
 		</keyboard>
 	</input>
+
+	<nasal>
+		<systems>
+			<file>Aircraft/A320-family/Nasal/systems.nas</file>
+		</systems>
+		<electrical>
+			<file>Aircraft/A320-family/Nasal/electrical.nas</file>
+		</electrical>
+		<reversethrust>
+			<file>Aircraft/A320-family/Nasal/reversethrust.nas</file>
+		</reversethrust>
+		<tyresmoke>
+			<file>Aircraft/A320-family/Nasal/tyresmoke.nas</file>
+		</tyresmoke>
+		<walk>
+			<file>Aircraft/A320-family/Nasal/walk.nas</file>
+		</walk>
+	</nasal>
+
+	<aircraft>
+		<jetway-pos>
+			<x-tra>-1.95</x-tra>
+			<y-rot>0</y-rot>
+			<z-rot>24</z-rot>
+			<hood-rot>3</hood-rot>
+		</jetway-pos>
+	</aircraft>
+
 </PropertyList>
-
-

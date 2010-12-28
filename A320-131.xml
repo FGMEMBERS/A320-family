@@ -50,6 +50,23 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	<y> 0 </y>
 	<z> -41.7398 </z>
 	</location>
+
+	<pointmass name="Crew">
+		<weight unit="LBS">600</weight>
+		<location name="POINTMASS" unit="IN">
+			<x>200</x>
+			<y>0</y>
+			<z>0</z>
+		</location>
+	</pointmass>
+	<pointmass name="PAX">
+		<weight unit="LBS">93000</weight>
+		<location name="POINTMASS" unit="IN">
+			<x>705</x>
+			<y>0</y>
+			<z>0</z>
+		</location>
+	</pointmass>
 </mass_balance>
 
 <ground_reactions>
@@ -374,6 +391,8 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<contents unit="LBS"> 0 </contents>
 	</tank>
 </propulsion>
+
+<system file="pushback" />
 
 <flight_control name="FCS: A320">
 	<channel name="Pitch">
@@ -885,5 +904,19 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	</function>
 	</axis>
 </aerodynamics>
-</fdm_config>
 
+	<external_reactions>
+		<force name="pushback" frame="BODY">
+			<location unit="IN">
+				<x>294</x>
+				<y>0</y>
+				<z>-149</z>
+			</location>
+			<direction>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</direction>
+		</force>
+	</external_reactions>
+</fdm_config>

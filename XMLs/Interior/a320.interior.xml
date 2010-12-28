@@ -1,23 +1,209 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <PropertyList>
 
-	<path>../../Models/Interior/a320.interior.3ds</path> 
-	<!--texture-path>../Textures/Livery/House</texture-path-->
-	
-	<!-- Turn off shadow for the cabin linings. -->
+	<path>../../Models/Interior/a320.interior.ac</path>
+
+	<!-- ANIMATIONS -->
+	<!-- PAX doors -->
 	<animation>
-		<name>Cabin</name>
-		<type>noshadow</type>
-		<object-name>CABIN</object-name>
+		<name>PAX left-front door pick</name>
+		<type>pick</type>
+		<object-name>DoorL1</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+				 systems.triggerDoor(systems.doorl1, "doorl1", "PAX left-front (main)");
+				</script>
+			</binding>
+		</action>
 	</animation>
-	
+	<animation>
+		<name>PAX left-front door x translate</name>
+		<type>translate</type>
+		<object-name>DoorL1</object-name>
+		<property>sim/model/door-positions/doorl1/position-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.25</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>-1</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<name>PAX left-front door y translate</name>
+		<type>translate</type>
+		<object-name>DoorL1</object-name>
+		<property>sim/model/door-positions/doorl1/position-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.25</ind><dep>-0.2</dep></entry>
+			<entry><ind>1</ind><dep>-0.2</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<name>PAX right-front door pick</name>
+		<type>pick</type>
+		<object-name>DoorR1</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+				 systems.triggerDoor(systems.doorr1, "doorr1", "PAX right-front");
+				</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>PAX right-front door x translate</name>
+		<type>translate</type>
+		<object-name>DoorR1</object-name>
+		<property>sim/model/door-positions/doorr1/position-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.25</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>-1</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<name>PAX right-front door y translate</name>
+		<type>translate</type>
+		<object-name>DoorR1</object-name>
+		<property>sim/model/door-positions/doorr1/position-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.25</ind><dep>0.2</dep></entry>
+			<entry><ind>1</ind><dep>0.2</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<name>PAX left-back door pick</name>
+		<type>pick</type>
+		<object-name>DoorL4</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+				 systems.triggerDoor(systems.doorl4, "doorl4", "PAX left-back");
+				</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>PAX left-back door x translate</name>
+		<type>translate</type>
+		<object-name>DoorL4</object-name>
+		<property>sim/model/door-positions/doorl4/position-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.25</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>-1</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<name>PAX left-back door y translate</name>
+		<type>translate</type>
+		<object-name>DoorL4</object-name>
+		<property>sim/model/door-positions/doorl4/position-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.25</ind><dep>-0.2</dep></entry>
+			<entry><ind>1</ind><dep>-0.2</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<name>PAX right-back door pick</name>
+		<type>pick</type>
+		<object-name>DoorR4</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+				 systems.triggerDoor(systems.doorr4, "doorr4", "PAX right-back");
+				</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>PAX right-back door x translate</name>
+		<type>translate</type>
+		<object-name>DoorR4</object-name>
+		<property>sim/model/door-positions/doorr4/position-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.25</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>-1</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<name>PAX right-back door y translate</name>
+		<type>translate</type>
+		<object-name>DoorR4</object-name>
+		<property>sim/model/door-positions/doorr4/position-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.25</ind><dep>0.2</dep></entry>
+			<entry><ind>1</ind><dep>0.2</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
 	<!-- Animation for the doors of the main gears. -->
 	<animation>
 		<name>Main_Gear_Doors.Left</name>
 		<type>rotate</type>
-		<object-name>MG DOOR.L</object-name>
-		<property>/gear/gear[0]/position-norm</property>
+		<object-name>GearLDoor</object-name>
+		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
 			<entry><ind>0.2</ind><dep>84.0</dep></entry>
@@ -36,7 +222,7 @@
 	<animation>
 		<name>Main_Gear_Doors.Right</name>
 		<type>rotate</type>
-		<object-name>MG DOOR.R</object-name>
+		<object-name>GearRDoor</object-name>
 		<property>/gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
@@ -57,8 +243,8 @@
 	<animation>
 		<name>Nose_Gear_Doors.Left.01</name>
 		<type>rotate</type>
-		<object-name>NG DOOR.L1</object-name>
-		<property>/gear/gear[0]/position-norm</property>
+		<object-name>GearNFwdDoorL</object-name>
+		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
 			<entry><ind>0.2</ind><dep>90.0</dep></entry>
@@ -81,8 +267,8 @@
 	<animation>
 		<name>Nose_Gear_Doors.Left.02</name>
 		<type>rotate</type>
-		<object-name>NG DOOR.L2</object-name>
-		<property>/gear/gear[0]/position-norm</property>
+		<object-name>GearNAftDoorL</object-name>
+		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.2</ind><dep>0.0</dep></entry>
 			<entry><ind>0.8</ind><dep>45.0</dep></entry>
@@ -103,8 +289,8 @@
 	<animation>
 		<name>Nose_Gear_Doors.Right.01</name>
 		<type>rotate</type>
-		<object-name>NG DOOR.R1</object-name>
-		<property>/gear/gear[0]/position-norm</property>
+		<object-name>GearNFwdDoorR</object-name>
+		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.0</ind><dep>0.0</dep></entry>
 			<entry><ind>0.2</ind><dep>90.0</dep></entry>
@@ -127,8 +313,8 @@
 	<animation>
 		<name>Nose_Gear_Doors.Right.02</name>
 		<type>rotate</type>
-		<object-name>NG DOOR.R2</object-name>
-		<property>/gear/gear[0]/position-norm</property>
+		<object-name>GearNAftDoorR</object-name>
+		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.2</ind><dep>0.0</dep></entry>
 			<entry><ind>0.8</ind><dep>45.0</dep></entry>
@@ -149,8 +335,8 @@
 	<animation>
 		<name>Nose_Gear_Doors.Center</name>
 		<type>rotate</type>
-		<object-name>NG DOOR.C</object-name>
-		<property>/gear/gear[0]/position-norm</property>
+		<object-name>GearNDoorC</object-name>
+		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.2</ind><dep>0.0</dep></entry>
 			<entry><ind>0.8</ind><dep>92.0</dep></entry>

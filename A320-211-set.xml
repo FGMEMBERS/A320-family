@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList include="A320-main.xml">
+
+	<sim>
+		<description>Airbus A320-200 with CFM56-5A1 engines</description>
+		<flight-model>jsb</flight-model>
+		<aero>A320-211</aero>
+		<variant>211</variant>
+		<engine>CFM56-5A1</engine>
+
+		<model>
+			<path>Aircraft/A320-family/XMLs/A320-211.xml</path>
+			<livery type="string">NWA</livery>
+		</model>
+
+		<!-- Flaps only go up to 35 degrees for the 200 -->
+		<flaps>
+			<setting>0.00</setting>
+			<setting>0.25</setting>
+			<setting>0.375</setting>
+			<setting>0.5</setting>
+			<setting>0.875</setting>
+		</flaps>
+
+		<menubar>
+			<default>
+				<menu n="100">
+					<label>Airbus A320-211</label>
+				</menu>
+			</default>
+		</menubar>
+	</sim>
+	
+</PropertyList>

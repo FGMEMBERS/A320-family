@@ -1,6 +1,7 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <PropertyList>
-	<path>../Models/a320.pylon.iae.left.3ds</path>
-	<texture-path>../Textures/Livery/House</texture-path>
+
+	<path>../Models/a320.pylon.iae.left.ac</path>
+
 </PropertyList>
