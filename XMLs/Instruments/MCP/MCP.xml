@@ -157,6 +157,30 @@
 		</condition>
 	</animation>
 
+	<!-- ILS -->
+	<animation>
+		<name>ILS button pick</name>
+		<type>pick</type>
+		<object-name>ILSBtns</object-name>
+		<object-name>ILSBtnLts</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>instrumentation/pfd/ils</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>ILS button light</name>
+		<type>select</type>
+		<object-name>ILSBtnLts</object-name>
+		<condition>
+			<property>instrumentation/pfd/ils</property>
+		</condition>
+	</animation>
+
 	<!-- MFD control panel -->
 	<animation>
 		<name>NAV display 1 switches pick</name>

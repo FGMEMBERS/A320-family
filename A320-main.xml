@@ -8,12 +8,17 @@
 
 		<model>
 			<livery>
+				<file>Blank.png</file>
 				<texture>Blank.png</texture>
 				<texture-path n="0">../Blank.png</texture-path>
 				<texture-path n="1">../../Blank.png</texture-path>
 			</livery>
 			<A320>
 				<heading-bug-pfd-deg type="double">0</heading-bug-pfd-deg>
+				<heading-bug-deg type="double">0</heading-bug-deg>
+				<nav1-bug-deg type="double">0</nav1-bug-deg>
+				<nav2-bug-deg type="double">0</nav2-bug-deg>
+				<wp-bug-deg type="double">0</wp-bug-deg>
 				<ias-bug-kt-norm type="double">0</ias-bug-kt-norm>
 				<mach-bug-kt-norm type="double">0</mach-bug-kt-norm>
 			</A320>

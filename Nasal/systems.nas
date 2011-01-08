@@ -30,18 +30,21 @@ var strobe = aircraft.light.new("sim/model/lights/strobe", [0.025, 1.5], "contro
 # trigger engine failure when the "on-fire" property is set to true
 var failEngine = func(engineNo)
  {
- if (props.globals.getNode("engines/engine[" ~ engineNo ~ "]/on-fire").getBoolValue())
-  {
-  props.globals.getNode("sim/failure-manager/engines/engine[" ~ engineNo ~ "]/serviceable").setBoolValue(0);
-  }
+ props.globals.getNode("sim/failure-manager/engines/engine[" ~ engineNo ~ "]/serviceable").setBoolValue(0);
  };
 setlistener("engines/engine[0]/on-fire", func
  {
- failEngine(0);
+ if (props.globals.getNode("engines/engine[0]/on-fire").getBoolValue())
+  {
+  failEngine(0);
+  }
  }, 0, 0);
 setlistener("engines/engine[1]/on-fire", func
  {
- failEngine(1);
+ if (props.globals.getNode("engines/engine[1]/on-fire").getBoolValue())
+  {
+  failEngine(1);
+  }
  }, 0, 0);
 
 # startup/shutdown functions
@@ -182,7 +185,7 @@ var instruments =
  setSpeedBugs: func
   {
   setprop("sim/model/A320/ias-bug-kt-norm", getprop("autopilot/settings/target-speed-kt") - getprop("velocities/airspeed-kt"));
-  setprop("sim/model/A320/mach-bug-kt-norm", getprop("autopilot/settings/target-speed-mach") * 600 - getprop("velocities/uBody-fps") * 0.5924838);
+  setprop("sim/model/A320/mach-bug-kt-norm", (getprop("autopilot/settings/target-speed-mach") - getprop("velocities/mach")) * 600);
   },
  setMPProps: func
   {

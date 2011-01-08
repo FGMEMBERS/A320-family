@@ -471,24 +471,17 @@
 
 	<!-- ILS guides -->
 	<animation>
-		<name>ILS lateral guide select</name>
+		<name>ILS guides select</name>
 		<type>select</type>
 		<object-name>ILS</object-name>
-		<condition>
-			<property>instrumentation/nav[0]/nav-loc</property>
-		</condition>
-	</animation>
-	<animation>
-		<name>ILS lateral guide pointer select</name>
-		<type>select</type>
 		<object-name>ILSPtr</object-name>
+		<object-name>GSTrack</object-name>
+		<object-name>GSPtr</object-name>
 		<condition>
-			<and>
-				<property>instrumentation/nav[0]/nav-loc</property>
-				<property>instrumentation/nav[0]/in-range</property>
-			</and>
+			<property>instrumentation/pfd/ils</property>
 		</condition>
 	</animation>
+
 	<animation>
 		<name>ILS lateral guide pointer translate</name>
 		<type>translate</type>
@@ -502,22 +495,6 @@
 		</axis>
 	</animation>
 
-	<animation>
-		<name>ILS glideslope guide select</name>
-		<type>select</type>
-		<object-name>GSTrack</object-name>
-		<condition>
-			<property>instrumentation/nav[0]/has-gs</property>
-		</condition>
-	</animation>
-	<animation>
-		<name>ILS glideslope guide pointer select</name>
-		<type>select</type>
-		<object-name>GSPtr</object-name>
-		<condition>
-			<property>instrumentation/nav[0]/gs-in-range</property>
-		</condition>
-	</animation>
 	<animation>
 		<name>ILS glideslope guide pointer translate</name>
 		<type>translate</type>

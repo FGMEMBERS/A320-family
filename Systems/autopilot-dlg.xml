@@ -350,7 +350,7 @@
 				</visible>
 			</text>
 			<button>
-				<legend>APP</legend>
+				<legend>APPR</legend>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
