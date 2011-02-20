@@ -1,7 +1,7 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
 MATERIAL "CockpitFrame" rgb 0.683997 0.683997 0.683997 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 shi 32 trans 0
-MATERIAL "Glass" rgb 0.8 0.8 0.8 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 shi 32 trans 0.8
+MATERIAL "Glass" rgb 0.8 0.8 0.8 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 shi 32 trans 0.266667
 MATERIAL "DoorInterior" rgb 0.204458 0.204458 0.204458 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 shi 32 trans 0
 MATERIAL "GearDoor" rgb 0.597501 0.597501 0.597501 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 shi 32 trans 0
 OBJECT world
@@ -954,469 +954,469 @@ numvert 90
 5.272772 0.877726 1.04243
 5.300209 0.884938 1.048301
 numsurf 78
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 11 0 0
 12 0 0
 10 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 10 0 0
 12 0 0
 9 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 9 0 0
 12 0 0
 13 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 9 0 0
 13 0 0
 14 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 9 0 0
 14 0 0
 15 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 9 0 0
 15 0 0
 16 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 9 0 0
 16 0 0
 8 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 16 0 0
 0 0 0
 8 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 8 0 0
 0 0 0
 1 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 8 0 0
 1 0 0
 2 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 8 0 0
 2 0 0
 3 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 8 0 0
 3 0 0
 7 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 7 0 0
 3 0 0
 6 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 6 0 0
 3 0 0
 4 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 6 0 0
 4 0 0
 5 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 26 0 0
 27 0 0
 28 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 26 0 0
 28 0 0
 29 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 26 0 0
 29 0 0
 25 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 25 0 0
 29 0 0
 24 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 24 0 0
 29 0 0
 23 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 23 0 0
 29 0 0
 22 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 22 0 0
 29 0 0
 21 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 21 0 0
 29 0 0
 20 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 20 0 0
 29 0 0
 19 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 19 0 0
 29 0 0
 18 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 18 0 0
 29 0 0
 30 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 18 0 0
 30 0 0
 17 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 33 0 0
 34 0 0
 35 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 33 0 0
 35 0 0
 36 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 33 0 0
 36 0 0
 32 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 32 0 0
 36 0 0
 31 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 31 0 0
 36 0 0
 37 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 31 0 0
 37 0 0
 38 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 31 0 0
 38 0 0
 39 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 31 0 0
 39 0 0
 40 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 31 0 0
 40 0 0
 44 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 44 0 0
 40 0 0
 43 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 43 0 0
 40 0 0
 41 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 43 0 0
 41 0 0
 42 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 56 0 0
 55 0 0
 57 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 55 0 0
 54 0 0
 57 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 54 0 0
 58 0 0
 57 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 54 0 0
 59 0 0
 58 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 54 0 0
 60 0 0
 59 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 54 0 0
 61 0 0
 60 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 54 0 0
 53 0 0
 61 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 53 0 0
 45 0 0
 61 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 53 0 0
 46 0 0
 45 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 53 0 0
 47 0 0
 46 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 53 0 0
 48 0 0
 47 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 53 0 0
 52 0 0
 48 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 52 0 0
 51 0 0
 48 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 51 0 0
 49 0 0
 48 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 51 0 0
 50 0 0
 49 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 71 0 0
 73 0 0
 72 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 71 0 0
 74 0 0
 73 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 71 0 0
 70 0 0
 74 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 70 0 0
 69 0 0
 74 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 69 0 0
 68 0 0
 74 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 68 0 0
 67 0 0
 74 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 67 0 0
 66 0 0
 74 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 66 0 0
 65 0 0
 74 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 65 0 0
 64 0 0
 74 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 64 0 0
 63 0 0
 74 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 63 0 0
 75 0 0
 74 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 63 0 0
 62 0 0
 75 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 78 0 0
 80 0 0
 79 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 78 0 0
 81 0 0
 80 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 78 0 0
 77 0 0
 81 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 77 0 0
 76 0 0
 81 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 76 0 0
 82 0 0
 81 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 76 0 0
 83 0 0
 82 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 76 0 0
 84 0 0
 83 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 76 0 0
 85 0 0
 84 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 76 0 0
 89 0 0
 85 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 89 0 0
 88 0 0
 85 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 88 0 0
 86 0 0
 85 0 0
-SURF 0x30
+SURF 0x10
 mat 2
 refs 3
 88 0 0
@@ -1430,7 +1430,7 @@ OBJECT poly
 name "Fuselage"
 data 20
 FUSELAGE_1 - Default
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 3236
@@ -31568,7 +31568,7 @@ OBJECT poly
 name "Belly"
 data 21
 FUSELAGE_1 - Defa.012
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 348
@@ -34602,7 +34602,7 @@ OBJECT poly
 name "Cargo1"
 data 21
 FUSELAGE_1 - Defa.009
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 26
@@ -34785,12 +34785,12 @@ FUSELAGE_1 - Defa
 crease 30.000000
 numvert 52
 9.807929 -2.02597 -0.692778
-9.851851 -2.040673 -0.651386
+9.851851 -2.040672 -0.651386
 9.911851 -2.046053 -0.636236
 11.491853 -2.046053 -0.636236
 11.551852 -2.040672 -0.651386
 11.595775 -2.02597 -0.692778
-11.611852 -2.005887 -0.749317
+11.611852 -2.005888 -0.749317
 9.791852 -2.005888 -0.749317
 11.611852 -1.04666 -1.756857
 9.791852 -1.04666 -1.756857
@@ -35168,7 +35168,7 @@ OBJECT poly
 name "Cargo2"
 data 21
 FUSELAGE_1 - Defa.008
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 52
@@ -35940,7 +35940,7 @@ OBJECT poly
 name "Cargo3"
 data 21
 FUSELAGE_1 - Defa.007
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 30
@@ -36182,7 +36182,7 @@ numvert 57
 28.332035 -1.638637 -1.196668
 28.366711 -0.972366 -1.73521
 28.341 -1.005734 -1.714649
-28.332035 -1.044476 -1.689804
+28.332035 -1.044477 -1.689804
 28.332035 -1.334748 -1.500534
 28.788017 -0.943191 -1.732744
 29.273281 -1.00056 -1.652078
@@ -36606,7 +36606,7 @@ OBJECT poly
 name "DoorL1"
 data 21
 FUSELAGE_1 - Defa.011
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 32
@@ -36828,7 +36828,7 @@ OBJECT poly
 name "DoorL2"
 data 21
 FUSELAGE_1 - Defa.015
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 46
@@ -37160,7 +37160,7 @@ OBJECT poly
 name "DoorL3"
 data 21
 FUSELAGE_1 - Defa.016
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 46
@@ -37492,7 +37492,7 @@ OBJECT poly
 name "DoorL4"
 data 21
 FUSELAGE_1 - Defa.017
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 41
@@ -37783,7 +37783,7 @@ OBJECT poly
 name "DoorR1"
 data 21
 FUSELAGE_1 - Defa.010
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 32
@@ -38005,7 +38005,7 @@ OBJECT poly
 name "DoorR2"
 data 21
 FUSELAGE_1 - Defa.014
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 46
@@ -38337,7 +38337,7 @@ OBJECT poly
 name "DoorR3"
 data 21
 FUSELAGE_1 - Defa.013
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 46
@@ -38669,7 +38669,7 @@ OBJECT poly
 name "DoorR4"
 data 21
 FUSELAGE_1 - Defa.018
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 41
@@ -38960,7 +38960,7 @@ OBJECT poly
 name "GearLDoor"
 data 21
 FUSELAGE_1 - Defa.019
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 19
@@ -39103,7 +39103,7 @@ OBJECT poly
 name "GearNAftDoorL"
 data 21
 FUSELAGE_1 - Defa.005
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -39171,7 +39171,7 @@ OBJECT poly
 name "GearNAftDoorR"
 data 21
 FUSELAGE_1 - Defa.006
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 10
@@ -39305,7 +39305,7 @@ OBJECT poly
 name "GearNFwdDoorL"
 data 21
 FUSELAGE_1 - Defa.004
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 25
@@ -39502,7 +39502,7 @@ OBJECT poly
 name "GearNFwdDoorR"
 data 21
 FUSELAGE_1 - Defa.003
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 25
@@ -39699,7 +39699,7 @@ OBJECT poly
 name "GearRDoor"
 data 21
 FUSELAGE_1 - Defa.020
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 19
@@ -39842,7 +39842,7 @@ OBJECT poly
 name "Nose"
 data 21
 FUSELAGE_1 - Defa.001
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 130
@@ -41338,7 +41338,7 @@ OBJECT poly
 name "Ports"
 data 21
 FUSELAGE_1 - Defa.002
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 48

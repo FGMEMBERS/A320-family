@@ -313,8 +313,8 @@
 			<binding>
 				<command>property-cycle</command>
 				<property>autopilot/settings/speed-mode</property>
-				<value>knots</value>
-				<value>mach</value>
+				<value type="int">0</value>
+				<value type="int">1</value>
 			</binding>
 		</action>
 	</animation>
@@ -329,7 +329,7 @@
 		<condition>
 			<equals>
 				<property>autopilot/settings/speed-mode</property>
-				<value>knots</value>
+				<value>0</value>
 			</equals>
 		</condition>
 	</animation>
@@ -380,7 +380,7 @@
 		<condition>
 			<equals>
 				<property>autopilot/settings/speed-mode</property>
-				<value>mach</value>
+				<value>1</value>
 			</equals>
 		</condition>
 	</animation>
@@ -432,7 +432,7 @@
 				<command>nasal</command>
 				<script><![CDATA[
 				 var setting = getprop("autopilot/settings/speed-mode");
-				 if (setting == "knots")
+				 if (setting == "0")
 				  {
 				  var newSpeed = getprop("autopilot/settings/target-speed-kt") + 1;
 				  if (newSpeed <= 999)
@@ -440,7 +440,7 @@
 				   setprop("autopilot/settings/target-speed-kt", newSpeed);
 				   }
 				  }
-				 elsif (setting == "mach")
+				 elsif (setting == "1")
 				  {
 				  var newSpeed = getprop("autopilot/settings/target-speed-mach") + 0.01;
 				  if (newSpeed <= 9.99)
@@ -459,7 +459,7 @@
 				<command>nasal</command>
 				<script><![CDATA[
 				 var setting = getprop("autopilot/settings/speed-mode");
-				 if (setting == "knots")
+				 if (setting == "0")
 				  {
 				  var newSpeed = getprop("autopilot/settings/target-speed-kt") - 1;
 				  if (newSpeed >= 0)
@@ -467,7 +467,7 @@
 				   setprop("autopilot/settings/target-speed-kt", newSpeed);
 				   }
 				  }
-				 elsif (setting == "mach")
+				 elsif (setting == "1")
 				  {
 				  var newSpeed = getprop("autopilot/settings/target-speed-mach") - 0.01;
 				  if (newSpeed >= 0)
@@ -525,8 +525,8 @@
 			<binding>
 				<command>property-cycle</command>
 				<property>autopilot/settings/heading-mode</property>
-				<value>magnetic</value>
-				<value>track</value>
+				<value type="int">0</value>
+				<value type="int">1</value>
 			</binding>
 		</action>
 	</animation>
@@ -575,7 +575,7 @@
 		<condition>
 			<equals>
 				<property>autopilot/settings/heading-mode</property>
-				<value>magnetic</value>
+				<value>0</value>
 			</equals>
 		</condition>
 	</animation>
@@ -586,7 +586,7 @@
 		<condition>
 			<equals>
 				<property>autopilot/settings/heading-mode</property>
-				<value>track</value>
+				<value>1</value>
 			</equals>
 		</condition>
 	</animation>

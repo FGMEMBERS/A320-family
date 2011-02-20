@@ -6,7 +6,7 @@ OBJECT poly
 name "FairingPylons"
 data 21
 WINGS.TOP_1 - Def.020
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 536
@@ -4165,7 +4165,7 @@ OBJECT poly
 name "Wings"
 data 21
 WINGS.TOP_1 - Default
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 543
@@ -11246,7 +11246,7 @@ OBJECT poly
 name "AileronL"
 data 21
 WINGS.TOP_1 - Def.012
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -11298,7 +11298,7 @@ OBJECT poly
 name "AileronR"
 data 21
 WINGS.TOP_1 - Def.013
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -11350,7 +11350,7 @@ OBJECT poly
 name "FairingL1"
 data 21
 WINGS.TOP_1 - Def.024
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 74
@@ -12099,7 +12099,7 @@ OBJECT poly
 name "FairingL2"
 data 21
 WINGS.TOP_1 - Def.025
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 81
@@ -12916,7 +12916,7 @@ OBJECT poly
 name "FairingL3"
 data 21
 WINGS.TOP_1 - Def.026
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 77
@@ -13717,7 +13717,7 @@ OBJECT poly
 name "FairingR1"
 data 21
 WINGS.TOP_1 - Def.023
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 74
@@ -14466,7 +14466,7 @@ OBJECT poly
 name "FairingR2"
 data 21
 WINGS.TOP_1 - Def.022
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 81
@@ -15283,7 +15283,7 @@ OBJECT poly
 name "FairingR3"
 data 21
 WINGS.TOP_1 - Def.021
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 77
@@ -16084,7 +16084,7 @@ OBJECT poly
 name "FlapL1"
 data 21
 WINGS.TOP_1 - Def.017
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 37
@@ -16442,7 +16442,7 @@ OBJECT poly
 name "FlapL2"
 data 21
 WINGS.TOP_1 - Def.016
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 25
@@ -16735,7 +16735,7 @@ OBJECT poly
 name "FlapR1"
 data 21
 WINGS.TOP_1 - Def.015
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 37
@@ -17093,7 +17093,7 @@ OBJECT poly
 name "FlapR2"
 data 21
 WINGS.TOP_1 - Def.014
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 25
@@ -17386,7 +17386,7 @@ OBJECT poly
 name "Flaps1"
 data 21
 WINGS.TOP_1 - Def.018
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 16
@@ -17496,7 +17496,7 @@ OBJECT poly
 name "SlatL1"
 data 21
 WINGS.TOP_1 - Def.006
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 30
@@ -17872,7 +17872,7 @@ OBJECT poly
 name "SlatL2"
 data 21
 WINGS.TOP_1 - Def.007
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 59
@@ -18619,7 +18619,7 @@ OBJECT poly
 name "SlatL3"
 data 21
 WINGS.TOP_1 - Def.008
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 42
@@ -19151,7 +19151,7 @@ OBJECT poly
 name "SlatL4"
 data 21
 WINGS.TOP_1 - Def.009
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 43
@@ -19696,7 +19696,7 @@ OBJECT poly
 name "SlatL5"
 data 21
 WINGS.TOP_1 - Def.010
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 39
@@ -20189,7 +20189,7 @@ OBJECT poly
 name "SlatR1"
 data 21
 WINGS.TOP_1 - Def.001
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 30
@@ -20565,7 +20565,7 @@ OBJECT poly
 name "SlatR2"
 data 21
 WINGS.TOP_1 - Def.002
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 59
@@ -21312,7 +21312,7 @@ OBJECT poly
 name "SlatR3"
 data 21
 WINGS.TOP_1 - Def.003
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 42
@@ -21844,7 +21844,7 @@ OBJECT poly
 name "SlatR4"
 data 21
 WINGS.TOP_1 - Def.004
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 43
@@ -22389,7 +22389,7 @@ OBJECT poly
 name "SlatR5"
 data 21
 WINGS.TOP_1 - Def.005
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 39
@@ -22882,7 +22882,7 @@ OBJECT poly
 name "SpoilerL1"
 data 21
 WINGS.TOP_1 - Def.031
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 7
@@ -22959,7 +22959,7 @@ OBJECT poly
 name "SpoilerL2"
 data 21
 WINGS.TOP_1 - Def.030
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -23023,7 +23023,7 @@ OBJECT poly
 name "SpoilerL3"
 data 21
 WINGS.TOP_1 - Def.029
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -23087,7 +23087,7 @@ OBJECT poly
 name "SpoilerL4"
 data 21
 WINGS.TOP_1 - Def.028
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -23151,7 +23151,7 @@ OBJECT poly
 name "SpoilerL5"
 data 21
 WINGS.TOP_1 - Def.027
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 7
@@ -23228,7 +23228,7 @@ OBJECT poly
 name "SpoilerR1"
 data 21
 WINGS.TOP_1 - Def.032
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 14
@@ -23354,7 +23354,7 @@ OBJECT poly
 name "SpoilerR2"
 data 21
 WINGS.TOP_1 - Def.033
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -23418,7 +23418,7 @@ OBJECT poly
 name "SpoilerR3"
 data 21
 WINGS.TOP_1 - Def.034
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -23482,7 +23482,7 @@ OBJECT poly
 name "SpoilerR4"
 data 21
 WINGS.TOP_1 - Def.035
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 6
@@ -23546,7 +23546,7 @@ OBJECT poly
 name "SpoilerR5"
 data 21
 WINGS.TOP_1 - Def.036
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 7
@@ -23623,7 +23623,7 @@ OBJECT poly
 name "Wingtips"
 data 21
 WINGS.TOP_1 - Def.011
-texture "NWA.png"
+texture "A320-NWA.png"
 texrep 1 1
 crease 30.000000
 numvert 108

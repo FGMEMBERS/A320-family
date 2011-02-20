@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList include="A320-main.xml">
+
+	<sim>
+		<description>Airbus A318-100 with CFM56-5B8 engines</description>
+		<flight-model>jsb</flight-model>
+		<aero>A318-111</aero>
+		<variant>100</variant>
+		<engine>CFM56-5B8</engine>
+
+		<model>
+			<path>Aircraft/A320-family/XMLs/A318-111.xml</path>
+			<livery>
+				<file>A318-BAW</file>
+				<texture>A318-BAW.png</texture>
+				<texture-path n="0">../Models/Liveries/A318-BAW.png</texture-path>
+				<texture-path n="1">../../Models/Liveries/A318-BAW.png</texture-path>
+			</livery>
+		</model>
+
+		<!-- Flaps only go up to 35 degrees for the 111 -->
+		<flaps>
+			<setting>0.00</setting>
+			<setting>0.25</setting>
+			<setting>0.375</setting>
+			<setting>0.5</setting>
+			<setting>0.875</setting>
+		</flaps>
+
+		<view>
+			<name>Pilot View</name>
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y">-0.525</x-offset-m>
+				<y-offset-m archive="y">2.3635023</y-offset-m>
+				<z-offset-m archive="y">-11.7299</z-offset-m>
+				<pitch-offset-deg archive="y">-15.0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="100">
+			<name>Gear View</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0</x-offset-m>
+				<y-offset-m archive="y">-1.5</y-offset-m>
+				<z-offset-m archive="y">8.5</z-offset-m>
+				<pitch-offset-deg archive="y">0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="101">
+			<name>Passenger View (Economy Class)</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-1.5</x-offset-m>
+				<y-offset-m archive="y">2.3</y-offset-m>
+				<z-offset-m archive="y">5</z-offset-m>
+				<pitch-offset-deg archive="y">0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="102">
+			<name>Passenger View (First Class)</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-1.45</x-offset-m>
+				<y-offset-m archive="y">2.3</y-offset-m>
+				<z-offset-m archive="y">-6.8</z-offset-m>
+				<pitch-offset-deg archive="y">0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="103">
+			<name>Copilot View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0.525</x-offset-m>
+				<y-offset-m archive="y">2.3635023</y-offset-m>
+				<z-offset-m archive="y">-11.7299</z-offset-m>
+				<pitch-offset-deg archive="y">-15.0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="104">
+			<name>Overhead Panel View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0</x-offset-m>
+				<y-offset-m archive="y">2.3635023</y-offset-m>
+				<z-offset-m archive="y">-11.547</z-offset-m>
+				<pitch-offset-deg archive="y">40</pitch-offset-deg>
+			</config>
+		</view>
+
+		<menubar>
+			<default>
+				<menu n="100">
+					<label>Airbus A318-111</label>
+				</menu>
+			</default>
+		</menubar>
+
+		<multiplay>
+			<generic>
+				<!-- Engine type: "0" for CFM56 and "1" for IAE V2500 -->
+				<float n="0" type="double">0</float>
+				<!-- Winglets: "0" for no and "1" for yes -->
+				<float n="1" type="double">1</float>
+			</generic>
+		</multiplay>
+	</sim>
+
+	<payload>
+		<weight n="1">
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">29300</max-lb>
+		</weight>
+	</payload>
+
+	<instrumentation>
+		<cdu>
+			<ident>
+				<model>A318-111</model>
+				<engines>CFM56-5B8/P</engines>
+			</ident>
+		</cdu>
+	</instrumentation>
+
+</PropertyList>

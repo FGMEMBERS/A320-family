@@ -3,7 +3,16 @@
 <!-- All variants share one central model, they only link to separate files so that different A320s are distinguishable through multiplayer -->
 
 <PropertyList>
+
 	<model>
 		<path>Aircraft/A320-family/XMLs/A320.xml</path>
 	</model>
+
+	<!-- Dual control -->
+	<nasal>
+		<load>
+		 aircraft_dual_control.pilot_type = "Aircraft/A320-family/XMLs/A320-211.xml";
+		</load>
+	</nasal>
+
 </PropertyList>

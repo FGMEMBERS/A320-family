@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>Philippine Airlines</name>
-				<texture>PAL.png</texture>
+				<texture>Liveries/A320-PAL.png</texture>
 			</livery>
 		</model>
 	</sim>

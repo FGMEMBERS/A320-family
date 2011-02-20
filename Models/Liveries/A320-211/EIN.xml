@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>Aer Lingus</name>
-				<texture>EIN.png</texture>
+				<texture>Liveries/A320-EIN.png</texture>
 			</livery>
 		</model>
 	</sim>

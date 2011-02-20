@@ -21,7 +21,7 @@
 				<property>/autopilot/settings/autothrottle</property>
 				<equals>
 					<property>/autopilot/settings/speed-mode</property>
-					<value>knots</value>
+					<value>0</value>
 				</equals>
 				<not>
 					<property>/autopilot/settings/speed</property>
@@ -67,7 +67,7 @@
 				<property>/autopilot/settings/autothrottle</property>
 				<equals>
 					<property>/autopilot/settings/speed-mode</property>
-					<value>mach</value>
+					<value>1</value>
 				</equals>
 				<not>
 					<property>/autopilot/settings/speed</property>
@@ -118,7 +118,7 @@
 				</equals>
 				<equals>
 					<property>/autopilot/settings/heading-mode</property>
-					<value>magnetic</value>
+					<value>0</value>
 				</equals>
 			</and>
 		</input>
@@ -135,7 +135,7 @@
 				</equals>
 				<equals>
 					<property>/autopilot/settings/heading-mode</property>
-					<value>magnetic</value>
+					<value>0</value>
 				</equals>
 			</and>
 		</input>
@@ -207,7 +207,7 @@
 				</equals>
 				<equals>
 					<property>/autopilot/settings/heading-mode</property>
-					<value>track</value>
+					<value>1</value>
 				</equals>
 			</and>
 		</input>
@@ -224,13 +224,30 @@
 				</equals>
 				<equals>
 					<property>/autopilot/settings/heading-mode</property>
-					<value>track</value>
+					<value>1</value>
 				</equals>
 			</and>
 		</input>
 		<output>/autopilot/internal/heading-hold-deg</output>
 	</logic>
-	<!-- TODO: Fix this controller -->
+	<filter>
+		<name>Ground track error computer/normalizer</name>
+		<debug type="bool">false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<property>/autopilot/settings/heading-bug-deg</property>
+			<offset>
+				<property>/orientation/track-magnetic-deg</property>
+				<scale>-1</scale>
+			</offset>
+		</input>
+		<output>/autopilot/internal/fdm-track-bug-error-deg</output>
+		<period>
+			<min>-180</min>
+			<max>180</max>
+		</period>
+	</filter>
 	<pid-controller>
 		<name>Ground track hold stage 1</name>
 		<debug type="bool">false</debug>
@@ -239,7 +256,7 @@
 			<value type="bool">true</value>
 		</enable>
 		<input>
-			<prop>/autopilot/internal/fdm-heading-bug-error-deg</prop>
+			<prop>/autopilot/internal/fdm-track-bug-error-deg</prop>
 		</input>
 		<reference>
 			<value>0</value>
@@ -636,5 +653,35 @@
 			<u_max>25</u_max>
 		</config>
 	</pid-controller>
+	<filter>
+		<name>Flight director pitch computer</name>
+		<debug type="bool">false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<expression>
+				<dif>
+					<property>/autopilot/internal/target-pitch-deg</property>
+					<property>/orientation/pitch-deg</property>
+				</dif>
+			</expression>
+		</input>
+		<output>/autopilot/internal/flight-director-pitch-deg</output>
+	</filter>
+	<filter>
+		<name>Flight director roll computer</name>
+		<debug type="bool">false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<expression>
+				<dif>
+					<property>/autopilot/internal/target-roll-deg</property>
+					<property>/orientation/roll-deg</property>
+				</dif>
+			</expression>
+		</input>
+		<output>/autopilot/internal/flight-director-roll-deg</output>
+	</filter>
 
 </PropertyList>

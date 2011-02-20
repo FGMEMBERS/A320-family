@@ -198,15 +198,20 @@
 		<condition>
 			<or>
 				<equals>
-					<property>sim/aero</property>
-					<value>A320-211</value>
+					<property>sim/variant</property>
+					<value>200</value>
 				</equals>
 				<equals>
-					<property>sim/aero</property>
-					<value>A320-231</value>
+					<property>sim/multiplay/generic/float[1]</property>
+					<value>1</value>
 				</equals>
 			</or>
 		</condition>
 	</animation>
+
+	<model>
+		<name>Tutorial marker</name>
+		<path>Models/Aircraft/marker.xml</path>
+	</model>
 
 </PropertyList>

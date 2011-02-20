@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>Cebu Pacific Air</name>
-				<texture>CEB.png</texture>
+				<texture>Liveries/A320-CEB.png</texture>
 			</livery>
 		</model>
 	</sim>

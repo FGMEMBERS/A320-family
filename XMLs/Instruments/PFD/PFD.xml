@@ -12,8 +12,8 @@
 		<name>Autopilot IAS setting</name>
 		<offsets>
 			<x-m>0.0001</x-m>
-			<y-m>-0.088</y-m>
-			<z-m>0.06</z-m>
+			<y-m>-0.073</y-m>
+			<z-m>0.045</z-m>
 		</offsets>
 		<alignment>left-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
@@ -21,7 +21,7 @@
 		<format type="string">%3.0f</format>
 		<property>autopilot/settings/target-speed-kt</property>
 		<font>helvetica_bold.txf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.005</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -32,8 +32,8 @@
 		<name>Autopilot Mach setting</name>
 		<offsets>
 			<x-m>0.0001</x-m>
-			<y-m>-0.088</y-m>
-			<z-m>0.06</z-m>
+			<y-m>-0.073</y-m>
+			<z-m>0.045</z-m>
 		</offsets>
 		<alignment>left-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
@@ -41,7 +41,7 @@
 		<format type="string">%1.2f</format>
 		<property>autopilot/settings/target-speed-mach</property>
 		<font>helvetica_bold.txf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.005</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -55,7 +55,7 @@
 		<condition>
 			<equals>
 				<property>autopilot/settings/speed-mode</property>
-				<value>knots</value>
+				<value>0</value>
 			</equals>
 		</condition>
 	</animation>
@@ -66,7 +66,7 @@
 		<condition>
 			<equals>
 				<property>autopilot/settings/speed-mode</property>
-				<value>mach</value>
+				<value>1</value>
 			</equals>
 		</condition>
 	</animation>
@@ -75,8 +75,8 @@
 		<name>Autopilot altitude setting</name>
 		<offsets>
 			<x-m>0.0001</x-m>
-			<y-m>0.035</y-m>
-			<z-m>0.06</z-m>
+			<y-m>0.045</y-m>
+			<z-m>0.045</z-m>
 		</offsets>
 		<alignment>left-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
@@ -84,7 +84,7 @@
 		<format type="string">%5.0f</format>
 		<property>autopilot/settings/target-altitude-ft</property>
 		<font>helvetica_bold.txf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.005</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -96,8 +96,8 @@
 		<name>Autopilot heading setting</name>
 		<offsets>
 			<x-m>0.0001</x-m>
-			<y-m>-0.066</y-m>
-			<z-m>-0.068</z-m>
+			<y-m>-0.046</y-m>
+			<z-m>-0.065</z-m>
 		</offsets>
 		<alignment>left-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
@@ -105,7 +105,7 @@
 		<format type="string">%3.0f</format>
 		<property>autopilot/settings/heading-bug-deg</property>
 		<font>helvetica_bold.txf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.005</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -117,8 +117,8 @@
 		<name>Mach indicator</name>
 		<offsets>
 			<x-m>0.0001</x-m>
-			<y-m>-0.097</y-m>
-			<z-m>-0.043</z-m>
+			<y-m>-0.073</y-m>
+			<z-m>-0.044</z-m>
 		</offsets>
 		<alignment>left-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
@@ -126,7 +126,7 @@
 		<format type="string">%1.2f</format>
 		<property>velocities/mach</property>
 		<font>helvetica_bold.txf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.005</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -138,16 +138,16 @@
 		<name>Altimeter barometer setting</name>
 		<offsets>
 			<x-m>0.0001</x-m>
-			<y-m>0.047</y-m>
-			<z-m>-0.043</z-m>
+			<y-m>0.044</y-m>
+			<z-m>-0.044</z-m>
 		</offsets>
-		<alignment>right-center</alignment>
+		<alignment>left-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
 		<format type="string">%2.2f IN</format>
 		<property>instrumentation/altimeter/setting-inhg</property>
 		<font>helvetica_bold.txf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.005</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -174,9 +174,10 @@
 
 	<!-- ANIMATIONS -->
 	<!-- Lighting -->
-<!--	<animation>
-		<name>Cockpit illumination</name>
+	<animation>
+		<name>Dome illumination</name>
 		<type>material</type>
+		<object-name>Border</object-name>
 		<object-name>Off</object-name>
 		<emission>
 			<red>0.5</red>
@@ -184,7 +185,7 @@
 			<blue>0.5</blue>
 			<factor-prop>controls/lighting/dome-norm</factor-prop>
 		</emission>
-	</animation>-->
+	</animation>
 
 	<!-- Power on/off -->
 	<animation>
@@ -355,8 +356,8 @@
 		</axis>
 		<center>
 			<x-m>0</x-m>
-			<y-m>-0.0211</y-m>
-			<z-m>0.0055</z-m>
+			<y-m>-0.0079</y-m>
+			<z-m>0.003</z-m>
 		</center>
 	</animation>
 
@@ -513,7 +514,7 @@
 		<name>IAS indicator tape translate</name>
 		<type>textranslate</type>
 		<object-name>Spd</object-name>
-		<property>velocities/airspeed-kt</property>
+		<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>560</ind><dep>0.752929687</dep></entry>
@@ -552,7 +553,7 @@
 		<type>translate</type>
 		<object-name>SpdIASAP</object-name>
 		<property>sim/model/A320/ias-bug-kt-norm</property>
-		<factor>0.00065</factor>
+		<factor>0.00059</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -576,7 +577,7 @@
 		<type>translate</type>
 		<object-name>SpdMachAP</object-name>
 		<property>sim/model/A320/mach-bug-kt-norm</property>
-		<factor>0.00065</factor>
+		<factor>0.00059</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -870,7 +871,7 @@
 		<type>translate</type>
 		<object-name>HdgAP</object-name>
 		<property>sim/model/A320/heading-bug-pfd-deg</property>
-		<factor>0.0005675</factor>
+		<factor>0.0004933</factor>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
@@ -885,15 +886,15 @@
 		<object-name>VSPtr</object-name>
 		<property>velocities/vertical-speed-fps</property>
 		<interpolation>
-			<entry><ind>100</ind><dep>0.0385</dep></entry>
-			<entry><ind>66.667</ind><dep>0.0321</dep></entry>
-			<entry><ind>33.333</ind><dep>0.0255</dep></entry>
-			<entry><ind>16.667</ind><dep>0.0127</dep></entry>
+			<entry><ind>100</ind><dep>0.0328</dep></entry>
+			<entry><ind>66.667</ind><dep>0.0275</dep></entry>
+			<entry><ind>33.333</ind><dep>0.0217</dep></entry>
+			<entry><ind>16.667</ind><dep>0.0106</dep></entry>
 			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>-16.667</ind><dep>-0.013</dep></entry>
-			<entry><ind>-33.333</ind><dep>-0.0259</dep></entry>
-			<entry><ind>-66.667</ind><dep>-0.0323</dep></entry>
-			<entry><ind>-100</ind><dep>-0.0388</dep></entry>
+			<entry><ind>-16.667</ind><dep>-0.0111</dep></entry>
+			<entry><ind>-33.333</ind><dep>-0.022</dep></entry>
+			<entry><ind>-66.667</ind><dep>-0.0275</dep></entry>
+			<entry><ind>-100</ind><dep>-0.033</dep></entry>
 		</interpolation>
 		<axis>
 			<x>0</x>
@@ -908,15 +909,15 @@
 		<object-name>VSAP</object-name>
 		<property>autopilot/settings/vertical-speed-fpm</property>
 		<interpolation>
-			<entry><ind>6000</ind><dep>0.0385</dep></entry>
-			<entry><ind>4000</ind><dep>0.0321</dep></entry>
-			<entry><ind>2000</ind><dep>0.0255</dep></entry>
-			<entry><ind>1000</ind><dep>0.0127</dep></entry>
+			<entry><ind>6000</ind><dep>0.0328</dep></entry>
+			<entry><ind>4000</ind><dep>0.0275</dep></entry>
+			<entry><ind>2000</ind><dep>0.0217</dep></entry>
+			<entry><ind>1000</ind><dep>0.0106</dep></entry>
 			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>-1000</ind><dep>-0.013</dep></entry>
-			<entry><ind>-2000</ind><dep>-0.0259</dep></entry>
-			<entry><ind>-4000</ind><dep>-0.0323</dep></entry>
-			<entry><ind>-6000</ind><dep>-0.0388</dep></entry>
+			<entry><ind>-1000</ind><dep>-0.0111</dep></entry>
+			<entry><ind>-2000</ind><dep>-0.022</dep></entry>
+			<entry><ind>-4000</ind><dep>-0.0275</dep></entry>
+			<entry><ind>-6000</ind><dep>-0.033</dep></entry>
 		</interpolation>
 		<axis>
 			<x>0</x>

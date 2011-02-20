@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>XL Airways France</name>
-				<texture>XLF.png</texture>
+				<texture>Liveries/A320-XLF.png</texture>
 			</livery>
 		</model>
 	</sim>

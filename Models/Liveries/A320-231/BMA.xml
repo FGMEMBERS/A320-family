@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>British Midland International (BMI)</name>
-				<texture>BMA.png</texture>
+				<texture>Liveries/A320-BMA.png</texture>
 			</livery>
 		</model>
 	</sim>

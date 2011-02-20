@@ -27,11 +27,16 @@
 		<type>material</type>
 		<object-name>Vstab</object-name>
 		<object-name>Rudder</object-name>
+		<condition>
+			<equals>
+				<property>controls/lighting/nav-lights-switch</property>
+				<value>2</value>
+			</equals>
+		</condition>
 		<emission>
 			<red>0.25</red>
 			<green>0.25</green>
 			<blue>0.25</blue>
-			<factor-prop>controls/lighting/logo-lights</factor-prop>
 		</emission>
 	</animation>
 
@@ -42,7 +47,7 @@
 		<object-name>Vstab</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture-path[0]</texture-prop>
-		<texture>Blank.png</texture>
+		<texture>Liveries/A320-Blank.png</texture>
 	</animation>
 
 	<!-- Nasal code -->

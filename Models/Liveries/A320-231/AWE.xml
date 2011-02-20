@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>US Airways</name>
-				<texture>AWE.png</texture>
+				<texture>Liveries/A320-AWE.png</texture>
 			</livery>
 		</model>
 	</sim>

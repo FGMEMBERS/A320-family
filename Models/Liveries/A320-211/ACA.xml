@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>Air Canada</name>
-				<texture>ACA.png</texture>
+				<texture>Liveries/A320-ACA.png</texture>
 			</livery>
 		</model>
 	</sim>

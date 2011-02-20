@@ -13,18 +13,6 @@
 		</offsets>
 	</model>
 	
-	<animation>
-		<type>translate</type>
-		<object-name>Reverser</object-name>
-		<object-name>Nozzle</object-name>
-		<property>engines/engine[0]/reverser-pos-norm</property>
-		<factor>0.25</factor>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
 	<model>
 		<name>Engine.CFM.Right</name>
 		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.cfm.right.xml</path>
@@ -60,10 +48,28 @@
 		<object-name>Engine.CFM.Left</object-name>
 		<object-name>Engine.CFM.Right</object-name>
 		<condition>
-			<equals>
-				<property>sim/engine</property>
-				<value>CFM56-5A1</value>
-			</equals>
+			<or>
+				<equals>
+					<property>sim/engine</property>
+					<value>CFM56-5A1</value>
+				</equals>
+				<equals>
+					<property>sim/engine</property>
+					<value>CFM56-5B3</value>
+				</equals>
+				<equals>
+					<property>sim/engine</property>
+					<value>CFM56-5B5</value>
+				</equals>
+				<equals>
+					<property>sim/engine</property>
+					<value>CFM56-5B8</value>
+				</equals>
+				<equals>
+					<property>sim/multiplay/generic/float[0]</property>
+					<value>0</value>
+				</equals>
+			</or>
 		</condition>
 	</animation>
 	
@@ -72,10 +78,16 @@
 		<object-name>Engine.IAE.Left</object-name>
 		<object-name>Engine.IAE.Right</object-name>
 		<condition>
-			<equals>
-				<property>sim/engine</property>
-				<value>IAE V2500</value>
-			</equals>
+			<or>
+				<equals>
+					<property>sim/engine</property>
+					<value>IAE V2500</value>
+				</equals>
+				<equals>
+					<property>sim/multiplay/generic/float[0]</property>
+					<value>1</value>
+				</equals>
+			</or>
 		</condition>
 	</animation>
 

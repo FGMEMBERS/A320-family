@@ -4,6 +4,20 @@
 
 	<path>../Models/a320.fuselage.ac</path>
 
+	<!-- APU fire -->
+	<model>
+		<name>APU fire</name>
+		<path>Aircraft/A320-family/XMLs/Effects/enginefire.xml</path>
+		<offsets>
+			<x-m>38.9</x-m>
+			<y-m>0</y-m>
+			<z-m>0.95</z-m>
+		</offsets>
+		<condition>
+			<property>engines/apu/on-fire</property>
+		</condition>
+	</model>
+
 	<!-- ANIMATIONS -->
 	<!-- PAX doors -->
 	<animation>
@@ -456,7 +470,7 @@
 		<object-name>Fuselage</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture-path[0]</texture-prop>
-		<texture>Blank.png</texture>
+		<texture>Liveries/A320-Blank.png</texture>
 	</animation>
 
 	<!-- Nasal code -->

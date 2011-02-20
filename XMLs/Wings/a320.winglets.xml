@@ -12,7 +12,7 @@
 		<object-name>WingletR</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture-path[1]</texture-prop>
-		<texture>Blank.png</texture>
+		<texture>Liveries/A320-Blank.png</texture>
 	</animation>
 
 	<!-- Nasal code -->

@@ -24,53 +24,165 @@ var beacon = aircraft.light.new("sim/model/lights/beacon", [0.015, 3], "controls
 var strobe_switch = props.globals.getNode("controls/switches/strobe", 2);
 var strobe = aircraft.light.new("sim/model/lights/strobe", [0.025, 1.5], "controls/lighting/strobe");
 
+## SOUNDS
+#########
+
+# seatbelt/no smoking sign triggers
+setlistener("controls/switches/seatbelt-sign", func
+ {
+ props.globals.getNode("sim/sound/seatbelt-sign").setBoolValue(1);
+
+ settimer(func
+  {
+  props.globals.getNode("sim/sound/seatbelt-sign").setBoolValue(0);
+  }, 2);
+ });
+setlistener("controls/switches/no-smoking-sign", func
+ {
+ props.globals.getNode("sim/sound/no-smoking-sign").setBoolValue(1);
+
+ settimer(func
+  {
+  props.globals.getNode("sim/sound/no-smoking-sign").setBoolValue(0);
+  }, 2);
+ });
+
 ## ENGINES
 ##########
 
-# trigger engine failure when the "on-fire" property is set to true
-var failEngine = func(engineNo)
+# APU loop function
+var apuLoop = func
  {
- props.globals.getNode("sim/failure-manager/engines/engine[" ~ engineNo ~ "]/serviceable").setBoolValue(0);
+ if (props.globals.getNode("engines/apu/on-fire").getBoolValue())
+  {
+  props.globals.getNode("engines/apu/serviceable").setBoolValue(0);
+  }
+ if (props.globals.getNode("controls/APU/fire-switch").getBoolValue())
+  {
+  props.globals.getNode("engines/apu/on-fire").setBoolValue(0);
+  }
+ if (props.globals.getNode("engines/apu/serviceable").getBoolValue() and (props.globals.getNode("controls/APU/master-switch").getBoolValue() or props.globals.getNode("controls/APU/starter").getBoolValue()))
+  {
+  if (props.globals.getNode("controls/APU/starter").getBoolValue())
+   {
+   var rpm = getprop("engines/apu/rpm");
+   rpm += getprop("sim/time/delta-realtime-sec") * 25;
+   if (rpm >= 100)
+    {
+    rpm = 100;
+    }
+   setprop("engines/apu/rpm", rpm);
+   }
+  if (props.globals.getNode("controls/APU/master-switch").getBoolValue() and getprop("engines/apu/rpm") == 100)
+   {
+   props.globals.getNode("engines/apu/running").setBoolValue(1);
+   }
+  }
+ else
+  {
+  props.globals.getNode("engines/apu/running").setBoolValue(0);
+
+  var rpm = getprop("engines/apu/rpm");
+  rpm -= getprop("sim/time/delta-realtime-sec") * 30;
+  if (rpm < 0)
+   {
+   rpm = 0;
+   }
+  setprop("engines/apu/rpm", rpm);
+  }
+
+ settimer(apuLoop, 0);
  };
-setlistener("engines/engine[0]/on-fire", func
+# engine loop function
+var engineLoop = func(engine_no)
  {
- if (props.globals.getNode("engines/engine[0]/on-fire").getBoolValue())
+ var tree1 = "engines/engine[" ~ engine_no ~ "]/";
+ var tree2 = "controls/engines/engine[" ~ engine_no ~ "]/";
+
+ if (props.globals.getNode(tree1 ~ "on-fire").getBoolValue())
   {
-  failEngine(0);
+  props.globals.getNode("sim/failure-manager/engines/engine[" ~ engine_no ~ "]/serviceable").setBoolValue(0);
   }
- }, 0, 0);
-setlistener("engines/engine[1]/on-fire", func
+ if (props.globals.getNode(tree2 ~ "fire-bottle-discharge").getBoolValue())
+  {
+  props.globals.getNode(tree1 ~ "on-fire").setBoolValue(0);
+  }
+ if (props.globals.getNode("sim/failure-manager/engines/engine[" ~ engine_no ~ "]/serviceable").getBoolValue())
+  {
+  props.globals.getNode(tree2 ~ "cutoff").setBoolValue(props.globals.getNode(tree2 ~ "cutoff-switch").getBoolValue());
+  }
+ props.globals.getNode(tree2 ~ "starter").setBoolValue(props.globals.getNode(tree2 ~ "starter-switch").getBoolValue());
+
+ if (getprop("controls/engines/engine-start-switch") == 0 or getprop("controls/engines/engine-start-switch") == 2)
+  {
+  props.globals.getNode(tree2 ~ "starter").setBoolValue(1);
+  }
+
+ if (!props.globals.getNode("engines/apu/running").getBoolValue())
+  {
+  props.globals.getNode(tree2 ~ "starter").setBoolValue(0);
+  }
+
+ settimer(func
+  {
+  engineLoop(engine_no);
+  }, 0);
+ };
+# start the loop 2 seconds after the FDM initializes
+setlistener("sim/signals/fdm-initialized", func
  {
- if (props.globals.getNode("engines/engine[1]/on-fire").getBoolValue())
+ settimer(func
   {
-  failEngine(1);
-  }
- }, 0, 0);
+  engineLoop(0);
+  engineLoop(1);
+  apuLoop();
+  }, 2);
+ });
 
 # startup/shutdown functions
 var startup = func
  {
- setprop("controls/engines/engine[0]/cutoff", 1);
- setprop("controls/engines/engine[1]/cutoff", 1);
- setprop("controls/engines/engine[0]/starter", 1);
- setprop("controls/engines/engine[1]/starter", 1);
- setprop("controls/electric/avionics-switch", 1);
  setprop("controls/electric/battery-switch", 1);
- setprop("controls/lighting/instruments-norm", 0.8);
+ setprop("controls/electric/engine[0]/generator", 1);
+ setprop("controls/electric/engine[1]/generator", 1);
+ setprop("controls/engines/engine[0]/cutoff-switch", 1);
+ setprop("controls/engines/engine[1]/cutoff-switch", 1);
+ setprop("controls/APU/master-switch", 1);
+ setprop("controls/APU/starter", 1);
 
- settimer(func
+ var listener1 = setlistener("engines/apu/running", func
   {
-  setprop("controls/engines/engine[0]/cutoff", 0);
-  setprop("controls/engines/engine[1]/cutoff", 0);
-  }, 2);
+  if (props.globals.getNode("engines/apu/running").getBoolValue())
+   {
+   setprop("controls/engines/engine-start-switch", 2);
+   settimer(func
+    {
+    setprop("controls/engines/engine[0]/cutoff-switch", 0);
+    setprop("controls/engines/engine[1]/cutoff-switch", 0);
+    }, 2);
+   removelistener(listener1);
+   }
+  }, 0, 0);
+ var listener2 = setlistener("engines/engine[0]/running", func
+  {
+  if (props.globals.getNode("engines/engine[0]/running").getBoolValue())
+   {
+   settimer(func
+    {
+    setprop("controls/APU/master-switch", 0);
+    setprop("controls/APU/starter", 0);
+    setprop("controls/electric/battery-switch", 0);
+    }, 2);
+   removelistener(listener2);
+   }
+  }, 0, 0);
  };
 var shutdown = func
  {
- setprop("controls/engines/engine[0]/cutoff", 1);
- setprop("controls/engines/engine[1]/cutoff", 1);
- setprop("controls/electric/avionics-switch", 0);
- setprop("controls/electric/battery-switch", 0);
- setprop("controls/lighting/instruments-norm", 0);
+ setprop("controls/electric/engine[0]/generator", 0);
+ setprop("controls/electric/engine[1]/generator", 0);
+ setprop("controls/engines/engine[0]/cutoff-switch", 1);
+ setprop("controls/engines/engine[1]/cutoff-switch", 1);
  };
 
 # listener to activate these functions accordingly
@@ -166,7 +278,6 @@ var instruments =
   instruments.setSpeedBugs();
   instruments.setMPProps();
   instruments.calcEGTDegC();
-  instruments.calcTotalFuel();
 
   settimer(instruments.loop, 0);
   },
@@ -257,20 +368,6 @@ var instruments =
    {
    setprop("engines/engine[1]/egt-degc", (getprop("engines/engine[1]/egt-degf") - 32) * 1.8);
    }
-  },
- calcTotalFuel: func()
-  {
-  if (getprop("consumables/fuel/tank[0]/level-lbs") != nil)
-   {
-   var tank1 = getprop("consumables/fuel/tank[0]/level-lbs");
-   var tank2 = getprop("consumables/fuel/tank[1]/level-lbs");
-   var tank3 = getprop("consumables/fuel/tank[2]/level-lbs");
-   var tank4 = getprop("consumables/fuel/tank[3]/level-lbs");
-   var tank5 = getprop("consumables/fuel/tank[4]/level-lbs");
-   var tank6 = getprop("consumables/fuel/tank[5]/level-lbs");
-   var tank7 = getprop("consumables/fuel/tank[6]/level-lbs");
-   setprop("consumables/fuel/total-fuel-lbs", tank1 + tank2 + tank3 + tank4 + tank5 + tank6 + tank7);
-   }
   }
  };
 # start the loop 2 seconds after the FDM initializes
@@ -281,31 +378,6 @@ setlistener("sim/signals/fdm-initialized", func
 
 ## AUTOPILOT
 ############
-
-# flight director pitch/roll computer
-var flightDirectorLoop = func
- {
- var apPitch = getprop("autopilot/internal/target-pitch-deg");
- var acPitch = getprop("orientation/pitch-deg");
- if (apPitch and acPitch)
-  {
-  setprop("autopilot/internal/flight-director-pitch-deg", apPitch - acPitch);
-  }
-
- var apRoll = getprop("autopilot/internal/target-roll-deg");
- var acRoll = getprop("orientation/roll-deg");
- if (apRoll and acRoll)
-  {
-  setprop("autopilot/internal/flight-director-roll-deg", apRoll - acRoll);
-  }
-
- settimer(flightDirectorLoop, 0.05);
- };
-# start the loop 2 seconds after the FDM initializes
-setlistener("sim/signals/fdm-initialized", func
- {
- settimer(flightDirectorLoop, 2);
- });
 
 # set the vertical speed setting if the altitude setting is higher/lower than the current altitude
 var APVertSpeedSet = func
@@ -336,6 +408,12 @@ setlistener("autopilot/settings/target-altitude-ft", APVertSpeedSet, 1, 0);
 var doorl1 = aircraft.door.new("sim/model/door-positions/doorl1", 2);
 var doorr1 = aircraft.door.new("sim/model/door-positions/doorr1", 2);
 
+# middle doors (A321 only)
+var doorl2 = aircraft.door.new("sim/model/door-positions/doorl2", 2);
+var doorr2 = aircraft.door.new("sim/model/door-positions/doorr2", 2);
+var doorl3 = aircraft.door.new("sim/model/door-positions/doorl3", 2);
+var doorr3 = aircraft.door.new("sim/model/door-positions/doorr3", 2);
+
 # rear doors
 var doorl4 = aircraft.door.new("sim/model/door-positions/doorl4", 2);
 var doorr4 = aircraft.door.new("sim/model/door-positions/doorr4", 2);
@@ -344,6 +422,9 @@ var doorr4 = aircraft.door.new("sim/model/door-positions/doorr4", 2);
 var cargobulk = aircraft.door.new("sim/model/door-positions/cargobulk", 2.5);
 var cargoaft = aircraft.door.new("sim/model/door-positions/cargoaft", 2.5);
 var cargofwd = aircraft.door.new("sim/model/door-positions/cargofwd", 2.5);
+
+# seat armrests in the flight deck
+var armrests = aircraft.door.new("sim/model/door-positions/armrests", 2);
 
 # door opener/closer
 var triggerDoor = func(door, doorName, doorDesc)

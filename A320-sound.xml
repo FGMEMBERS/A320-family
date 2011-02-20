@@ -534,46 +534,6 @@
         <max-dist>1.0</max-dist>
     </stall>
 
-    <switch>
-        <name>click on</name>
-        <mode>once</mode>
-        <path>Aircraft/A320-family/Sounds/click.wav</path>
-        <condition>
-            <property>/sim/sound/switch</property>
-        </condition>
-        <volume>
-            <factor>0.45</factor>
-        </volume>
-        <position>
-            <x>-24</x>
-            <y>0</y>
-            <z>0.18</z>
-        </position>
-        <reference-dist>0.5</reference-dist>
-        <max-dist>1.0</max-dist>
-    </switch>
-
-    <switch>
-        <name>click off</name>
-        <mode>once</mode>
-        <path>Aircraft/A320-family/Sounds/click.wav</path>
-        <condition>
-            <not>
-                <property>/sim/sound/switch</property>
-            </not>
-        </condition>
-        <volume>
-            <offset>0.5</offset>
-        </volume>
-        <position>
-            <x>-24</x>
-            <y>0</y>
-            <z>0.18</z>
-        </position>
-        <reference-dist>0.5</reference-dist>
-        <max-dist>1.0</max-dist>
-    </switch>
-
     <speedbrake>
         <name>speedbrake</name>
         <mode>in-transit</mode>
@@ -673,6 +633,44 @@
         <reference-dist>10.0</reference-dist>
         <max-dist>100.0</max-dist>
     </nosmoke>
+
+    <!-- Seatbelt/No smoking signs -->
+    <passign>
+        <name>Seatbelt sign</name>
+        <path>Aircraft/A320-family/Sounds/cabinalert.wav</path>
+        <mode>once</mode>
+        <condition>
+            <property>sim/sound/seatbelt-sign</property>
+        </condition>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <position>
+            <x>0.00</x>
+            <y>0.00</y>
+            <z>0.00</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>100.0</max-dist>
+    </passign>
+    <passsign>
+        <name>No smoking sign</name>
+        <path>Aircraft/A320-family/Sounds/cabinalert.wav</path>
+        <mode>once</mode>
+        <condition>
+            <property>sim/sound/no-smoking-sign</property>
+        </condition>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <position>
+            <x>0.00</x>
+            <y>0.00</y>
+            <z>0.00</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>100.0</max-dist>
+    </passsign>
 
     <!-- Overspeed warning -->
     <overspeed>

@@ -35,6 +35,15 @@
 			</binding>
 			<live>true</live>
 		</checkbox>
+
+		<checkbox>
+			<label>APU</label>
+			<property>engines/apu/on-fire</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
 	</group>
 
 	<hrule/>

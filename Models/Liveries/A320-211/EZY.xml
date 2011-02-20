@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>EasyJet</name>
-				<texture>EZY.png</texture>
+				<texture>Liveries/A320-EZY.png</texture>
 			</livery>
 		</model>
 	</sim>

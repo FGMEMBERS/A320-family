@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>Jetstar Airways</name>
-				<texture>JST.png</texture>
+				<texture>Liveries/A320-JST.png</texture>
 			</livery>
 		</model>
 	</sim>

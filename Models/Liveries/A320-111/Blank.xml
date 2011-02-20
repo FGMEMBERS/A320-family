@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>Bare metal</name>
-				<texture>Blank.png</texture>
+				<texture>Liveries/A320-Blank.png</texture>
 			</livery>
 		</model>
 	</sim>

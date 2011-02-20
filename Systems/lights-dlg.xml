@@ -51,14 +51,55 @@
 
 		<hrule/>
 
-		<checkbox>
+		<text>
+			<label>Navigation/logo lights</label>
+		</text>
+
+		<group>
+			<layout>hbox</layout>
+
+			<button>
+				<legend>Off</legend>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/lighting/nav-lights-switch</property>
+					<value>0</value>
+				</binding>
+			</button>
+			<button>
+				<legend>1</legend>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/lighting/nav-lights-switch</property>
+					<value>1</value>
+				</binding>
+			</button>
+			<button>
+				<legend>2</legend>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/lighting/nav-lights-switch</property>
+					<value>2</value>
+				</binding>
+			</button>
+		</group>
+<!--		<checkbox>
 			<label>Navigation lights</label>
 			<property>controls/lighting/nav-lights</property>
 			<binding>
 				<command>dialog-apply</command>
 			</binding>
 			<live>true</live>
-		</checkbox>
+		</checkbox>-->
 
 		<checkbox>
 			<label>Strobe lights</label>
@@ -78,14 +119,14 @@
 			<live>true</live>
 		</checkbox>
 
-		<checkbox>
+<!--		<checkbox>
 			<label>Logo lights</label>
 			<property>controls/lighting/logo-lights</property>
 			<binding>
 				<command>dialog-apply</command>
 			</binding>
 			<live>true</live>
-		</checkbox>
+		</checkbox>-->
 
 <!--		<checkbox>
 			<label>Flight deck lights</label>
@@ -145,7 +186,7 @@
 			<legend>Close</legend>
 			<default>true</default>
 			<key>Esc</key>
-		<padding>10</padding>
+			<padding>10</padding>
 			<binding>
 				<command>dialog-apply</command>
 			</binding>
