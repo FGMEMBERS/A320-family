@@ -5,41 +5,81 @@
 
 	<model>
 		<name>Engine.CFM.Left</name>
-		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.cfm.left.xml</path>
+		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.cfm.xml</path>
+		<overlay>
+			<params>
+				<n1>engines/engine[0]/n1</n1>
+				<on-fire>engines/engine[0]/on-fire</on-fire>
+				<contrail>sim/multiplay/generic/int[10]</contrail>
+				<reverser-pos-norm>engines/engine[0]/reverser-pos-norm</reverser-pos-norm>
+				<pylon-model-path>Aircraft/A320-family/Engines/XMLs/a320.pylon.cfm.left.xml</pylon-model-path>
+			</params>
+		</overlay>
 		<offsets>
 			<x-m>-1.38</x-m>
 			<y-m>-5.755</y-m>
 			<z-m>-1.0170087</z-m>
+			<heading-deg>1</heading-deg>
 		</offsets>
 	</model>
 	
 	<model>
 		<name>Engine.CFM.Right</name>
-		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.cfm.right.xml</path>
+		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.cfm.xml</path>
+		<overlay>
+			<params>
+				<n1>engines/engine[1]/n1</n1>
+				<on-fire>engines/engine[1]/on-fire</on-fire>
+				<contrail>sim/multiplay/generic/int[11]</contrail>
+				<reverser-pos-norm>engines/engine[1]/reverser-pos-norm</reverser-pos-norm>
+				<pylon-model-path>Aircraft/A320-family/Engines/XMLs/a320.pylon.cfm.right.xml</pylon-model-path>
+			</params>
+		</overlay>
 		<offsets>
 			<x-m>-1.38</x-m>
 			<y-m>5.755</y-m>
 			<z-m>-1.0170087</z-m>
+			<heading-deg>-1</heading-deg>
 		</offsets>
 	</model>
 	
 	<model>
 		<name>Engine.IAE.Left</name>
-		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.iae.left.xml</path>
+		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.iae.xml</path>
+		<overlay>
+			<params>
+				<n1>engines/engine[0]/n1</n1>
+				<on-fire>engines/engine[0]/on-fire</on-fire>
+				<contrail>sim/multiplay/generic/int[10]</contrail>
+				<reverser-pos-norm>engines/engine[0]/reverser-pos-norm</reverser-pos-norm>
+				<pylon-model-path>Aircraft/A320-family/Engines/XMLs/a320.pylon.iae.left.xml</pylon-model-path>
+			</params>
+		</overlay>
 		<offsets>
 			<x-m>-1.6387912</x-m>
 			<y-m>-5.755</y-m>
 			<z-m>-1.0170087</z-m>
+			<heading-deg>1</heading-deg>
 		</offsets>
 	</model>
 	
 	<model>
 		<name>Engine.IAE.Right</name>
-		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.iae.right.xml</path>
+		<path>Aircraft/A320-family/Engines/XMLs/a320.engine.iae.xml</path>
+		<overlay>
+			<params>
+				<n1>engines/engine[1]/n1</n1>
+				<on-fire>engines/engine[1]/on-fire</on-fire>
+				<contrail>sim/multiplay/generic/int[11]</contrail>
+				<reverser-pos-norm>engines/engine[1]/reverser-pos-norm</reverser-pos-norm>
+				<pylon-model-path>Aircraft/A320-family/Engines/XMLs/a320.pylon.iae.right.xml</pylon-model-path>
+			</params>
+		</overlay>
 		<offsets>
 			<x-m>-1.6387912</x-m>
 			<y-m>5.755</y-m>
 			<z-m>-1.0170087</z-m>
+			<heading-deg>-1</heading-deg>
 		</offsets>
 	</model>
 	
@@ -66,7 +106,7 @@
 					<value>CFM56-5B8</value>
 				</equals>
 				<equals>
-					<property>sim/multiplay/generic/float[0]</property>
+					<property>sim/multiplay/generic/int[0]</property>
 					<value>0</value>
 				</equals>
 			</or>
@@ -84,7 +124,7 @@
 					<value>IAE V2500</value>
 				</equals>
 				<equals>
-					<property>sim/multiplay/generic/float[0]</property>
+					<property>sim/multiplay/generic/int[0]</property>
 					<value>1</value>
 				</equals>
 			</or>

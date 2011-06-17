@@ -16,6 +16,16 @@
 				<ias-bug-kt-norm type="double">0</ias-bug-kt-norm>
 				<mach-bug-kt-norm type="double">0</mach-bug-kt-norm>
 			</A320>
+			<lights>
+				<logo-lights type="bool">false</logo-lights>
+				<nav-lights type="bool">false</nav-lights>
+				<beacon>
+					<state type="int">0</state>
+				</beacon>
+				<strobe>
+					<state type="int">0</state>
+				</strobe>
+			</lights>
 			<pushback>
 				<kp type="double">1000</kp>
 				<ki type="double">0</ki>
@@ -29,6 +39,10 @@
 		</startup>
 
 		<systems>
+			<!-- Disable the generic electrical system and use the Nasal system -->
+			<electrical>
+				<path></path>
+			</electrical>
 			<autopilot>
 				<name>Autopilot</name>
 				<path>Aircraft/A320-family/Systems/a320-autopilot.xml</path>
@@ -207,6 +221,41 @@
 			<line>Tutorials are available on the Airbus A320 series only.</line>
 			<line>Have a nice flight!</line>
 		</help>
+
+		<!-- Multiplayer properties -->
+		<!--
+		 .../sim/multiplay/generic/int[0]	- engine type
+		 .../sim/multiplay/generic/int[1]	- winglets on/off
+		 .../sim/multiplay/generic/int[2]	- port landing light on/off
+		 .../sim/multiplay/generic/int[3]	- nose landing light on/off
+		 .../sim/multiplay/generic/int[4]	- starboard landing light on/off
+		 .../sim/multiplay/generic/int[5]	- navigation lights on/off
+		 .../sim/multiplay/generic/int[6]	- logo lights on/off
+		 .../sim/multiplay/generic/int[7]	- strobe lights on/off
+		 .../sim/multiplay/generic/int[8]	- wing lights on/off
+		 .../sim/multiplay/generic/int[9]	- beacon lights on/off
+		 .../sim/multiplay/generic/int[10]	- engine 1 contrail on/off
+		 .../sim/multiplay/generic/int[11]	- engine 2 contrail on/off
+
+		 .../sim/multiplay/generic/float[0]	- cockpit dome lights
+		 .../sim/multiplay/generic/float[1]	- interior cabin lights
+		-->
+		<multiplay>
+			<generic>
+				<float n="0" alias="/controls/lighting/dome-norm" />
+				<float n="1" alias="/controls/lighting/interior" />
+				<int n="2" alias="/controls/lighting/landing-lights[0]" />
+				<int n="3" alias="/controls/lighting/landing-lights[1]" />
+				<int n="4" alias="/controls/lighting/landing-lights[2]" />
+				<int n="5" alias="/sim/model/lights/nav-lights" />
+				<int n="6" alias="/sim/model/lights/logo-lights" />
+				<int n="7" alias="/sim/model/lights/strobe/state" />
+				<int n="8" alias="/controls/lighting/wing-lights" />
+				<int n="9" alias="/sim/model/lights/beacon/state" />
+				<int n="10" alias="/engines/engine[0]/contrail" />
+				<int n="11" alias="/engines/engine[1]/contrail" />
+			</generic>
+		</multiplay>
 	</sim>
 
 	<consumables>
@@ -305,7 +354,6 @@
 		<lighting>
 			<beacon type="bool">false</beacon>
 			<interior type="double">0</interior>
-			<cockpit type="bool">false</cockpit>
 			<cones type="bool">true</cones>
 			<dome-norm type="double">0</dome-norm>
 			<landing-lights n="0" type="bool">false</landing-lights>
@@ -314,6 +362,7 @@
 			<nav-lights-switch type="int">0</nav-lights-switch>
 			<overhead-panel-norm type="double">0.8</overhead-panel-norm>
 			<main-panel-pedestal-norm type="double">0.8</main-panel-pedestal-norm>
+			<wing-lights type="bool">false</wing-lights>
 			<strobe type="bool">false</strobe>
 		</lighting>
 		<switches>
@@ -331,11 +380,13 @@
 			<serviceable type="bool">true</serviceable>
 		</apu>
 		<engine n="0">
+			<contrail type="bool">false</contrail>
 			<on-fire type="bool">false</on-fire>
 			<reverser-pos-norm type="double">0</reverser-pos-norm>
 			<running type="bool">false</running>
 		</engine>
 		<engine n="1">
+			<contrail type="bool">false</contrail>
 			<on-fire type="bool">false</on-fire>
 			<reverser-pos-norm type="double">0</reverser-pos-norm>
 			<running type="bool">false</running>
@@ -417,6 +468,21 @@
 				<file-prefix>Sounds/mk-viii/</file-prefix>
 			</voice>
 		</mk-viii>
+		<!-- See http://wiki.flightgear.org/index.php/TCAS -->
+		<tcas>
+			<serviceable type="bool">true</serviceable>
+			<inputs>
+				<mode type="int">3</mode>
+			</inputs>
+<!--			<voice>
+				<file-prefix>Sounds/tcas/female/</file-prefix>
+			</voice>-->
+			<speaker>
+				<max-dist type="double">2</max-dist>
+				<reference-dist type="double">1</reference-dist>
+				<volume type="double">1</volume>
+			</speaker>
+		</tcas>
 	</instrumentation>
 
 	<input>
@@ -427,7 +493,8 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					 reversethrust.togglereverser();
+					 A320.engine1.reverse_thrust();
+					 A320.engine2.reverse_thrust();
 					</script>
 				</binding>
 			</key>
@@ -624,21 +691,13 @@
 	</input>
 
 	<nasal>
-		<systems>
-			<file>Aircraft/A320-family/Nasal/systems.nas</file>
-		</systems>
-		<electrical>
+		<A320>
+			<file>Aircraft/A320-family/Nasal/engines.nas</file>
 			<file>Aircraft/A320-family/Nasal/electrical.nas</file>
-		</electrical>
-		<v-speeds>
 			<file>Aircraft/A320-family/Nasal/v-speeds.nas</file>
-		</v-speeds>
-		<reversethrust>
-			<file>Aircraft/A320-family/Nasal/reversethrust.nas</file>
-		</reversethrust>
-		<tyresmoke>
 			<file>Aircraft/A320-family/Nasal/tyresmoke.nas</file>
-		</tyresmoke>
+			<file>Aircraft/A320-family/Nasal/systems.nas</file>
+		</A320>
 		<walk>
 			<file>Aircraft/A320-family/Nasal/walk.nas</file>
 		</walk>
@@ -658,12 +717,12 @@
 	</nasal>
 
 	<aircraft>
-		<jetway-pos>
-			<x-tra>-1.95</x-tra>
-			<y-rot>0</y-rot>
-			<z-rot>24</z-rot>
-			<hood-rot>3</hood-rot>
-		</jetway-pos>
+		<door n="0">
+			<x-m>16.582</x-m>
+			<y-m>9.702</y-m>
+			<z-m>3.642</z-m>
+		</door>
+		<jetway-hood-deg type="double">3</jetway-hood-deg>
 	</aircraft>
 
 </PropertyList>

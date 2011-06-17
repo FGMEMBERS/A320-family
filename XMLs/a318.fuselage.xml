@@ -30,7 +30,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-				 systems.triggerDoor(systems.doorl1, "doorl1", "PAX left-front (main)");
+				 A320.triggerDoor(A320.doorl1, "doorl1", "PAX left-front (main)");
 				</script>
 			</binding>
 		</action>
@@ -78,7 +78,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-				 systems.triggerDoor(systems.doorr1, "doorr1", "PAX right-front");
+				 A320.triggerDoor(A320.doorr1, "doorr1", "PAX right-front");
 				</script>
 			</binding>
 		</action>
@@ -126,7 +126,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-				 systems.triggerDoor(systems.doorl3, "doorl3", "PAX left");
+				 A320.triggerDoor(A320.doorl3, "doorl3", "PAX left");
 				</script>
 			</binding>
 		</action>
@@ -174,7 +174,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-				 systems.triggerDoor(systems.doorr3, "doorr3", "PAX right");
+				 A320.triggerDoor(A320.doorr3, "doorr3", "PAX right");
 				</script>
 			</binding>
 		</action>
@@ -224,7 +224,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-				 systems.triggerDoor(systems.cargofwd, "cargofwd", "forward cargo");
+				 A320.triggerDoor(A320.cargofwd, "cargofwd", "forward cargo");
 				</script>
 			</binding>
 		</action>
@@ -259,7 +259,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-				 systems.triggerDoor(systems.cargoaft, "cargoaft", "aft cargo");
+				 A320.triggerDoor(A320.cargoaft, "cargoaft", "aft cargo");
 				</script>
 			</binding>
 		</action>
@@ -439,15 +439,5 @@
 		<texture-prop>texture-path[0]</texture-prop>
 		<texture>A318-BAW.png</texture>
 	</animation>
-
-	<!-- Nasal code -->
-	<nasal>
-		<load>
-		 var livery_update = aircraft.livery_update.new("Aircraft/A320-family/Models/Liveries/" ~ getprop("sim/aero"));
-		</load>
-		<unload>
-		 livery_update.stop();
-		</unload>
-	</nasal>
 
 </PropertyList>

@@ -110,9 +110,9 @@
 		<multiplay>
 			<generic>
 				<!-- Engine type: "0" for CFM56 and "1" for IAE V2500 -->
-				<float n="0" type="double">1</float>
+				<int n="0" type="int">1</int>
 				<!-- Winglets: "0" for no and "1" for yes -->
-				<float n="1" type="double">1</float>
+				<int n="1" type="int">1</int>
 			</generic>
 		</multiplay>
 	</sim>

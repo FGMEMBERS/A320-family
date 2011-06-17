@@ -4,9 +4,31 @@
 
 	<path>../../Models/Lights/light-cone.ac</path>
 
+	<params>
+		<steering-norm>gear/gear[0]/steering-norm</steering-norm>
+	</params>
+
 	<effect>
 		<inherits-from>Effects/light-cone</inherits-from>
 		<object-name>Cone</object-name>
 	</effect>
+
+	<!-- Steering -->
+	<animation>
+		<name>Landing light steer</name>
+		<type>rotate</type>
+		<property alias="../../params/steering-norm" />
+		<factor>60</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+	</animation>
 
 </PropertyList>

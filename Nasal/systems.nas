@@ -1,6 +1,58 @@
 # AIRBUS A320 SYSTEMS FILE
 ##########################
 
+# NOTE: This file contains a loop for running all update functions, so it should be loaded last
+
+## SYSTEMS LOOP
+###############
+
+var systems =
+ {
+ stopUpdate: 0,
+ init: func
+  {
+  print("A320 aircraft systems ... initialized");
+  systems.stop();
+  settimer(func
+   {
+   systems.stopUpdate = 0;
+   systems.update();
+   }, 0.5);
+  },
+ stop: func
+  {
+  systems.stopUpdate = 1;
+  },
+ update: func
+  {
+  apu1.update();
+  engine1.update();
+  engine2.update();
+  instruments.update();
+  update_electrical();
+
+  # stop calling our systems code if the stop() function was called or the aircraft crashes
+  if (!systems.stopUpdate and !props.globals.getNode("sim/crashed").getBoolValue())
+   {
+   settimer(systems.update, 0);
+   }
+  }
+ };
+
+# call init() 2 seconds after the FDM is ready
+setlistener("sim/signals/fdm-initialized", func
+ {
+ settimer(systems.init, 2);
+ }, 0, 0);
+# call init() if the simulator resets
+setlistener("sim/signals/reinit", func(reinit)
+ {
+ if (reinit.getBoolValue())
+  {
+  systems.init();
+  }
+ }, 0, 0);
+
 ## LIVERY SELECT
 ################
 
@@ -23,6 +75,35 @@ var beacon = aircraft.light.new("sim/model/lights/beacon", [0.015, 3], "controls
 
 var strobe_switch = props.globals.getNode("controls/switches/strobe", 2);
 var strobe = aircraft.light.new("sim/model/lights/strobe", [0.025, 1.5], "controls/lighting/strobe");
+
+# logo lights listener
+setlistener("controls/lighting/nav-lights-switch", func
+ {
+ var nav_lights = props.globals.getNode("sim/model/lights/nav-lights");
+ var logo_lights = props.globals.getNode("sim/model/lights/logo-lights");
+ var setting = getprop("controls/lighting/nav-lights-switch");
+ if (setting == 1)
+  {
+  nav_lights.setBoolValue(1);
+  logo_lights.setBoolValue(0);
+  }
+ elsif (setting == 2)
+  {
+  nav_lights.setBoolValue(1);
+  logo_lights.setBoolValue(1);
+  }
+ else
+  {
+  nav_lights.setBoolValue(0);
+  logo_lights.setBoolValue(0);
+  }
+ });
+
+## TIRE SMOKE/RAIN
+##################
+
+var tiresmoke_system = aircraft.tyresmoke_system.new(0, 1, 2);
+aircraft.rain.init();
 
 ## SOUNDS
 #########
@@ -47,157 +128,6 @@ setlistener("controls/switches/no-smoking-sign", func
   }, 2);
  });
 
-## ENGINES
-##########
-
-# APU loop function
-var apuLoop = func
- {
- if (props.globals.getNode("engines/apu/on-fire").getBoolValue())
-  {
-  props.globals.getNode("engines/apu/serviceable").setBoolValue(0);
-  }
- if (props.globals.getNode("controls/APU/fire-switch").getBoolValue())
-  {
-  props.globals.getNode("engines/apu/on-fire").setBoolValue(0);
-  }
- if (props.globals.getNode("engines/apu/serviceable").getBoolValue() and (props.globals.getNode("controls/APU/master-switch").getBoolValue() or props.globals.getNode("controls/APU/starter").getBoolValue()))
-  {
-  if (props.globals.getNode("controls/APU/starter").getBoolValue())
-   {
-   var rpm = getprop("engines/apu/rpm");
-   rpm += getprop("sim/time/delta-realtime-sec") * 25;
-   if (rpm >= 100)
-    {
-    rpm = 100;
-    }
-   setprop("engines/apu/rpm", rpm);
-   }
-  if (props.globals.getNode("controls/APU/master-switch").getBoolValue() and getprop("engines/apu/rpm") == 100)
-   {
-   props.globals.getNode("engines/apu/running").setBoolValue(1);
-   }
-  }
- else
-  {
-  props.globals.getNode("engines/apu/running").setBoolValue(0);
-
-  var rpm = getprop("engines/apu/rpm");
-  rpm -= getprop("sim/time/delta-realtime-sec") * 30;
-  if (rpm < 0)
-   {
-   rpm = 0;
-   }
-  setprop("engines/apu/rpm", rpm);
-  }
-
- settimer(apuLoop, 0);
- };
-# engine loop function
-var engineLoop = func(engine_no)
- {
- var tree1 = "engines/engine[" ~ engine_no ~ "]/";
- var tree2 = "controls/engines/engine[" ~ engine_no ~ "]/";
-
- if (props.globals.getNode(tree1 ~ "on-fire").getBoolValue())
-  {
-  props.globals.getNode("sim/failure-manager/engines/engine[" ~ engine_no ~ "]/serviceable").setBoolValue(0);
-  }
- if (props.globals.getNode(tree2 ~ "fire-bottle-discharge").getBoolValue())
-  {
-  props.globals.getNode(tree1 ~ "on-fire").setBoolValue(0);
-  }
- if (props.globals.getNode("sim/failure-manager/engines/engine[" ~ engine_no ~ "]/serviceable").getBoolValue())
-  {
-  props.globals.getNode(tree2 ~ "cutoff").setBoolValue(props.globals.getNode(tree2 ~ "cutoff-switch").getBoolValue());
-  }
- props.globals.getNode(tree2 ~ "starter").setBoolValue(props.globals.getNode(tree2 ~ "starter-switch").getBoolValue());
-
- if (getprop("controls/engines/engine-start-switch") == 0 or getprop("controls/engines/engine-start-switch") == 2)
-  {
-  props.globals.getNode(tree2 ~ "starter").setBoolValue(1);
-  }
-
- if (!props.globals.getNode("engines/apu/running").getBoolValue())
-  {
-  props.globals.getNode(tree2 ~ "starter").setBoolValue(0);
-  }
-
- settimer(func
-  {
-  engineLoop(engine_no);
-  }, 0);
- };
-# start the loop 2 seconds after the FDM initializes
-setlistener("sim/signals/fdm-initialized", func
- {
- settimer(func
-  {
-  engineLoop(0);
-  engineLoop(1);
-  apuLoop();
-  }, 2);
- });
-
-# startup/shutdown functions
-var startup = func
- {
- setprop("controls/electric/battery-switch", 1);
- setprop("controls/electric/engine[0]/generator", 1);
- setprop("controls/electric/engine[1]/generator", 1);
- setprop("controls/engines/engine[0]/cutoff-switch", 1);
- setprop("controls/engines/engine[1]/cutoff-switch", 1);
- setprop("controls/APU/master-switch", 1);
- setprop("controls/APU/starter", 1);
-
- var listener1 = setlistener("engines/apu/running", func
-  {
-  if (props.globals.getNode("engines/apu/running").getBoolValue())
-   {
-   setprop("controls/engines/engine-start-switch", 2);
-   settimer(func
-    {
-    setprop("controls/engines/engine[0]/cutoff-switch", 0);
-    setprop("controls/engines/engine[1]/cutoff-switch", 0);
-    }, 2);
-   removelistener(listener1);
-   }
-  }, 0, 0);
- var listener2 = setlistener("engines/engine[0]/running", func
-  {
-  if (props.globals.getNode("engines/engine[0]/running").getBoolValue())
-   {
-   settimer(func
-    {
-    setprop("controls/APU/master-switch", 0);
-    setprop("controls/APU/starter", 0);
-    setprop("controls/electric/battery-switch", 0);
-    }, 2);
-   removelistener(listener2);
-   }
-  }, 0, 0);
- };
-var shutdown = func
- {
- setprop("controls/electric/engine[0]/generator", 0);
- setprop("controls/electric/engine[1]/generator", 0);
- setprop("controls/engines/engine[0]/cutoff-switch", 1);
- setprop("controls/engines/engine[1]/cutoff-switch", 1);
- };
-
-# listener to activate these functions accordingly
-setlistener("sim/model/start-idling", func(idle)
- {
- var run = idle.getBoolValue();
- if (run)
-  {
-  startup();
-  }
- else
-  {
-  shutdown();
-  }
- }, 0, 0);
 
 ## GEAR
 #######
@@ -272,14 +202,12 @@ var instruments =
 
   return bugDeg;
   },
- loop: func
+ update: func
   {
   instruments.setHSIBugsDeg();
   instruments.setSpeedBugs();
   instruments.setMPProps();
   instruments.calcEGTDegC();
-
-  settimer(instruments.loop, 0);
   },
  # set the rotation of the HSI bugs
  setHSIBugsDeg: func
@@ -370,11 +298,6 @@ var instruments =
    }
   }
  };
-# start the loop 2 seconds after the FDM initializes
-setlistener("sim/signals/fdm-initialized", func
- {
- settimer(instruments.loop, 2);
- });
 
 ## AUTOPILOT
 ############

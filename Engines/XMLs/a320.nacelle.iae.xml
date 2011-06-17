@@ -4,16 +4,16 @@
 
 	<path>../Models/a320.nacelle.iae.ac</path>
 
-	<offsets>
-		<pitch-deg>2.2</pitch-deg>
-	</offsets>
+	<params>
+		<reverser-pos-norm>engines/engine[0]/reverser-pos-norm</reverser-pos-norm>
+	</params>
 
 	<!-- Reverse thrust animation -->
 	<animation>
 		<type>translate</type>
 		<object-name>Reverser</object-name>
 		<object-name>Nozzle</object-name>
-		<property>engines/engine[1]/reverser-pos-norm</property>
+		<property alias="../../params/reverser-pos-norm" />
 		<factor>0.25</factor>
 		<axis>
 			<x>1</x>

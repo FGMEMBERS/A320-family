@@ -429,26 +429,28 @@
 			<button>3</button>
 			<repeatable type="bool">true</repeatable>
 			<binding>
-				<command>nasal</command>
-				<script><![CDATA[
-				 var setting = getprop("autopilot/settings/speed-mode");
-				 if (setting == "0")
-				  {
-				  var newSpeed = getprop("autopilot/settings/target-speed-kt") + 1;
-				  if (newSpeed <= 999)
-				   {
-				   setprop("autopilot/settings/target-speed-kt", newSpeed);
-				   }
-				  }
-				 elsif (setting == "1")
-				  {
-				  var newSpeed = getprop("autopilot/settings/target-speed-mach") + 0.01;
-				  if (newSpeed <= 9.99)
-				   {
-				   setprop("autopilot/settings/target-speed-mach", newSpeed);
-				   }
-				  }
-				]]></script>
+				<condition>
+					<equals>
+						<property>autopilot/settings/speed-mode</property>
+						<value>0</value>
+					</equals>
+				</condition>
+				<command>property-adjust</command>
+				<property>autopilot/settings/target-speed-kt</property>
+				<step type="double">1</step>
+				<max>999</max>
+			</binding>
+			<binding>
+				<condition>
+					<equals>
+						<property>autopilot/settings/speed-mode</property>
+						<value>1</value>
+					</equals>
+				</condition>
+				<command>property-adjust</command>
+				<property>autopilot/settings/target-speed-mach</property>
+				<step type="double">0.01</step>
+				<max>9.99</max>
 			</binding>
 		</action>
 		<action>
@@ -456,26 +458,28 @@
 			<button>4</button>
 			<repeatable type="bool">true</repeatable>
 			<binding>
-				<command>nasal</command>
-				<script><![CDATA[
-				 var setting = getprop("autopilot/settings/speed-mode");
-				 if (setting == "0")
-				  {
-				  var newSpeed = getprop("autopilot/settings/target-speed-kt") - 1;
-				  if (newSpeed >= 0)
-				   {
-				   setprop("autopilot/settings/target-speed-kt", newSpeed);
-				   }
-				  }
-				 elsif (setting == "1")
-				  {
-				  var newSpeed = getprop("autopilot/settings/target-speed-mach") - 0.01;
-				  if (newSpeed >= 0)
-				   {
-				   setprop("autopilot/settings/target-speed-mach", newSpeed);
-				   }
-				  }
-				]]></script>
+				<condition>
+					<equals>
+						<property>autopilot/settings/speed-mode</property>
+						<value>0</value>
+					</equals>
+				</condition>
+				<command>property-adjust</command>
+				<property>autopilot/settings/target-speed-kt</property>
+				<step type="double">-1</step>
+				<min>0</min>
+			</binding>
+			<binding>
+				<condition>
+					<equals>
+						<property>autopilot/settings/speed-mode</property>
+						<value>1</value>
+					</equals>
+				</condition>
+				<command>property-adjust</command>
+				<property>autopilot/settings/target-speed-mach</property>
+				<step type="double">-0.01</step>
+				<min>0</min>
 			</binding>
 		</action>
 	</animation>
@@ -606,13 +610,15 @@
 				<max>360</max>
 			</binding>
 			<binding>
-				<command>nasal</command>
-				<script>
-				 if (getprop("autopilot/settings/heading-bug-deg") == 360)
-				  {
-				  setprop("autopilot/settings/heading-bug-deg", 0);
-				  }
-				</script>
+				<condition>
+					<greater-than>
+						<property>autopilot/settings/heading-bug-deg</property>
+						<value>360</value>
+					</greater-than>
+				</condition>
+				<command>property-assign</command>
+				<property>autopilot/settings/heading-bug-deg</property>
+				<value>1</value>
 			</binding>
 		</action>
 		<action>
@@ -626,13 +632,15 @@
 				<min>0</min>
 			</binding>
 			<binding>
-				<command>nasal</command>
-				<script>
-				 if (getprop("autopilot/settings/heading-bug-deg") == 0)
-				  {
-				  setprop("autopilot/settings/heading-bug-deg", 360);
-				  }
-				</script>
+				<condition>
+					<less-than-equals>
+						<property>autopilot/settings/heading-bug-deg</property>
+						<value>0</value>
+					</less-than-equals>
+				</condition>
+				<command>property-assign</command>
+				<property>autopilot/settings/heading-bug-deg</property>
+				<value>360</value>
 			</binding>
 		</action>
 	</animation>

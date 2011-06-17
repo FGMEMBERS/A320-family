@@ -152,7 +152,14 @@
 
 	<model>
 		<name>Port landing light</name>
-		<path>Aircraft/A320-family/XMLs/Lights/landing-port.xml</path>
+		<path>Aircraft/A320-family/XMLs/Lights/landing.xml</path>
+		<overlay>
+			<params>
+				<control n="0">sim/multiplay/generic/int[2]</control>
+				<control n="1">sim/multiplay/generic/int[2]</control>
+				<steering-norm></steering-norm>
+			</params>
+		</overlay>
 		<offsets>
 			<x-m>15.9</x-m>
 			<y-m>-3.16</y-m>
@@ -162,7 +169,14 @@
 
 	<model>
 		<name>Nosegear landing light</name>
-		<path>Aircraft/A320-family/XMLs/Lights/landing-nose.xml</path>
+		<path>Aircraft/A320-family/XMLs/Lights/landing.xml</path>
+		<overlay>
+			<params>
+				<control n="0">sim/multiplay/generic/int[3]</control>
+				<control n="1">gear/gear[0]/position-norm</control>
+				<steering-norm>gear/gear[0]/steering-norm</steering-norm>
+			</params>
+		</overlay>
 		<offsets>
 			<x-m>3.08</x-m>
 			<y-m>0</y-m>
@@ -172,13 +186,21 @@
 
 	<model>
 		<name>Starboard landing light</name>
-		<path>Aircraft/A320-family/XMLs/Lights/landing-stbd.xml</path>
+		<path>Aircraft/A320-family/XMLs/Lights/landing.xml</path>
+		<overlay>
+			<params>
+				<control n="0">sim/multiplay/generic/int[4]</control>
+				<control n="1">sim/multiplay/generic/int[4]</control>
+				<steering-norm></steering-norm>
+			</params>
+		</overlay>
 		<offsets>
 			<x-m>15.9</x-m>
 			<y-m>3.16</y-m>
 			<z-m>-1.4</z-m>
 		</offsets>
 	</model>
+
 
 	<!-- Other non-aircraft models -->
 	<model>

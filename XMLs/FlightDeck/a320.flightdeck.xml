@@ -167,143 +167,35 @@
 	<model>
 		<name>Pilot radio panel</name>
 		<path>Aircraft/A320-family/XMLs/Instruments/Radiopanel/Radiopanel.xml</path>
+		<overlay>
+			<params>
+				<selected-mhz>instrumentation/nav[0]/frequencies/selected-mhz</selected-mhz>
+				<standby-mhz>instrumentation/nav[0]/frequencies/standby-mhz</standby-mhz>
+			</params>
+		</overlay>
 		<offsets>
 			<x-m>-16.811</x-m>
 			<y-m>-0.187</y-m>
 			<z-m>-2.325</z-m>
 			<pitch-deg>-78</pitch-deg>
 		</offsets>
-		<overlay>
-			<params>
-				<selected-mhz>instrumentation/nav[0]/frequencies/selected-mhz</selected-mhz>
-				<standby-mhz>instrumentation/nav[0]/frequencies/standby-mhz</standby-mhz>
-				<script-small-step-up><![CDATA[
-				 var setting = getprop("instrumentation/nav[0]/frequencies/standby-mhz");
-				 var max = 117.95;
-				 if (setting < max)
-				  {
-				  setprop("instrumentation/nav[0]/frequencies/standby-mhz", setting + 0.05);
-				  }
-				 if (setting > max)
-				  {
-				  setprop("instrumentation/nav[0]/frequencies/standby-mhz", max);
-				  }
-				]]></script-small-step-up>
-				<script-small-step-down><![CDATA[
-				 var setting = getprop("instrumentation/nav[0]/frequencies/standby-mhz");
-				 var min = 108;
-				 if (setting > min)
-				  {
-				  setprop("instrumentation/nav[0]/frequencies/standby-mhz", setting - 0.05);
-				  }
-				 if (setting < min)
-				  {
-				  setprop("instrumentation/nav[0]/frequencies/standby-mhz", min);
-				  }
-				]]></script-small-step-down>
-				<script-big-step-up><![CDATA[
-				 var setting = getprop("instrumentation/nav[0]/frequencies/standby-mhz");
-				 var max = 117.95;
-				 if (setting < max)
-				  {
-				  setprop("instrumentation/nav[0]/frequencies/standby-mhz", setting + 1);
-				  }
-				 if (setting > max)
-				  {
-				  setprop("instrumentation/nav[0]/frequencies/standby-mhz", max);
-				  }
-				]]></script-big-step-up>
-				<script-big-step-down><![CDATA[
-				 var setting = getprop("instrumentation/nav[0]/frequencies/standby-mhz");
-				 var min = 108;
-				 if (setting > min)
-				  {
-				  setprop("instrumentation/nav[0]/frequencies/standby-mhz", setting - 1);
-				  }
-				 if (setting < min)
-				  {
-				  setprop("instrumentation/nav[0]/frequencies/standby-mhz", min);
-				  }
-				]]></script-big-step-down>
-				<script-swap>
-				 var setting1 = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
-				 var setting2 = getprop("instrumentation/nav[0]/frequencies/standby-mhz");
-				 setprop("instrumentation/nav[0]/frequencies/standby-mhz", setting1);
-				 setprop("instrumentation/nav[0]/frequencies/selected-mhz", setting2);
-				</script-swap>
-			</params>
-		</overlay>
 	</model>
 
 	<model>
 		<name>Copilot radio panel</name>
 		<path>Aircraft/A320-family/XMLs/Instruments/Radiopanel/Radiopanel.xml</path>
+		<overlay>
+			<params>
+				<selected-mhz>instrumentation/nav[1]/frequencies/selected-mhz</selected-mhz>
+				<standby-mhz>instrumentation/nav[1]/frequencies/standby-mhz</standby-mhz>
+			</params>
+		</overlay>
 		<offsets>
 			<x-m>-16.811</x-m>
 			<y-m>0.187</y-m>
 			<z-m>-2.325</z-m>
 			<pitch-deg>-78</pitch-deg>
 		</offsets>
-		<overlay>
-			<params>
-				<selected-mhz>instrumentation/nav[1]/frequencies/selected-mhz</selected-mhz>
-				<standby-mhz>instrumentation/nav[1]/frequencies/standby-mhz</standby-mhz>
-				<script-small-step-up><![CDATA[
-				 var setting = getprop("instrumentation/nav[1]/frequencies/standby-mhz");
-				 var max = 117.95;
-				 if (setting < max)
-				  {
-				  setprop("instrumentation/nav[1]/frequencies/standby-mhz", setting + 0.05);
-				  }
-				 if (setting > max)
-				  {
-				  setprop("instrumentation/nav[1]/frequencies/standby-mhz", max);
-				  }
-				]]></script-small-step-up>
-				<script-small-step-down><![CDATA[
-				 var setting = getprop("instrumentation/nav[1]/frequencies/standby-mhz");
-				 var min = 108;
-				 if (setting > min)
-				  {
-				  setprop("instrumentation/nav[1]/frequencies/standby-mhz", setting - 0.05);
-				  }
-				 if (setting < min)
-				  {
-				  setprop("instrumentation/nav[1]/frequencies/standby-mhz", min);
-				  }
-				]]></script-small-step-down>
-				<script-big-step-up><![CDATA[
-				 var setting = getprop("instrumentation/nav[1]/frequencies/standby-mhz");
-				 var max = 117.95;
-				 if (setting < max)
-				  {
-				  setprop("instrumentation/nav[1]/frequencies/standby-mhz", setting + 1);
-				  }
-				 if (setting > max)
-				  {
-				  setprop("instrumentation/nav[1]/frequencies/standby-mhz", max);
-				  }
-				]]></script-big-step-up>
-				<script-big-step-down><![CDATA[
-				 var setting = getprop("instrumentation/nav[1]/frequencies/standby-mhz");
-				 var min = 108;
-				 if (setting > min)
-				  {
-				  setprop("instrumentation/nav[1]/frequencies/standby-mhz", setting - 1);
-				  }
-				 if (setting < min)
-				  {
-				  setprop("instrumentation/nav[1]/frequencies/standby-mhz", min);
-				  }
-				]]></script-big-step-down>
-				<script-swap>
-				 var setting1 = getprop("instrumentation/nav[1]/frequencies/selected-mhz");
-				 var setting2 = getprop("instrumentation/nav[1]/frequencies/standby-mhz");
-				 setprop("instrumentation/nav[1]/frequencies/standby-mhz", setting1);
-				 setprop("instrumentation/nav[1]/frequencies/selected-mhz", setting2);
-				</script-swap>
-			</params>
-		</overlay>
 	</model>
 
 	<!-- ANIMATIONS -->
@@ -321,7 +213,7 @@
 			<red>0.5</red>
 			<green>0.5</green>
 			<blue>0.5</blue>
-			<factor-prop>controls/lighting/dome-norm</factor-prop>
+			<factor-prop>sim/multiplay/generic/float[0]</factor-prop>
 		</emission>
 	</animation>
 
@@ -333,11 +225,11 @@
 		<condition>
 			<or>
 				<not>
-					<property>controls/lighting/dome-norm</property>
+					<property>sim/multiplay/generic/float[0]</property>
 				</not>
 				<and>
 					<equals>
-						<property>controls/lighting/dome-norm</property>
+						<property>sim/multiplay/generic/float[0]</property>
 						<value>0.5</value>
 					</equals>
 					<greater-than>
@@ -347,7 +239,7 @@
 				</and>
 				<and>
 					<equals>
-						<property>controls/lighting/dome-norm</property>
+						<property>sim/multiplay/generic/float[0]</property>
 						<value>1</value>
 					</equals>
 					<greater-than>
@@ -366,7 +258,7 @@
 			<or>
 				<and>
 					<equals>
-						<property>controls/lighting/dome-norm</property>
+						<property>sim/multiplay/generic/float[0]</property>
 						<value>0.5</value>
 					</equals>
 					<less-than-equals>
@@ -376,7 +268,7 @@
 				</and>
 				<and>
 					<equals>
-						<property>controls/lighting/dome-norm</property>
+						<property>sim/multiplay/generic/float[0]</property>
 						<value>1</value>
 					</equals>
 					<less-than-equals>

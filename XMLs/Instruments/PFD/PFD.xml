@@ -183,7 +183,7 @@
 			<red>0.5</red>
 			<green>0.5</green>
 			<blue>0.5</blue>
-			<factor-prop>controls/lighting/dome-norm</factor-prop>
+			<factor-prop>sim/multiplay/generic/float[0]</factor-prop>
 		</emission>
 	</animation>
 
