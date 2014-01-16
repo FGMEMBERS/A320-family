@@ -528,8 +528,8 @@
 					<property>controls/flight/ground-spoilers-armed</property>
 				</binding>
 			</key>
-			<key n="9">
-				<name>Tab</name>
+			<key n="61">
+				<name>=</name>
 				<desc>Cycle autobrake setting</desc>
 				<binding>
 					<command>property-cycle</command>
