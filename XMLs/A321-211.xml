@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- All variants share one central model, they only link to separate files so that different A321s are distinguishable through multiplayer -->
+
+<PropertyList>
+
+	<model>
+		<path>Aircraft/A320-family/XMLs/A321.xml</path>
+	</model>
+
+	<!-- Dual control/livery select -->
+	<nasal>
+		<load>
+		 aircraft_dual_control.pilot_type = "Aircraft/A320-family/XMLs/A321-211.xml";
+		 var livery_update = aircraft.livery_update.new("Aircraft/A320-family/Models/Liveries/A321-211");
+		</load>
+		<unload>
+		 livery_update.stop();
+		</unload>
+	</nasal>
+
+</PropertyList>

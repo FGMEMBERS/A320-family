@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList include="A320-main.xml">
+
+	<sim>
+		<description>Airbus A320-200 with IAE V2500 engines</description>
+		<flight-model>jsb</flight-model>
+		<aero>A320-231</aero>
+		<variant>231</variant>
+		<engine>IAE V2500</engine>
+
+		<model>
+			<path>Aircraft/A320-family/XMLs/A320-231.xml</path>
+			<livery>
+				<file>Liveries/A320-Blank</file>
+				<texture>Liveries/A320-Blank.png</texture>
+				<texture-path n="0">../Models/Liveries/A320-Blank.png</texture-path>
+				<texture-path n="1">../../Models/Liveries/A320-Blank.png</texture-path>
+			</livery>
+		</model>
+
+		<tutorials include="Tutorials/a320-tutorials.xml" />
+
+		<!-- Flaps only go up to 35 degrees for the 200 -->
+		<flaps>
+			<setting>0.00</setting>
+			<setting>0.25</setting>
+			<setting>0.375</setting>
+			<setting>0.5</setting>
+			<setting>0.875</setting>
+		</flaps>
+
+		<view>
+			<name>Pilot View</name>
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y">-0.525</x-offset-m>
+				<y-offset-m archive="y">2.3635023</y-offset-m>
+				<z-offset-m archive="y">-13.8829</z-offset-m>
+				<pitch-offset-deg archive="y">-15.0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="100">
+			<name>Gear View</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0</x-offset-m>
+				<y-offset-m archive="y">-1.5</y-offset-m>
+				<z-offset-m archive="y">8.5</z-offset-m>
+				<pitch-offset-deg archive="y">0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="101">
+			<name>Passenger View (Economy Class)</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-1.5</x-offset-m>
+				<y-offset-m archive="y">2.3</y-offset-m>
+				<z-offset-m archive="y">5</z-offset-m>
+				<pitch-offset-deg archive="y">0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="102">
+			<name>Passenger View (First Class)</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-1.45</x-offset-m>
+				<y-offset-m archive="y">2.3</y-offset-m>
+				<z-offset-m archive="y">-8.7</z-offset-m>
+				<pitch-offset-deg archive="y">0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="103">
+			<name>Copilot View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0.525</x-offset-m>
+				<y-offset-m archive="y">2.3635023</y-offset-m>
+				<z-offset-m archive="y">-13.8829</z-offset-m>
+				<pitch-offset-deg archive="y">-15.0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="104">
+			<name>Overhead Panel View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0</x-offset-m>
+				<y-offset-m archive="y">2.3635023</y-offset-m>
+				<z-offset-m archive="y">-13.73</z-offset-m>
+				<pitch-offset-deg archive="y">40</pitch-offset-deg>
+			</config>
+		</view>
+
+		<menubar>
+			<default>
+				<menu n="100">
+					<label>Airbus A320-231</label>
+				</menu>
+			</default>
+		</menubar>
+
+		<multiplay>
+			<generic>
+				<!-- Engine type: "0" for CFM56 and "1" for IAE V2500 -->
+				<int n="0" type="int">1</int>
+				<!-- Winglets: "0" for no and "1" for yes -->
+				<int n="1" type="int">1</int>
+			</generic>
+		</multiplay>
+	</sim>
+
+	<payload>
+		<weight n="1">
+			<min-lb type="double">0</min-lb>
+			<max-lb type="double">39500</max-lb>
+		</weight>
+	</payload>
+
+	<instrumentation>
+		<cdu>
+			<ident>
+				<model>A320-231</model>
+				<engines>V2500-A1</engines>
+			</ident>
+		</cdu>
+	</instrumentation>
+
+</PropertyList>
