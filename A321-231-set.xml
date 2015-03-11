@@ -8,7 +8,7 @@
 		<aero>A321-231</aero>
 		<variant>200</variant>
 		<engine>IAE V2500</engine>
-
+        <variant-of>A320-211</variant-of>
 		<model>
 			<path>Aircraft/A320-family/XMLs/A321-231.xml</path>
 			<livery>
