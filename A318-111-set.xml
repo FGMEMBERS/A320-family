@@ -8,7 +8,7 @@
 		<aero>A318-111</aero>
 		<variant>100</variant>
 		<engine>CFM56-5B8</engine>
-
+        <variant-of>A320-211</variant-of>
 		<model>
 			<path>Aircraft/A320-family/XMLs/A318-111.xml</path>
 			<livery>

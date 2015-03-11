@@ -7,6 +7,8 @@
 		<status>beta</status>
 		<flight-model>null</flight-model>
 
+        <variant-of>A320-211</variant-of>
+
 		<model>
 			<path>Aircraft/A320-family/XMLs/A320-copilot.xml</path>
 		</model>

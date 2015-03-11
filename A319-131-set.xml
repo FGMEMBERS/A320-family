@@ -8,7 +8,7 @@
 		<aero>A319-131</aero>
 		<variant>100</variant>
 		<engine>IAE V2500</engine>
-
+        <variant-of>A320-211</variant-of>
 		<model>
 			<path>Aircraft/A320-family/XMLs/A319-131.xml</path>
 			<livery>

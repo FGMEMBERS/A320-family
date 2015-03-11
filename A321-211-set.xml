@@ -8,7 +8,7 @@
 		<aero>A321-211</aero>
 		<variant>200</variant>
 		<engine>CFM56-5B3</engine>
-
+        <variant-of>A320-211</variant-of>
 		<model>
 			<path>Aircraft/A320-family/XMLs/A321.xml</path>
 			<livery>
