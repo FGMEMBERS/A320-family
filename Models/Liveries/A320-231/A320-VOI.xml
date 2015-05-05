@@ -1,0 +1,11 @@
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Volaris</name>
+        <texture>Liveries/A320-VOI.png</texture>
+        <texture2>FanDisk.png</texture2>
+      </livery>
+    </model>
+  </sim>
+</PropertyList>

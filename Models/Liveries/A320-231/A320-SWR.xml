@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Swiss International Air Lines</name>
+        <texture>Liveries/A320-SWR.png</texture>
+	  <texture2>FanDisk.png</texture2>
+      </livery>
+    </model>
+  </sim>
+</PropertyList>

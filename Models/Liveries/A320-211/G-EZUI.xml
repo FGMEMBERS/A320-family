@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+		<sim>
+				<model>
+						<livery>
+								<name>easyJet - 200th Airbus</name>
+								<texture>Liveries/A320-211/G-EZUI.png</texture>
+						</livery>
+				</model>
+		</sim>
+</PropertyList>
