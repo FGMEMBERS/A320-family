@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name>Austrian Airlines (Star Alliance)</name>
+				<texture>Liveries/A320-231/A320-AUA.png</texture>
+			</livery>
+		</model>
+	</sim>
+</PropertyList>
