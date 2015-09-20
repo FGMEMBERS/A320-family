@@ -17,12 +17,13 @@
 				<texture-path n="0">../Models/Liveries/A318-BAW.png</texture-path>
 				<texture-path n="1">../../Models/Liveries/A318-BAW.png</texture-path>
 			</livery>
-			<door>
-				<position-x-m type="float">-11.22</position-x-m>
+				<door>
+				<position-x-m type="float">-9.0</position-x-m>
 				<position-y-m type="float">-1.74</position-y-m>
 				<position-z-m type="float">1.28</position-z-m>
 				<jetway-hood-deg type="float">0</jetway-hood-deg>
 			</door>
+		
 		</model>
 
 		<!-- Flaps only go up to 35 degrees for the 111 -->
