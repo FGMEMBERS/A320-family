@@ -5,7 +5,7 @@
 	<sim>
 		
 		<sound>
-			<path>Aircraft/A320-family/Sounds/cfm56-sound.xml</path>
+			<path>Aircraft/A320-family/Sounds/v2500-sound.xml</path>
 		</sound>
 		
 		<author>Ampere K Hardraade (3d, FDM), Skyop (systems, instruments, etc.)</author>

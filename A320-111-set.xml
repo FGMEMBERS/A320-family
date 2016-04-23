@@ -3,12 +3,12 @@
 <PropertyList include="A320-main.xml">
 
 	<sim>
-		<description>Airbus A320-111 with CFM56-5A1 engines</description>
+		<description>Airbus A320-111 [CFM]</description>
 		<flight-model>jsb</flight-model>
 		<aero>A320-111</aero>
 		<variant>100</variant>
 		<engine>CFM56-5A1</engine>
-        <variant-of>A320-211</variant-of>
+
 		<model>
 			<path>Aircraft/A320-family/XMLs/A320-111.xml</path>
 			<livery>
@@ -17,12 +17,6 @@
 				<texture-path n="0">../Models/Liveries/A320-Blank.png</texture-path>
 				<texture-path n="1">../../Models/Liveries/A320-Blank.png</texture-path>
 			</livery>
-				<door>
-				<position-x-m type="float">-11.22</position-x-m>
-				<position-y-m type="float">-1.74</position-y-m>
-				<position-z-m type="float">1.28</position-z-m>
-				<jetway-hood-deg type="float">0</jetway-hood-deg>
-			</door>
 		</model>
 
 		<tutorials include="Tutorials/a320-tutorials.xml" />
@@ -41,9 +35,9 @@
 			<internal archive="y">true</internal>
 			<config>
 				<x-offset-m archive="y">-0.525</x-offset-m>
-				<y-offset-m archive="y">2.45</y-offset-m>
-				<z-offset-m archive="y">-13.00</z-offset-m>
-				<pitch-offset-deg archive="y">-10.0</pitch-offset-deg>
+				<y-offset-m archive="y">2.3635023</y-offset-m>
+				<z-offset-m archive="y">-13.8829</z-offset-m>
+				<pitch-offset-deg archive="y">-15.0</pitch-offset-deg>
 			</config>
 		</view>
 		<view n="100">

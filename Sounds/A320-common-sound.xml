@@ -1,0 +1,445 @@
+<PropertyList>
+  <fx>
+	<apu>
+		<name>apu_run</name>
+		<mode>looped</mode>
+		<path>Aircraft/A320-family/Sounds/apu/fan.wav</path>
+		<volume>
+			<property>engines/apu/rpm</property>
+			<factor>0.01</factor>
+			<min>0</min>
+		</volume>
+		<pitch>
+			<property>engines/apu/rpm</property>
+			<factor>0.013</factor>
+			<min>0.1</min>
+		</pitch>
+	</apu>
+	
+	<apu>
+		<name>apu_run</name>
+		<mode>looped</mode>
+		<path>Aircraft/A320-family/Sounds/apu/turbine.wav</path>
+		<volume>
+			<property>engines/apu/rpm</property>
+			<factor>0.01</factor>
+			<min>0</min>
+		</volume>
+		<pitch>
+			<property>engines/apu/rpm</property>
+			<factor>0.02</factor>
+			<min>0.1</min>
+		</pitch>
+	</apu>
+	
+	<gear>
+        <name>gear</name>
+        <mode>in-transit</mode>
+        <path>Aircraft/A320-family/Sounds/misc/a320-gear-lev.wav</path>
+        <property>/gear/gear[0]/position-norm</property>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <pitch>
+            <internal>dt_play</internal>
+            <offset>0.7</offset>
+            <factor>-0.001</factor>
+        </pitch>
+        <position>
+            <x>0</x>
+            <y>0</y>
+            <z>-2</z>
+        </position>
+        <reference-dist>5.0</reference-dist>
+        <max-dist>10.0</max-dist>
+    </gear>
+
+    <gear>
+        <name>gear-lock</name>
+        <path>Aircraft/A320-family/Sounds/misc/a320-gear-doors.wav</path>
+        <condition>
+            <equals>
+                <property>/gear/gear[0]/position-norm</property>
+                <value>0</value>
+            </equals>
+        </condition>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <position>
+            <x>0</x>
+            <y>0</y>
+            <z>-2</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>20.0</max-dist>
+    </gear>
+	
+	<gear>
+        <name>gear-lock</name>
+        <path>Aircraft/A320-family/Sounds/misc/a320-gear-doors.wav</path>
+        <condition>
+            <greater-than>
+                <property>/gear/gear[0]/position-norm</property>
+                <value>0.8</value>
+            </greater-than>
+        </condition>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <position>
+            <x>0</x>
+            <y>0</y>
+            <z>-2</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>20.0</max-dist>
+    </gear>
+
+    <squeal>
+        <name>squeal</name>
+        <path>/Aircraft/A320-family/Sounds/touchdown.wav</path>
+        <condition>
+            <or>
+                <property>/gear/gear[0]/wow</property>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+            </or>
+        </condition>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <volume>
+            <property>/velocities/speed-down-fps</property>
+            <factor>0.05</factor>
+        </volume>
+        <volume>
+            <property>/velocities/airspeed-kt</property>
+            <factor>0.01</factor>
+        </volume>
+        <volume>
+            <internal>dt_stop</internal>
+            <factor>0.05</factor>
+            <max>1.0</max>
+        </volume>
+        <pitch>
+            <property>/velocities/airspeed-kt</property>
+            <factor>0.0025</factor>
+            <offset>1.2</offset>
+        </pitch>
+        <position>
+            <x>-6.5</x>
+            <y>0</y>
+            <z>-5</z>
+        </position>
+        <reference-dist>20.0</reference-dist>
+        <max-dist>40.0</max-dist>
+    </squeal>
+	
+	
+	<flap>
+        <name>flaps</name>
+        <mode>in-transit</mode>
+        <path>Aircraft/A320-family/Sounds/misc/a320-flap-lev.wav</path>
+        <property>/surface-positions/flap-pos-norm</property>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+            <max>1.5</max>
+        </volume>
+        <position>
+            <x>-9</x>
+            <y>0</y>
+            <z>0</z>
+        </position>
+        <reference-dist>5.0</reference-dist>
+        <max-dist>10.0</max-dist>
+    </flap>
+	
+    <flap>
+        <name>flaps</name>
+        <mode>in-transit</mode>
+        <path>Aircraft/A320-family/Sounds/misc/a320-flaps.wav</path>
+        <property>/surface-positions/flaps-pos-norm</property>
+        <position>
+            <x>-9</x>
+            <y>0</y>
+            <z>0</z>
+        </position>
+        <reference-dist>5.0</reference-dist>
+        <max-dist>10.0</max-dist>
+    </flap>
+
+    <wind>
+        <name>wind</name>
+        <mode>looped</mode>
+        <path>Aircraft/A320-family/Sounds/misc/a320-wind.wav</path>
+        <property>/velocities/airspeed-kt</property>
+        <volume>
+            <property>/position/altitude-ft</property>
+            <factor>-0.000015</factor>
+            <offset>1.0</offset>
+            <min>0.1</min>
+            <max>1.0</max>
+        </volume>
+        <volume>
+            <property>/velocities/airspeed-kt</property>
+            <factor>0.0015</factor>
+            <min>0.03</min>
+            <max>0.25</max>
+        </volume>
+        <pitch>
+            <property>/velocities/airspeed-kt</property>
+            <factor>0.01</factor>
+            <offset>0.05</offset>
+        </pitch>
+        <position>
+            <x>-24</x>
+            <y>0</y>
+            <z>0.86</z>
+        </position>
+        <reference-dist>1.0</reference-dist>
+        <max-dist>2.0</max-dist>
+    </wind>
+
+    <stall>
+        <name>stall</name>
+        <mode>looped</mode>
+        <path>/Aircraft/A320-family/Sounds/stall.wav</path>
+        <condition>
+            <property>sim/sound/stall-horn</property>
+        </condition>
+        <volume>
+            <offset>0.5</offset>
+        </volume>
+        <position>
+            <x>-24</x>
+            <y>0</y>
+            <z>0.18</z>
+        </position>
+        <reference-dist>0.5</reference-dist>
+        <max-dist>1.0</max-dist>
+    </stall>
+
+    <speedbrake>
+        <name>speedbrake</name>
+        <mode>in-transit</mode>
+        <path>Aircraft/A320-family/Sounds/misc/a320-flaps.wav</path>
+        <property>/surface-positions/speedbrake-pos-norm</property>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+            <factor>2.0</factor>
+        </volume>
+        <position>
+            <x>-24</x>
+            <y>0</y>
+            <z>0.18</z>
+        </position>
+        <reference-dist>0.5</reference-dist>
+        <max-dist>1.0</max-dist>
+    </speedbrake>
+
+    <engines>
+        <name>left reverse-thrust</name>
+        <mode>looped</mode>
+        <path>Sounds/exhaust_loop.wav</path>
+        <condition>
+            <property>engines/engine[0]/running</property>
+        </condition>
+        <volume>
+            <property>surface-positions/reverser-norm[0]</property>
+        </volume>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <position>
+            <x>2.75</x>
+            <y>9.8</y>
+            <z>-3</z>
+        </position>
+        <reference-dist>250.0</reference-dist>
+        <max-dist>500.0</max-dist>
+    </engines>
+
+    <engines>
+        <name>right reverse-thrust</name>
+        <mode>looped</mode>
+        <path>Sounds/exhaust_loop.wav</path>
+        <condition>
+            <property>engines/engine[1]/running</property>
+        </condition>
+        <volume>
+            <property>surface-positions/reverser-norm[1]</property>
+        </volume>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <position>
+            <x>2.75</x>
+            <y>-9.8</y>
+            <z>-3</z>
+        </position>
+        <reference-dist>250.0</reference-dist>
+        <max-dist>500.0</max-dist>
+    </engines>
+
+    <!-- Seatbelt/No smoking signs -->
+    <seatbelt>
+        <name>Seatbelt sign</name>
+        <path>Aircraft/A320-family/Sounds/misc/a320-cabin-chime.wav</path>
+        <mode>once</mode>
+        <condition>
+            <property>sim/sound/seatbelt-sign</property>
+			<property>sim/current-view/internal</property>
+        </condition>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <position>
+            <x>0.00</x>
+            <y>0.00</y>
+            <z>0.00</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>100.0</max-dist>
+    </seatbelt>
+    <nosmoke>
+        <name>No smoking sign</name>
+        <path>Aircraft/A320-family/Sounds/misc/a320-cabin-chime.wav</path>
+        <mode>once</mode>
+        <condition>
+            <property>sim/sound/no-smoking-sign</property>
+			<property>sim/current-view/internal</property>
+        </condition>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <position>
+            <x>0.00</x>
+            <y>0.00</y>
+            <z>0.00</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>100.0</max-dist>
+    </nosmoke>
+
+    <!-- Seatbelt/No smoking signs -->
+    <passign>
+        <name>Seatbelt sign</name>
+        <path>Aircraft/A320-family/Sounds/misc/a320-cabin-chime.wav</path>
+        <mode>once</mode>
+        <condition>
+            <property>sim/sound/seatbelt-sign</property>
+			<property>sim/current-view/internal</property>
+        </condition>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <position>
+            <x>0.00</x>
+            <y>0.00</y>
+            <z>0.00</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>100.0</max-dist>
+    </passign>
+    <passsign>
+        <name>No smoking sign</name>
+        <path>Aircraft/A320-family/Sounds/misc/a320-cabin-chime.wav</path>
+        <mode>once</mode>
+        <condition>
+            <property>sim/sound/no-smoking-sign</property>
+			<property>sim/current-view/internal</property>
+        </condition>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <position>
+            <x>0.00</x>
+            <y>0.00</y>
+            <z>0.00</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>100.0</max-dist>
+    </passsign>
+
+    <!-- Overspeed warning -->
+    <overspeed>
+        <name>Overspeed warning</name>
+        <path>Sounds/overspeed2.wav</path>
+        <mode>looped</mode>
+        <condition>
+            <greater-than>
+                <property>velocities/airspeed-kt</property>
+                <value>330</value>
+            </greater-than>
+			<property>sim/current-view/internal</property>
+        </condition>
+        <volume>
+            <property>sim/sound/effects/volume</property>
+        </volume>
+        <position>
+            <x>0</x>
+            <y>0</y>
+            <z>0</z>
+        </position>
+        <reference-dist>10</reference-dist>
+        <max-dist>100</max-dist>
+    </overspeed>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<engine>
+		<name>engine0-start</name>
+		<property>engines/engine[0]/n1</property>
+		<mode>looped</mode>
+		<path>Aircraft/A320-family/Sounds/eng/xa320-eng-start.wav</path>
+		<volume>
+			10
+		</volume>
+		<reference-dist>100</reference-dist>
+		<max-dist>1000</max-dist>
+	</engine>
+	
+	<engine>
+		<name>engine1-start</name>
+		<property>engines/engine[0]/n1</property>
+		<mode>looped</mode>
+		<path>Aircraft/A320-family/Sounds/eng/xa320-eng-start.wav</path>
+		<volume>
+			10
+		</volume>
+		<reference-dist>100</reference-dist>
+		<max-dist>1000</max-dist>
+	</engine>
+  </fx>
+</PropertyList>

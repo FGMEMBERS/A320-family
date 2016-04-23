@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<PropertyList include="A320-main.xml">
+<PropertyList include="A320-mainv.xml">
 
 	<sim>
-		<description>Airbus A320-231 with IAE V2500 engines</description>
+		<description>Airbus A320-231 [IAE]</description>
 		<flight-model>jsb</flight-model>
 		<aero>A320-231</aero>
 		<variant>231</variant>
 		<engine>IAE V2500</engine>
-        <variant-of>A320-211</variant-of>
+
 		<model>
 			<path>Aircraft/A320-family/XMLs/A320-231.xml</path>
 			<livery>
@@ -35,9 +35,9 @@
 			<internal archive="y">true</internal>
 			<config>
 				<x-offset-m archive="y">-0.525</x-offset-m>
-				<y-offset-m archive="y">2.47</y-offset-m>
-				<z-offset-m archive="y">-13.00</z-offset-m>
-				<pitch-offset-deg archive="y">-10.0</pitch-offset-deg>
+				<y-offset-m archive="y">2.3635023</y-offset-m>
+				<z-offset-m archive="y">-13.8829</z-offset-m>
+				<pitch-offset-deg archive="y">-15.0</pitch-offset-deg>
 			</config>
 		</view>
 		<view n="100">
