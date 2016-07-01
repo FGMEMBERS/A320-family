@@ -370,3 +370,8 @@ var triggerDoor = func(door, doorName, doorDesc)
    }
   }
  };
+ 
+ setlistener("/sim/signals/fdm-initialized", func {
+  it2.ap_init();
+  var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/A320-family/Systems/autopilot-dlg.xml");
+});
