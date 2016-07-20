@@ -3,6 +3,11 @@
 <PropertyList>
 
 	<sim>
+		
+		<sound>
+			<path>Aircraft/A320-family/Sounds/cfm56-sound.xml</path>
+		</sound>
+		
 		<author>Ampere K Hardraade (3d, FDM), Skyop (systems, instruments, etc.)</author>
 		<status>beta</status>
 
@@ -59,13 +64,14 @@
 				<name>Spoilers</name>
 				<path>Aircraft/A320-family/Systems/a320-spoilers.xml</path>
 			</autopilot>
+			<property-rule n="101">
+				<path>Systems/fl2070_sound.xml</path>
+			</property-rule>
 		</systems>
 
 		<chase-distance-m>-85</chase-distance-m>
 
-		<sound>
-			<path>Aircraft/A320-family/A320-sound.xml</path>
-		</sound>
+		
 
 		<instrumentation>
 			<path>Aircraft/A320-family/Systems/instrumentation.xml</path>
