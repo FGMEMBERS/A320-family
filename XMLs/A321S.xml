@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<PropertyList>
+
+	<model>
+		<path>Aircraft/A320-family/XMLs/A321S-main.xml</path>
+	</model>
+
+	<!-- Dual control/livery select -->
+	<nasal>
+		<load>
+		 aircraft_dual_control.pilot_type = "Aircraft/A320-family/XMLs/A321S.xml";
+		 var livery_update = aircraft.livery_update.new("Aircraft/A320-family/Models/Liveries/A321S");
+		</load>
+		<unload>
+		 livery_update.stop();
+		</unload>
+	</nasal>
+
+</PropertyList>

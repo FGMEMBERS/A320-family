@@ -65,7 +65,7 @@
 
 	<model>
 		<name>Winglets</name>
-		<path>Aircraft/A320-family/XMLs/Wings/a320.winglets.xml</path>
+		<path>Aircraft/A320-family/XMLs/Wings/a321.winglets.xml</path>
 		<offsets>
 			<x-m>15.280</x-m>
 			<z-m>-1.06019</z-m>
