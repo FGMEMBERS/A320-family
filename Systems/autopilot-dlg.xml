@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- IT-AUTOFLIGHT Configuration Dialog -->
+<!-- IT-AUTOFLIGHT Autoflight Control Dialog -->
 
 
 <PropertyList>
 
 	<name>autopilot</name>
 	<layout>vbox</layout>
-    <pref-width>230</pref-width>
+    <pref-width>260</pref-width>
 
     <group>
         <layout>hbox</layout>
         <text>
             <halign>left</halign>
-            <label>AUTOFLIGHT</label>
+            <label>IT-AUTOFLIGHT V3.0.0 Beta</label>
         </text>
         <button>
             <halign>right</halign>
@@ -33,23 +33,56 @@
 		<layout>hbox</layout>
 		<button>
 			<legend>A/T</legend>
+            <pref-width>35</pref-width>
 			<binding>
 			<command>property-toggle</command>
-			<property>/controls/it2/at_mastersw</property>
+			<property>/it-autoflight/at_mastersw</property>
 			</binding>
 		</button>
 		<button>
-			<legend>AP</legend>
+			<legend>AP1</legend>
+            <pref-width>35</pref-width>
 			<binding>
 			<command>property-toggle</command>
-			<property>/controls/it2/ap_mastersw</property>
+			<property>/it-autoflight/ap_mastersw</property>
 			</binding>
 		</button>
 		<button>
-			<legend>FD</legend>
+			<legend>AP2</legend>
+            <pref-width>35</pref-width>
 			<binding>
 			<command>property-toggle</command>
-			<property>/controls/it2/fd_mastersw</property>
+			<property>/it-autoflight/ap_mastersw2</property>
+			</binding>
+		</button>
+		<button>
+			<legend>CWS</legend>
+            <pref-width>35</pref-width>
+			<enable>
+				<equals>
+					<property>/it-autoflight/settings/CWS-allowed</property>
+					<value>IAMANOCTALYESIAM</value>
+				</equals>
+			</enable>
+			<binding>
+			<command>property-toggle</command>
+			<property>/it-autoflight/unused/cws_mastersw</property>
+			</binding>
+		</button>
+		<button>
+			<legend>FD1</legend>
+            <pref-width>35</pref-width>
+			<binding>
+			<command>property-toggle</command>
+			<property>/it-autoflight/fd_mastersw</property>
+			</binding>
+		</button>
+		<button>
+			<legend>FD2</legend>
+            <pref-width>35</pref-width>
+			<binding>
+			<command>property-toggle</command>
+			<property>/it-autoflight/fd_mastersw2</property>
 			</binding>
 		</button>
 	</group>
@@ -57,28 +90,55 @@
 	<group>
 		<layout>hbox</layout>
 		<text>
-			<label>A/T</label>
+			<label>[A/T]</label>
 			<visible>
 				<equals>
-					<property>/controls/it2/at_master</property>
+					<property>/it-autoflight/at_master</property>
 					<value>1</value>
 				</equals>
 			</visible>
 		</text>
 		<text>
-			<label>AP</label>
+			<label>[AP1]</label>
 			<visible>
 				<equals>
-					<property>/controls/it2/ap_master</property>
+					<property>/it-autoflight/ap_master</property>
 					<value>1</value>
 				</equals>
 			</visible>
 		</text>
 		<text>
-			<label>FD</label>
+			<label>[AP2]</label>
 			<visible>
 				<equals>
-					<property>/controls/it2/fd_master</property>
+					<property>/it-autoflight/ap_master2</property>
+					<value>1</value>
+				</equals>
+			</visible>
+		</text>
+		<text>
+			<label>[CWS]</label>
+			<visible>
+				<equals>
+					<property>/it-autoflight/unused/cws_master</property>
+					<value>1</value>
+				</equals>
+			</visible>
+		</text>
+		<text>
+			<label>[FD1]</label>
+			<visible>
+				<equals>
+					<property>/it-autoflight/fd_master</property>
+					<value>1</value>
+				</equals>
+			</visible>
+		</text>
+		<text>
+			<label>[FD2]</label>
+			<visible>
+				<equals>
+					<property>/it-autoflight/fd_master2</property>
 					<value>1</value>
 				</equals>
 			</visible>
@@ -95,7 +155,7 @@
 				<stretch type="bool">true</stretch>
 			</hrule>
 			<text>
-				<label>Mode Indicators</label>
+				<label>Flight Modes</label>
 			</text>
 			<hrule>
 				<stretch type="bool">true</stretch>
@@ -104,159 +164,36 @@
 		
 		<group>
 			<layout>hbox</layout>
-
 			<text>
-				<label>SPD</label>
-				<visible>
-					<equals>
-						<property>/controls/it2/apthrmode</property>
-						<value>0</value>
-					</equals>
-				</visible>
+				<border>1</border>
+				<label>999999</label>
+				<valign>center</valign>
+				<property>/it-autoflight/txtthrmode</property>
+				<live>1</live>
 			</text>
-
+			<vrule/>
 			<text>
-				<label>MACH</label>
-				<visible>
-					<equals>
-						<property>/controls/it2/apthrmode</property>
-						<value>1</value>
-					</equals>
-				</visible>
+				<border>1</border>
+				<label>99999</label>
+				<valign>center</valign>
+				<property>/it-autoflight/txtarmmode</property>
+				<live>1</live>
 			</text>
-
+			<vrule/>
 			<text>
-				<label>THR</label>
-				<visible>
-					<equals>
-						<property>/controls/it2/apthrmode2</property>
-						<value>0</value>
-					</equals>
-				</visible>
+				<border>1</border>
+				<label>99999</label>
+				<valign>center</valign>
+				<property>/it-autoflight/txtlatmode</property>
+				<live>1</live>
 			</text>
-
+			<vrule/>
 			<text>
-				<label>IDLE</label>
-				<visible>
-					<equals>
-						<property>/controls/it2/apthrmode2</property>
-						<value>1</value>
-					</equals>
-				</visible>
-			</text>
-			
-			<text>
-				<label>CLB</label>
-				<visible>
-					<equals>
-						<property>/controls/it2/apthrmode2</property>
-						<value>2</value>
-					</equals>
-				</visible>
-			</text>
-		</group>
-		
-		<group>
-			<layout>hbox</layout>
-			<text>
-				<label>HDG</label>
-				<visible>
-					<equals>
-						<property>/controls/it2/aplatmode</property>
-						<value>0</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>LNAV</label>
-				<visible>
-					<equals>
-						<property>/controls/it2/aplatmode</property>
-						<value>1</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>        </label>
-			</text>
-			<text>
-				<label>LOC</label>
-				<visible>
-					<or>
-					<equals>
-						<property>/controls/it2/loc1</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>/controls/it2/aplatmode</property>
-						<value>2</value>
-					</equals>
-					</or>
-				</visible>
-			</text>
-			<text>
-				<label>ARM</label>
-				<visible>
-					<equals>
-						<property>/controls/it2/loc1</property>
-						<value>1</value>
-					</equals>
-				</visible>
-			</text>
-		</group>
-		
-		<group>
-			<layout>hbox</layout>
-			<text>
-				<label>HLD</label>
-				<visible>
-					<equals>
-						<property>/controls/it2/apvertmode</property>
-						<value>0</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>FLCH</label>
-				<visible>
-					<equals>
-						<property>/controls/it2/apvertmode</property>
-						<value>4</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>VS</label>
-				<visible>
-					<equals>
-						<property>/controls/it2/apvertmode</property>
-						<value>1</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>G/S</label>
-				<visible>
-					<or>
-					<equals>
-						<property>/controls/it2/apvertmode</property>
-						<value>2</value>
-					</equals>
-					<equals>
-						<property>/controls/it2/app1</property>
-						<value>1</value>
-					</equals>
-					</or>
-				</visible>
-			</text>
-			<text>
-				<label>ARM</label>
-				<visible>
-					<equals>
-						<property>/controls/it2/app1</property>
-						<value>1</value>
-					</equals>
-				</visible>
+				<border>1</border>
+				<label>99999999</label>
+				<valign>center</valign>
+				<property>/it-autoflight/txtvertmode</property>
+				<live>1</live>
 			</text>
 		</group>
 
@@ -283,7 +220,7 @@
 				<legend>SPD</legend>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/apthrmode</property>
+				<property>/it-autoflight/apthrmode</property>
 				<value>0</value>
 				</binding>
 			</button>
@@ -294,20 +231,28 @@
 				<legend>Mach</legend>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/apthrmode</property>
+				<property>/it-autoflight/apthrmode</property>
 				<value>1</value>
 				</binding>
 			</button>
 			
-			<!--button>
-				<row>1</row>
+			<button>
+				<row>0</row>
 				<col>1</col>
-				<legend>ARM</legend>
+				<legend>TOGA</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/unused/toga</property>
+						<value>IAMANOCTALYESIAM</value>
+					</equals>
+				</enable>
 				<binding>
-				<command>property-toggle</command>
-				<property>/controls/it2/at-arm</property>
+				<command>property-cycle</command>
+				<property>/it-autoflight/toga</property>
+				<value>0</value>
+				<value>1</value>
 				</binding>
-			</button-->
+			</button>
 		</group>
 
 		<group>
@@ -325,9 +270,15 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&lt;&lt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>0</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/target-speed-kt</property>
+					<property>/it-autoflight/settings/target-speed-kt</property>
 					<min>0</min>
 					<max>380</max>
 					<step>-10</step>
@@ -340,9 +291,15 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&lt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>0</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/target-speed-kt</property>
+					<property>/it-autoflight/settings/target-speed-kt</property>
 					<min>0</min>
 					<max>380</max>
 					<step>-1</step>
@@ -354,8 +311,14 @@
 				<row>0</row>
 				<col>3</col>
                 <pref-width>40</pref-width>
-				<property>/autopilot/settings/target-speed-kt</property>
+				<property>/it-autoflight/settings/target-speed-kt</property>
 				<live type="bool">true</live>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>0</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -367,9 +330,15 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&gt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>0</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/target-speed-kt</property>
+					<property>/it-autoflight/settings/target-speed-kt</property>
 					<min>0</min>
 					<max>380</max>
 					<step>1</step>
@@ -383,9 +352,15 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&gt;&gt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>0</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/target-speed-kt</property>
+					<property>/it-autoflight/settings/target-speed-kt</property>
 					<min>0</min>
 					<max>380</max>
 					<step>10</step>
@@ -410,9 +385,15 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&lt;&lt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/target-mach</property>
+					<property>/it-autoflight/settings/target-mach</property>
 					<min>0</min>
 					<max>0.99</max>
 					<step>-0.1</step>
@@ -425,9 +406,15 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&lt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/target-mach</property>
+					<property>/it-autoflight/settings/target-mach</property>
 					<min>0</min>
 					<max>0.99</max>
 					<step>-0.01</step>
@@ -439,8 +426,14 @@
 				<row>0</row>
 				<col>3</col>
                 <pref-width>40</pref-width>
-				<property>/autopilot/settings/target-mach</property>
+				<property>/it-autoflight/settings/target-mach</property>
 				<live type="bool">true</live>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -452,9 +445,15 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&gt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/target-mach</property>
+					<property>/it-autoflight/settings/target-mach</property>
 					<min>0</min>
 					<max>0.99</max>
 					<step>0.01</step>
@@ -468,9 +467,15 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&gt;&gt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/target-mach</property>
+					<property>/it-autoflight/settings/target-mach</property>
 					<min>0</min>
 					<max>0.99</max>
 					<step>0.1</step>
@@ -498,31 +503,31 @@
 			<layout>hbox</layout>
 			
 			<button>
-                <pref-width>40</pref-width>
+                <pref-width>50</pref-width>
 				<legend>HLD</legend>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/aplatset</property>
+				<property>/it-autoflight/aplatset</property>
 				<value>3</value>
 				</binding>
 			</button>
 		
 			<button>
-                <pref-width>40</pref-width>
+                <pref-width>50</pref-width>
 				<legend>SEL</legend>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/aplatset</property>
+				<property>/it-autoflight/aplatset</property>
 				<value>0</value>
 				</binding>
 			</button>
 			
 			<button>
-                <pref-width>40</pref-width>
+                <pref-width>50</pref-width>
 				<legend>LNAV</legend>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/aplatset</property>
+				<property>/it-autoflight/aplatset</property>
 				<value>1</value>
 				</binding>
 			</button>
@@ -532,7 +537,7 @@
 				<legend>VOR/LOC</legend>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/aplatset</property>
+				<property>/it-autoflight/aplatset</property>
 				<value>2</value>
 				</binding>
 			</button>
@@ -555,7 +560,7 @@
 				<legend>&lt;&lt;</legend>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/heading-bug-deg</property>
+					<property>/it-autoflight/settings/heading-bug-deg</property>
 					<min>1</min>
 					<max>361</max>
 					<step>-10</step>
@@ -570,7 +575,7 @@
 				<legend>&lt;</legend>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/heading-bug-deg</property>
+					<property>/it-autoflight/settings/heading-bug-deg</property>
 					<min>1</min>
 					<max>361</max>
 					<step>-1</step>
@@ -582,7 +587,7 @@
 				<row>0</row>
 				<col>3</col>
                 <pref-width>40</pref-width>
-				<property>/autopilot/settings/heading-bug-deg</property>
+				<property>/it-autoflight/settings/heading-bug-deg</property>
 				<live type="bool">true</live>
 				<binding>
 					<command>dialog-apply</command>
@@ -597,7 +602,7 @@
 				<legend>&gt;</legend>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/heading-bug-deg</property>
+					<property>/it-autoflight/settings/heading-bug-deg</property>
 					<min>1</min>
 					<max>361</max>
 					<step>1</step>
@@ -613,14 +618,100 @@
 				<legend>&gt;&gt;</legend>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/heading-bug-deg</property>
+					<property>/it-autoflight/settings/heading-bug-deg</property>
 					<min>1</min>
 					<max>361</max>
 					<step>10</step>
 					<wrap>true</wrap>
 				</binding>
 			</button>
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
+			<text>
+				<label>Mode:</label>
+			</text>
+			<text>
+				<label>[MAG]</label>
+				<visible>
+					<equals>
+						<property>/it-autoflight/settings/use-true-hdg-error</property>
+						<value>0</value>
+					</equals>
+				</visible>
+			</text>
+			<text>
+				<label>[TRU]</label>
+				<visible>
+					<equals>
+						<property>/it-autoflight/settings/use-true-hdg-error</property>
+						<value>1</value>
+					</equals>
+				</visible>
+			</text>
+			<button>
+                <pref-width>60</pref-width>
+				<legend>Magnetic</legend>
+				<binding>
+					<command>property-assign</command>
+					<property>/it-autoflight/settings/use-true-hdg-error</property>
+					<value>0</value>
+				</binding>
+			</button>
+			<button>
+                <pref-width>45</pref-width>
+				<legend>True</legend>
+				<binding>
+					<command>property-assign</command>
+					<property>/it-autoflight/settings/use-true-hdg-error</property>
+					<value>1</value>
+				</binding>
+			</button>
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
+			<text>
+				<row>0</row>
+				<col>0</col>
+				<label>Bank Limit Select:</label>
+			</text>
 			
+			<slider>
+				<row>0</row>
+				<col>0</col>
+				<halign>center</halign>
+				<pref-width>130</pref-width>
+				<property>/it-autoflight/settings/bank-limit</property>
+				<step>5</step>
+				<min>5</min>
+				<max>30</max>
+				<live type="bool">true</live>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</slider>
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
+			<button>
+                <pref-width>70</pref-width>
+				<legend>AUTO</legend>
+				<binding>
+				<command>property-assign</command>
+				<property>/it-autoflight/settings/bank-limit</property>
+				<value>30</value>
+				</binding>
+			</button>
+			
+			<text>
+				<row>0</row>
+				<col>0</col>
+				<halign>right</halign>
+				<label>5   10   15   20   25   30</label>
+			</text>
 		</group>
 
 		<group>
@@ -645,7 +736,7 @@
 				<legend>HLD</legend>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/apvertset</property>
+				<property>/it-autoflight/apvertset</property>
 				<value>0</value>
 				</binding>
 			</button>
@@ -655,7 +746,7 @@
 				<legend>FLCH</legend>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/apvertset</property>
+				<property>/it-autoflight/apvertset</property>
 				<value>4</value>
 				</binding>
 			</button>
@@ -665,17 +756,33 @@
 				<legend>V/S</legend>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/apvertset</property>
+				<property>/it-autoflight/apvertset</property>
 				<value>1</value>
 				</binding>
 			</button>
 			
 			<button>
-                <pref-width>65</pref-width>
+                <pref-width>40</pref-width>
+				<legend>VNAV</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/settings/disabled-button</property>
+						<value>IAMANOCTALYESIAM</value>
+					</equals>
+				</enable>
+				<binding>
+				<command>property-assign</command>
+				<property>/it-autoflight/unused/vnav</property>
+				<value>1</value>
+				</binding>
+			</button>
+			
+			<button>
+                <pref-width>55</pref-width>
 				<legend>ILS</legend>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/apvertset</property>
+				<property>/it-autoflight/apvertset</property>
 				<value>2</value>
 				</binding>
 			</button>
@@ -698,7 +805,7 @@
 				<legend>&lt;&lt;</legend>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/target-altitude-ft</property>
+					<property>/it-autoflight/settings/target-altitude-ft</property>
 					<min>0</min>
 					<max>50000</max>
 					<step>-1000</step>
@@ -713,7 +820,7 @@
 				<legend>&lt;</legend>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/target-altitude-ft</property>
+					<property>/it-autoflight/settings/target-altitude-ft</property>
 					<min>0</min>
 					<max>50000</max>
 					<step>-100</step>
@@ -725,7 +832,7 @@
 				<row>0</row>
 				<col>3</col>
                 <pref-width>55</pref-width>
-				<property>/autopilot/settings/target-altitude-ft</property>
+				<property>/it-autoflight/settings/target-altitude-ft</property>
 				<live type="bool">true</live>
 				<binding>
 					<command>dialog-apply</command>
@@ -740,7 +847,7 @@
 				<legend>&gt;</legend>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/target-altitude-ft</property>
+					<property>/it-autoflight/settings/target-altitude-ft</property>
 					<min>0</min>
 					<max>50000</max>
 					<step>100</step>
@@ -756,7 +863,7 @@
 				<legend>&gt;&gt;</legend>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/target-altitude-ft</property>
+					<property>/it-autoflight/settings/target-altitude-ft</property>
 					<min>0</min>
 					<max>50000</max>
 					<step>1000</step>
@@ -764,7 +871,7 @@
 				</binding>
 			</button>
 		</group>
-		
+
 		<group>
 			<layout>table</layout>
 			
@@ -782,7 +889,7 @@
 				<legend>&lt;&lt;</legend>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/vertical-speed-fpm</property>
+					<property>/it-autoflight/settings/vertical-speed-fpm</property>
 					<min>-6000</min>
 					<max>6000</max>
 					<step>-1000</step>
@@ -797,7 +904,7 @@
 				<legend>&lt;</legend>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/vertical-speed-fpm</property>
+					<property>/it-autoflight/settings/vertical-speed-fpm</property>
 					<min>-6000</min>
 					<max>6000</max>
 					<step>-100</step>
@@ -809,7 +916,7 @@
 				<row>0</row>
 				<col>3</col>
                 <pref-width>55</pref-width>
-				<property>/autopilot/settings/vertical-speed-fpm</property>
+				<property>/it-autoflight/settings/vertical-speed-fpm</property>
 				<live type="bool">true</live>
 				<binding>
 					<command>dialog-apply</command>
@@ -824,7 +931,7 @@
 				<legend>&gt;</legend>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/vertical-speed-fpm</property>
+					<property>/it-autoflight/settings/vertical-speed-fpm</property>
 					<min>-6000</min>
 					<max>6000</max>
 					<step>100</step>
@@ -840,47 +947,11 @@
 				<legend>&gt;&gt;</legend>
 				<binding>
 					<command>property-adjust</command>
-					<property>/autopilot/settings/vertical-speed-fpm</property>
+					<property>/it-autoflight/settings/vertical-speed-fpm</property>
 					<min>-6000</min>
 					<max>6000</max>
 					<step>1000</step>
 					<wrap>false</wrap>
-				</binding>
-			</button>
-		</group>
-
-		<group>
-			<layout>hbox</layout>
-		</group>
-		
-		<group>
-			<layout>hbox</layout>
-
-			<hrule>
-				<stretch type="bool">true</stretch>
-			</hrule>
-			<text>
-				<label>AFDS</label>
-			</text>
-			<hrule>
-				<stretch type="bool">true</stretch>
-			</hrule>
-		</group>
-		
-		<group>
-			<layout>hbox</layout>
-			
-			<button>
-				<legend>AFDS MASTER OVRD OFF</legend>
-				<binding>
-				<command>property-assign</command>
-				<property>/controls/it2/ap_mastersw</property>
-				<value>0</value>
-				</binding>
-				<binding>
-				<command>property-assign</command>
-				<property>/controls/it2/at_mastersw</property>
-				<value>0</value>
 				</binding>
 			</button>
 		</group>

@@ -53,8 +53,8 @@
 				<path>Aircraft/A320-family/Systems/it-autoflight.xml</path>
 			</autopilot>
 			<autopilot>
-				<name>Autopilot helpers</name>
-				<path>Aircraft/Generic/generic-autopilot-helper.xml</path>
+				<name>Autothrust</name>
+				<path>Aircraft/A320-family/Systems/it-autothrust.xml</path>
 			</autopilot>
 			<autopilot>
 				<name>Autobrake</name>
@@ -289,6 +289,31 @@
 			</tank>
 		</fuel>
 	</consumables>
+	
+	<it-autoflight>
+	<settings>
+		<no-generics>1</no-generics>
+		<roll>
+			<umin>-007</umin>
+			<umax>0.07</umax>
+			<kp>0.05</kp>
+			<kp-vorloc>0.10</kp-vorloc>
+		</roll>
+		<pitch>
+			<umin>-0.20</umin>
+			<umax>0.20</umax>
+			<kp>-0.05</kp>
+		</pitch>
+		<flch>
+			<umin>-0.20</umin>
+			<umax>0.20</umax>
+			<kp>-0.05</kp>
+		</flch>
+		<gs>
+			<kp>0.10</kp>
+		</gs>
+	</settings>
+</it-autoflight>
 
 	<payload>
 		<weight n="0">
@@ -595,10 +620,9 @@
 		<dual_control>
 			<file>Aircraft/Generic/DualControl/pilot-dual-control.nas</file>
 		</dual_control>
-		<it2>
-			<file>Aircraft/A320-family/Nasal/autoflight.nas</file>
-			<file>Aircraft/A320-family/Nasal/autoflight-logic.nas</file>
-		</it2>	
+		<itaf>
+			<file>Aircraft/A320-Family/Nasal/it-autoflight.nas</file>
+		</itaf>	
 	</nasal>
 
 	<aircraft>
