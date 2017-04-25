@@ -6,21 +6,6 @@
 		<author>Ampere K Hardraade (3d, FDM), Skyop (systems, instruments, etc.)</author>
 		<status>beta</status>
 
-		<tags>
-			<tag>airbus</tag>
-			<tag>low-wing</tag>
-			<tag>tricycle</tag>
-			<tag>retractable-gear</tag>
-			<tag>twin-engine</tag>
-			<tag>jet</tag>
-			<tag>transport</tag>
-			<tag>glass-cockpit</tag>
-			<tag>ifr</tag>
-			<tag>1980s</tag>
-                        <tag>1990s</tag>
-			<tag>2000s</tag>
-		</tags>
-
 		<model>
 			<A320>
 				<heading-bug-pfd-deg type="double">0</heading-bug-pfd-deg>
