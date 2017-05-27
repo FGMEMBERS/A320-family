@@ -9,6 +9,20 @@
 		<variant>100</variant>
 		<engine>CFM56-5B5</engine>
         <variant-of>A320-211</variant-of>
+		<tags>
+                        <tag>airbus</tag>
+                        <tag>low-wing</tag>
+                        <tag>tricycle</tag>
+                        <tag>retractable-gear</tag>
+                        <tag>twin-engine</tag>
+                        <tag>jet</tag>
+                        <tag>transport</tag>
+                        <tag>glass-cockpit</tag>
+                        <tag>ifr</tag>
+                        <tag>1980s</tag>
+                        <tag>1990s</tag>
+                        <tag>2000s</tag>
+                </tags>
 		<model>
 			<path>Aircraft/A320-family/XMLs/A319-111.xml</path>
 			<livery>
