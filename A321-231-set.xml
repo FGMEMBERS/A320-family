@@ -25,6 +25,7 @@
                 </tags>
 		<model>
 			<path>Aircraft/A320-family/XMLs/A321-231.xml</path>
+			<fallback-model-index type="int">213</fallback-model-index>
 			<livery>
 				<file>A321-House</file>
 				<texture>A321-House.png</texture>

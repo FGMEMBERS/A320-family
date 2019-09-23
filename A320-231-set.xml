@@ -25,6 +25,7 @@
                 </tags>
 		<model>
 			<path>Aircraft/A320-family/XMLs/A320-231.xml</path>
+			<fallback-model-index type="int">212</fallback-model-index>
 			<livery>
 				<file>Liveries/A320-Blank</file>
 				<texture>Liveries/A320-Blank.png</texture>
